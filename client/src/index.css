@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(0, 0%, 10%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(16, 100%, 60%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --teal: hsl(176, 45%, 57%);
+  --teal-foreground: hsl(0, 0%, 100%);
+  --yellow: hsl(50, 100%, 71%);
+  --yellow-foreground: hsl(20, 14.3%, 4.1%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom grays */
+  --gray-50: hsl(210, 17%, 98%);
+  --gray-100: hsl(210, 14%, 95%);
+  --gray-600: hsl(0, 0%, 40%);
+  --gray-900: hsl(0, 0%, 20%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(0, 0%, 10%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(16, 100%, 60%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --teal: hsl(176, 45%, 57%);
+  --teal-foreground: hsl(0, 0%, 100%);
+  --yellow: hsl(50, 100%, 71%);
+  --yellow-foreground: hsl(20, 14.3%, 4.1%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-accent {
+    color: hsl(var(--accent));
+  }
+  
+  .bg-accent {
+    background-color: hsl(var(--accent));
+  }
+  
+  .text-teal {
+    color: hsl(var(--teal));
+  }
+  
+  .bg-teal {
+    background-color: hsl(var(--teal));
+  }
+  
+  .text-yellow {
+    color: hsl(var(--yellow));
+  }
+  
+  .bg-yellow {
+    background-color: hsl(var(--yellow));
+  }
+  
+  .text-gray-50 {
+    color: hsl(var(--gray-50));
+  }
+  
+  .bg-gray-50 {
+    background-color: hsl(var(--gray-50));
+  }
+  
+  .text-gray-100 {
+    color: hsl(var(--gray-100));
+  }
+  
+  .bg-gray-100 {
+    background-color: hsl(var(--gray-100));
+  }
+  
+  .text-gray-600 {
+    color: hsl(var(--gray-600));
+  }
+  
+  .text-gray-900 {
+    color: hsl(var(--gray-900));
+  }
+  
+  .bg-gray-900 {
+    background-color: hsl(var(--gray-900));
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.artistic-overlay {
+  background: linear-gradient(45deg, 
+    hsla(var(--accent), 0.2) 0%, 
+    hsla(var(--teal), 0.2) 25%,
+    hsla(var(--yellow), 0.2) 50%,
+    hsla(var(--accent), 0.2) 75%,
+    hsla(var(--teal), 0.2) 100%);
+  mix-blend-mode: multiply;
+}
+
+.audio-visualizer {
+  background: linear-gradient(90deg, 
+    hsla(var(--accent), 0.8) 0%, 
+    hsla(var(--teal), 0.8) 100%);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--gray-100));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
