@@ -42,7 +42,7 @@ export class MemStorage implements IStorage {
         client: "Heineken USA",
         role: "Producer, Manager",
         description: "Custom built onsite activation and photo op for Heineken USA at one of the largest hip-hop festivals.",
-        imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+        imageUrl: "/attached_assets/SeatGeek Sporting KC_1749669518138.JPG",
         challenges: [
           "Coordinating with festival logistics and security",
           "Managing high-volume crowd flow and engagement",
@@ -65,7 +65,7 @@ export class MemStorage implements IStorage {
         client: "Otter Creek Brewery",
         role: "Executive Producer",
         description: "Immersive Halloween concert series featuring emerging artists in atmospheric venues across NYC.",
-        imageUrl: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+        imageUrl: "/attached_assets/Cage The Elephant for SeatGeek_1749669504640.jpg",
         challenges: [
           "Sourcing unique, atmospheric venues",
           "Balancing intimate atmosphere with production needs",
@@ -88,7 +88,7 @@ export class MemStorage implements IStorage {
         client: "Various Artists",
         role: "Recording Engineer",
         description: "Recording engineer for notable artists including Drake, Cyndi Lauper, and David Guetta at Area 51 NYC.",
-        imageUrl: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+        imageUrl: "/attached_assets/Jim James Studio_02_1749669234911.jpg",
         challenges: [
           "Managing complex multi-track recordings",
           "Adapting to diverse artist preferences and styles",
@@ -111,7 +111,7 @@ export class MemStorage implements IStorage {
         client: "Various Digital Platforms",
         role: "Producer, Audio Engineer",
         description: "Produced and edited high-profile live concert performances for digital platforms and streaming.",
-        imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+        imageUrl: "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
         challenges: [
           "Achieving studio quality in live environments",
           "Managing multiple camera feeds and audio sources",
@@ -134,7 +134,7 @@ export class MemStorage implements IStorage {
         client: "LinkedIn Learning",
         role: "Course Producer",
         description: "Highly-rated professional development course reaching over 200,000 learners on LinkedIn Learning.",
-        imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+        imageUrl: "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
         challenges: [
           "Creating engaging content for diverse professional levels",
           "Balancing theoretical concepts with practical application",
@@ -157,7 +157,7 @@ export class MemStorage implements IStorage {
         client: "Madecraft",
         role: "Innovation Producer",
         description: "Developed automated systems using ChatGPT and OpenAI API for generating educational content at scale.",
-        imageUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+        imageUrl: "/attached_assets/Jon producing Madecraft_01_1749669199335.JPG",
         challenges: [
           "Integrating AI tools with existing production pipeline",
           "Maintaining content quality and brand consistency",
@@ -173,6 +173,75 @@ export class MemStorage implements IStorage {
         featured: true,
         year: 2024,
         tags: ["AI", "Automation", "Innovation", "Content Production"]
+      },
+      {
+        title: "Zocdoc iPhone App Commercial",
+        category: "digital",
+        client: "Zocdoc",
+        role: "Producer, Director",
+        description: "Produced viral TV commercial for Zocdoc iPhone app featuring animated storytelling with 1.1M+ views.",
+        imageUrl: "/attached_assets/Zocdoc_01_1749669530369.png",
+        challenges: [
+          "Creating engaging animated narrative within budget constraints",
+          "Coordinating complex post-production pipeline",
+          "Meeting tight broadcast deadlines",
+          "Ensuring brand message clarity in 30-second format"
+        ],
+        results: [
+          "1.1 million+ YouTube views achieved",
+          "Featured in national TV broadcast rotation",
+          "Significant increase in app downloads during campaign",
+          "Won internal company recognition for creative excellence"
+        ],
+        featured: true,
+        year: 2019,
+        tags: ["Commercial Production", "Animation", "Digital Marketing", "Viral Content"]
+      },
+      {
+        title: "Karl-Anthony Towns Interview Production",
+        category: "content",
+        client: "Madecraft",
+        role: "Producer, Director",
+        description: "Directed and produced high-profile interview content with NBA star Karl-Anthony Towns for educational platform.",
+        imageUrl: "/attached_assets/Karl Towns Interview_01_1749669221861.jpg",
+        challenges: [
+          "Coordinating with high-profile athlete's schedule",
+          "Managing complex multi-camera setup in gymnasium",
+          "Ensuring professional audio quality in challenging acoustics",
+          "Creating engaging content suitable for educational platform"
+        ],
+        results: [
+          "Successfully captured 2+ hours of interview content",
+          "Content featured prominently on Madecraft platform",
+          "Generated significant social media engagement",
+          "Strengthened platform's sports content offerings"
+        ],
+        featured: false,
+        year: 2023,
+        tags: ["Interview Production", "Sports Content", "Multi-Camera", "Celebrity"]
+      },
+      {
+        title: "Audio Engineering & Equipment Setup",
+        category: "audio",
+        client: "Various Clients",
+        role: "Audio Engineer, Technical Lead",
+        description: "Professional audio engineering and equipment configuration for studio sessions and live performances.",
+        imageUrl: "/attached_assets/Jon Audio Tinkering_01_1749669111385.jpg",
+        challenges: [
+          "Optimizing complex audio signal chains",
+          "Troubleshooting equipment issues under pressure",
+          "Adapting to diverse acoustic environments",
+          "Maintaining consistent sound quality across different setups"
+        ],
+        results: [
+          "Zero technical failures during critical sessions",
+          "Improved studio efficiency through optimized workflows",
+          "Mentored junior engineers on equipment best practices",
+          "Developed standardized setup procedures"
+        ],
+        featured: false,
+        year: 2014,
+        tags: ["Audio Engineering", "Equipment Setup", "Technical Leadership", "Studio Operations"]
       }
     ];
 

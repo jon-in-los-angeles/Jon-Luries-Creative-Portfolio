@@ -71,13 +71,12 @@ export default function HeroSection() {
             <div className="relative w-full max-w-md mx-auto">
               {/* Professional headshot portrait */}
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=1000" 
+                src="/attached_assets/Jon for SeatGeek_1749669105141.JPG" 
                 alt="Jonathan Lurie - Professional headshot" 
                 className="w-full h-auto rounded-2xl shadow-2xl relative z-10"
               />
               
-              {/* Artistic Overlay */}
-              <div className="absolute inset-0 artistic-overlay rounded-2xl z-20 opacity-30"></div>
+              
               
               {/* Code Elements Overlay */}
               <div className="absolute top-4 right-4 z-30 opacity-70">
