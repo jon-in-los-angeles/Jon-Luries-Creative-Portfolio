@@ -71,7 +71,7 @@ export default function HeroSection() {
             <div className="relative w-full max-w-md mx-auto">
               {/* Professional headshot portrait */}
               <img 
-                src="/attached_assets/Jon for SeatGeek_1749669105141.JPG" 
+                src="/attached_assets/Jon Headshot_1749763552830.JPG" 
                 alt="Jonathan Lurie - Professional headshot" 
                 className="w-full h-auto rounded-2xl shadow-2xl relative z-10"
               />

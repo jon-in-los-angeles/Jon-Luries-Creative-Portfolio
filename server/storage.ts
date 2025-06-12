@@ -42,7 +42,7 @@ export class MemStorage implements IStorage {
         client: "Heineken USA",
         role: "Producer, Manager",
         description: "Custom built onsite activation and photo op for Heineken USA at one of the largest hip-hop festivals.",
-        imageUrl: "/attached_assets/SeatGeek Sporting KC_1749669518138.JPG",
+        imageUrl: "/attached_assets/Tecate Rolling Loud_02_1749763910224.jpg",
         challenges: [
           "Coordinating with festival logistics and security",
           "Managing high-volume crowd flow and engagement",
@@ -62,10 +62,10 @@ export class MemStorage implements IStorage {
       {
         title: "Spooky Mansion",
         category: "events",
-        client: "Otter Creek Brewery",
+        client: "The Wild Honey Pie",
         role: "Executive Producer",
         description: "Immersive Halloween concert series featuring emerging artists in atmospheric venues across NYC.",
-        imageUrl: "/attached_assets/Cage The Elephant for SeatGeek_1749669504640.jpg",
+        imageUrl: "/attached_assets/SpookyMansion_1749763869627.jpg",
         challenges: [
           "Sourcing unique, atmospheric venues",
           "Balancing intimate atmosphere with production needs",
@@ -129,11 +129,11 @@ export class MemStorage implements IStorage {
         tags: ["Live Audio", "Digital Content", "Streaming"]
       },
       {
-        title: "Articulating Your Value",
+        title: "Professional Development Content",
         category: "content",
-        client: "LinkedIn Learning",
+        client: "Educational Platforms",
         role: "Course Producer",
-        description: "Highly-rated professional development course reaching over 200,000 learners on LinkedIn Learning.",
+        description: "Comprehensive professional development content series reaching diverse audiences across multiple learning platforms.",
         imageUrl: "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
         challenges: [
           "Creating engaging content for diverse professional levels",
@@ -142,10 +142,10 @@ export class MemStorage implements IStorage {
           "Ensuring accessibility across different learning styles"
         ],
         results: [
-          "200,000+ learners enrolled",
-          "4.7/5 average course rating",
-          "Featured in LinkedIn Learning's 'Top Courses'",
-          "Translated into 6 languages for global reach"
+          "200,000+ learners reached across platforms",
+          "Consistently high engagement and completion rates",
+          "Featured in multiple platform recommendation algorithms",
+          "Content adapted for global markets and languages"
         ],
         featured: true,
         year: 2023,
