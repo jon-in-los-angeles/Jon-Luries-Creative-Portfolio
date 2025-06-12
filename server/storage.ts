@@ -157,7 +157,7 @@ export class MemStorage implements IStorage {
         client: "Madecraft",
         role: "Innovation Producer",
         description: "Developed automated systems using ChatGPT and OpenAI API for generating educational content at scale.",
-        imageUrl: "/attached_assets/Jon producing Madecraft_01_1749669199335.JPG",
+        imageUrl: "ai-automation-icon",
         challenges: [
           "Integrating AI tools with existing production pipeline",
           "Maintaining content quality and brand consistency",
@@ -198,50 +198,50 @@ export class MemStorage implements IStorage {
         tags: ["Commercial Production", "Animation", "Digital Marketing", "Viral Content"]
       },
       {
-        title: "Karl-Anthony Towns Interview Production",
+        title: "Branded Content Production",
         category: "content",
-        client: "Madecraft",
+        client: "Various Brands",
         role: "Producer, Director",
-        description: "Directed and produced high-profile interview content with NBA star Karl-Anthony Towns for educational platform.",
+        description: "Directed and produced high-profile branded content featuring celebrities and influencers for digital marketing campaigns.",
         imageUrl: "/attached_assets/Karl Towns Interview_01_1749669221861.jpg",
         challenges: [
-          "Coordinating with high-profile athlete's schedule",
-          "Managing complex multi-camera setup in gymnasium",
-          "Ensuring professional audio quality in challenging acoustics",
-          "Creating engaging content suitable for educational platform"
+          "Coordinating with high-profile talent schedules",
+          "Managing complex multi-camera setups in various locations",
+          "Ensuring professional audio quality in challenging environments",
+          "Creating engaging content that balances brand messaging with authenticity"
         ],
         results: [
-          "Successfully captured 2+ hours of interview content",
-          "Content featured prominently on Madecraft platform",
-          "Generated significant social media engagement",
-          "Strengthened platform's sports content offerings"
+          "Successfully captured premium branded content across multiple campaigns",
+          "Content featured prominently across social media platforms",
+          "Generated significant engagement and brand awareness",
+          "Strengthened client relationships through quality deliverables"
         ],
         featured: false,
         year: 2023,
-        tags: ["Interview Production", "Sports Content", "Multi-Camera", "Celebrity"]
+        tags: ["Branded Content", "Celebrity Talent", "Multi-Camera", "Digital Marketing"]
       },
       {
-        title: "Audio Engineering & Equipment Setup",
+        title: "Recording Studio Productions",
         category: "audio",
-        client: "Various Clients",
-        role: "Audio Engineer, Technical Lead",
-        description: "Professional audio engineering and equipment configuration for studio sessions and live performances.",
-        imageUrl: "/attached_assets/Jon Audio Tinkering_01_1749669111385.jpg",
+        client: "Various Artists & Labels",
+        role: "Producer, Audio Engineer",
+        description: "Produced and engineered high-profile video performances and recording sessions featuring notable artists in professional studio environments.",
+        imageUrl: "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
         challenges: [
-          "Optimizing complex audio signal chains",
-          "Troubleshooting equipment issues under pressure",
-          "Adapting to diverse acoustic environments",
-          "Maintaining consistent sound quality across different setups"
+          "Coordinating complex multi-camera and audio setups",
+          "Balancing live performance energy with broadcast quality",
+          "Managing artist direction and technical requirements simultaneously",
+          "Delivering studio-quality recordings in live performance formats"
         ],
         results: [
-          "Zero technical failures during critical sessions",
-          "Improved studio efficiency through optimized workflows",
-          "Mentored junior engineers on equipment best practices",
-          "Developed standardized setup procedures"
+          "Successfully produced multiple award-winning performance videos",
+          "Achieved broadcast quality in challenging live environments",
+          "Built lasting relationships with high-profile artists and management",
+          "Established reputation for premium production value"
         ],
         featured: false,
         year: 2014,
-        tags: ["Audio Engineering", "Equipment Setup", "Technical Leadership", "Studio Operations"]
+        tags: ["Music Production", "Video Performance", "Studio Recording", "Artist Collaboration"]
       }
     ];
 

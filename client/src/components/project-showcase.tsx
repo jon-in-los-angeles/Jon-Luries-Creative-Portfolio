@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { ExternalLink, Play, Volume2, GraduationCap, Lightbulb } from "lucide-react";
 import type { Project } from "@shared/schema";
+import AIAutomationIcon from "./ai-automation-icon";
 
 interface ProjectModalStore {
   isOpen: boolean;
@@ -144,11 +145,19 @@ export default function ProjectShowcase() {
                 layout
               >
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl">
-                  <img 
-                    src={project.imageUrl} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
+                  {project.imageUrl === "ai-automation-icon" ? (
+                    <div className="h-48">
+                      <AIAutomationIcon />
+                    </div>
+                  ) : (
+                    <img 
+                      src={project.imageUrl} 
+                      alt={project.title}
+                      className={`w-full h-48 object-cover ${
+                        project.title === "Branded Content Production" ? "object-top" : ""
+                      }`}
+                    />
+                  )}
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
                       <span className={`text-${categoryColor} font-semibold text-sm`}>
