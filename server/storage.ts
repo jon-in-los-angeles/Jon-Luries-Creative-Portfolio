@@ -366,7 +366,7 @@ export class MemStorage implements IStorage {
           "Produced documentary-style series filmed in Austin, Texas, showcasing emerging artists and creative talent in intimate performance settings.",
         vimeoUrl: "https://vimeo.com/159641323",
         thumbnailUrl:
-          "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
+          "/attached_assets/Welcome Campers 3 _01_1749858039158.JPG",
         duration: "4:32",
         year: 2016,
         category: "Documentary Series",
