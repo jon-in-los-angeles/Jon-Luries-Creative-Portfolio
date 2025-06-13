@@ -241,11 +241,11 @@ export class MemStorage implements IStorage {
       {
         title: "Branded Content Production",
         category: "content",
-        client: "Various Brands",
+        client: "Squarespace, Microsoft, LinkedIn, SeatGeek, Zocdoc, Madecraft",
         role: "Producer, Director",
         description:
-          "Directed and produced high-profile branded content featuring celebrities and influencers for digital marketing campaigns.",
-        imageUrl: "/attached_assets/Karl Towns Interview_01_1749669221861.jpg",
+          "Directed and produced high-profile branded content featuring celebrities and influencers for digital marketing campaigns across major technology, entertainment, and healthcare brands.",
+        imageUrl: "/attached_assets/image_1749856642267.png",
         challenges: [
           "Coordinating with high-profile talent schedules",
           "Managing complex multi-camera setups in various locations",
