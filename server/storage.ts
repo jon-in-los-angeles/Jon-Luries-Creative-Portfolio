@@ -61,7 +61,7 @@ export class MemStorage implements IStorage {
       {
         title: "Large-Scale Brand Activations",
         category: "events",
-        client: "Heineken USA, SeatGeek, Rolling Loud, Live Nation, Complex Media",
+        client: "Heineken USA, Squarespace, Rolling Loud, Viacom",
         role: "Producer, Manager",
         description:
           "Large-scale brand activation and experiential marketing campaigns, managing complex A/V productions for major sporting and entertainment events across diverse venues and audiences.",
@@ -73,7 +73,7 @@ export class MemStorage implements IStorage {
           "Ensuring seamless technical execution under pressure",
         ],
         results: [
-          "50,000+ event attendees engaged across campaigns",
+          "1,000+ event attendees engaged across campaigns",
           "Successful delivery of multi-day activation experiences",
           "Enhanced brand visibility and social media presence",
           "Zero technical failures during critical live events",
@@ -97,7 +97,7 @@ export class MemStorage implements IStorage {
           "Coordinating multiple artists and technical crews",
         ],
         results: [
-          "8 sold-out performances across NYC",
+          "Filmed 8 live music videos during event",
           "95% positive audience feedback scores",
           "Featured in Time Out NY and Brooklyn Paper",
           "2M+ social media impressions",
