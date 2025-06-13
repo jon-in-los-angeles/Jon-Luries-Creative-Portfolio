@@ -7,7 +7,7 @@ export default function WatchSection() {
   const { data: videos = [], isLoading } = useQuery<Video[]>({
     queryKey: ["/api/videos"],
     queryFn: async () => {
-      const response = await fetch("/api/videos?featured=true");
+      const response = await fetch("/api/videos");
       if (!response.ok) throw new Error("Failed to fetch videos");
       return response.json();
     },
@@ -43,14 +43,14 @@ export default function WatchSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {videos.map((video, index) => (
             <motion.div
               key={video.id}
               className="group cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               onClick={() => window.open(video.vimeoUrl, '_blank')}
             >
               <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
@@ -97,7 +97,7 @@ export default function WatchSection() {
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500 font-medium">{video.year}</span>
                     <div className="flex items-center text-accent font-medium text-sm">
-                      Watch on Vimeo
+                      {video.vimeoUrl.includes('youtube.com') ? 'Watch on YouTube' : 'Watch on Vimeo'}
                       <Play className="w-4 h-4 ml-2" />
                     </div>
                   </div>
