@@ -1,4 +1,17 @@
-import { projects, experiences, contactMessages, type Project, type Experience, type ContactMessage, type InsertProject, type InsertExperience, type InsertContactMessage } from "@shared/schema";
+import {
+  projects,
+  experiences,
+  contactMessages,
+  videos,
+  type Project,
+  type Experience,
+  type ContactMessage,
+  type Video,
+  type InsertProject,
+  type InsertExperience,
+  type InsertContactMessage,
+  type InsertVideo,
+} from "@shared/schema";
 
 export interface IStorage {
   // Projects
@@ -6,10 +19,15 @@ export interface IStorage {
   getProjectsByCategory(category: string): Promise<Project[]>;
   getFeaturedProjects(): Promise<Project[]>;
   getProject(id: number): Promise<Project | undefined>;
-  
+
   // Experiences
   getAllExperiences(): Promise<Experience[]>;
-  
+
+  // Videos
+  getAllVideos(): Promise<Video[]>;
+  getFeaturedVideos(): Promise<Video[]>;
+  getVideo(id: number): Promise<Video | undefined>;
+
   // Contact Messages
   createContactMessage(message: InsertContactMessage): Promise<ContactMessage>;
 }
@@ -17,250 +35,287 @@ export interface IStorage {
 export class MemStorage implements IStorage {
   private projects: Map<number, Project>;
   private experiences: Map<number, Experience>;
+  private videos: Map<number, Video>;
   private contactMessages: Map<number, ContactMessage>;
   private currentProjectId: number;
   private currentExperienceId: number;
+  private currentVideoId: number;
   private currentMessageId: number;
 
   constructor() {
     this.projects = new Map();
     this.experiences = new Map();
+    this.videos = new Map();
     this.contactMessages = new Map();
     this.currentProjectId = 1;
     this.currentExperienceId = 1;
+    this.currentVideoId = 1;
     this.currentMessageId = 1;
-    
+
     this.seedData();
   }
 
   private seedData() {
     // Seed projects
-    const projectsData: Omit<Project, 'id'>[] = [
+    const projectsData: Omit<Project, "id">[] = [
       {
-        title: "SeatGeek Brand Activations",
+        title: "Heineken USA Brand Activations",
         category: "events",
         client: "SeatGeek",
         role: "Producer, Manager",
-        description: "Large-scale brand activation and experiential marketing campaigns, managing complex A/V productions for major sporting and entertainment events.",
+        description:
+          "Large-scale brand activation and experiential marketing campaigns, managing complex A/V productions for major sporting and entertainment events.",
         imageUrl: "/attached_assets/Tecate Rolling Loud_02_1749763910224.jpg",
         challenges: [
           "Coordinating with venue logistics and security teams",
           "Managing high-volume crowd flow and engagement",
           "Leading creative teams through complex productions",
-          "Ensuring seamless technical execution under pressure"
+          "Ensuring seamless technical execution under pressure",
         ],
         results: [
           "50,000+ event attendees engaged across campaigns",
           "Successful delivery of multi-day activation experiences",
           "Enhanced brand visibility and social media presence",
-          "Zero technical failures during critical live events"
+          "Zero technical failures during critical live events",
         ],
         featured: true,
         year: 2023,
-        tags: ["Event Production", "Brand Activation", "Team Leadership"]
+        tags: ["Event Production", "Brand Activation", "Team Leadership"],
       },
       {
         title: "Spooky Mansion",
         category: "events",
         client: "The Wild Honey Pie",
         role: "Executive Producer",
-        description: "Immersive Halloween concert series featuring emerging artists in atmospheric venues across NYC.",
+        description:
+          "Immersive Halloween concert series featuring emerging artists in atmospheric venues across NYC.",
         imageUrl: "/attached_assets/SpookyMansion_1749763869627.jpg",
         challenges: [
           "Sourcing unique, atmospheric venues",
           "Balancing intimate atmosphere with production needs",
           "Managing complex lighting and sound designs",
-          "Coordinating multiple artists and technical crews"
+          "Coordinating multiple artists and technical crews",
         ],
         results: [
           "8 sold-out performances across NYC",
           "95% positive audience feedback scores",
           "Featured in Time Out NY and Brooklyn Paper",
-          "2M+ social media impressions"
+          "2M+ social media impressions",
         ],
         featured: true,
         year: 2022,
-        tags: ["Event Production", "Music", "Venue Management"]
+        tags: ["Event Production", "Music", "Venue Management"],
       },
       {
         title: "Premier NYC Studio Sessions",
         category: "audio",
         client: "Various Artists",
         role: "Recording Engineer",
-        description: "Recording engineer for notable artists including Drake, Cyndi Lauper, and David Guetta at Area 51 NYC.",
+        description:
+          "Recording engineer for notable artists including Drake, Cyndi Lauper, and David Guetta at Area 51 NYC.",
         imageUrl: "/attached_assets/Jim James Studio_02_1749669234911.jpg",
         challenges: [
           "Managing complex multi-track recordings",
           "Adapting to diverse artist preferences and styles",
           "Maintaining consistent audio quality under pressure",
-          "Collaborating with high-profile production teams"
+          "Collaborating with high-profile production teams",
         ],
         results: [
           "Contributed to 12+ commercially released tracks",
           "Several tracks reached Billboard Hot 100",
           "Developed long-term relationships with A-list artists",
-          "Advanced to senior engineer role within 2 years"
+          "Advanced to senior engineer role within 2 years",
         ],
         featured: true,
         year: 2013,
-        tags: ["Audio Engineering", "Recording", "Music Production"]
+        tags: ["Audio Engineering", "Recording", "Music Production"],
       },
       {
         title: "Tiny Desk & KEXP Sessions",
         category: "audio",
         client: "Various Digital Platforms",
         role: "Producer, Audio Engineer",
-        description: "Produced and edited high-profile live concert performances for digital platforms and streaming.",
-        imageUrl: "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
+        description:
+          "Produced and edited high-profile live concert performances for digital platforms and streaming.",
+        imageUrl:
+          "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
         challenges: [
           "Achieving studio quality in live environments",
           "Managing multiple camera feeds and audio sources",
           "Real-time mixing with no opportunity for retakes",
-          "Balancing artistic vision with technical constraints"
+          "Balancing artistic vision with technical constraints",
         ],
         results: [
           "25+ live sessions produced and released",
           "Combined 5M+ views across platforms",
           "Featured artists gained significant streaming increases",
-          "Won 2 Webby nominations for audio production"
+          "Won 2 Webby nominations for audio production",
         ],
         featured: false,
         year: 2014,
-        tags: ["Live Audio", "Digital Content", "Streaming"]
+        tags: ["Live Audio", "Digital Content", "Streaming"],
       },
       {
         title: "LinkedIn Learning Course Production",
         category: "content",
         client: "LinkedIn Learning",
         role: "Course Producer",
-        description: "Professional development content creation for LinkedIn Learning platform, contributing to educational content reaching millions of learners worldwide.",
-        imageUrl: "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
+        description:
+          "Professional development content creation for LinkedIn Learning platform, contributing to educational content reaching millions of learners worldwide.",
+        imageUrl:
+          "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
         challenges: [
           "Creating engaging content for diverse professional levels",
           "Balancing theoretical concepts with practical application",
           "Designing interactive elements for online learning",
-          "Ensuring accessibility across different learning styles"
+          "Ensuring accessibility across different learning styles",
         ],
         results: [
           "Content contributed to platform growth from 8M to 22M viewership",
           "Reached over 2M learners across educational platforms",
           "Featured in LinkedIn Learning's top-performing courses",
-          "Content adapted for global markets and multiple languages"
+          "Content adapted for global markets and multiple languages",
         ],
         featured: true,
         year: 2023,
-        tags: ["eLearning", "Content Production", "Professional Development"]
+        tags: ["eLearning", "Content Production", "Professional Development"],
       },
       {
         title: "Workflow Automation & Production Tools",
         category: "digital",
         client: "Madecraft",
         role: "Innovation Producer",
-        description: "Developed automated production workflows and internal tools using Google Apps Script and OpenAI API, implementing bi-weekly sprints to enhance team efficiency.",
+        description:
+          "Developed automated production workflows and internal tools using Google Apps Script and OpenAI API, implementing bi-weekly sprints to enhance team efficiency.",
         imageUrl: "ai-automation-icon",
         challenges: [
           "Integrating AI tools with existing production pipeline",
           "Removing hurdles for future project workflows",
           "Training team on new automated systems",
-          "Maintaining content quality while scaling production"
+          "Maintaining content quality while scaling production",
         ],
         results: [
           "75% reduction in content production time",
           "300% increase in content output capacity",
           "Streamlined workflows adopted company-wide",
-          "Enhanced internal production tools through iterative development"
+          "Enhanced internal production tools through iterative development",
         ],
         featured: true,
         year: 2024,
-        tags: ["Workflow Optimization", "Automation", "Team Leadership", "Production Tools"]
+        tags: [
+          "Workflow Optimization",
+          "Automation",
+          "Team Leadership",
+          "Production Tools",
+        ],
       },
       {
         title: "Zocdoc iPhone App Commercial",
         category: "digital",
         client: "Zocdoc",
         role: "Producer, Director",
-        description: "Produced viral TV commercial for Zocdoc iPhone app featuring animated storytelling with 1.1M+ views.",
+        description:
+          "Produced viral TV commercial for Zocdoc iPhone app featuring animated storytelling with 1.1M+ views.",
         imageUrl: "/attached_assets/Zocdoc_01_1749669530369.png",
         challenges: [
           "Creating engaging animated narrative within budget constraints",
           "Coordinating complex post-production pipeline",
           "Meeting tight broadcast deadlines",
-          "Ensuring brand message clarity in 30-second format"
+          "Ensuring brand message clarity in 30-second format",
         ],
         results: [
           "1.1 million+ YouTube views achieved",
           "Featured in national TV broadcast rotation",
           "Significant increase in app downloads during campaign",
-          "Won internal company recognition for creative excellence"
+          "Won internal company recognition for creative excellence",
         ],
         featured: true,
         year: 2019,
-        tags: ["Commercial Production", "Animation", "Digital Marketing", "Viral Content"]
+        tags: [
+          "Commercial Production",
+          "Animation",
+          "Digital Marketing",
+          "Viral Content",
+        ],
       },
       {
         title: "Branded Content Production",
         category: "content",
         client: "Various Brands",
         role: "Producer, Director",
-        description: "Directed and produced high-profile branded content featuring celebrities and influencers for digital marketing campaigns.",
+        description:
+          "Directed and produced high-profile branded content featuring celebrities and influencers for digital marketing campaigns.",
         imageUrl: "/attached_assets/Karl Towns Interview_01_1749669221861.jpg",
         challenges: [
           "Coordinating with high-profile talent schedules",
           "Managing complex multi-camera setups in various locations",
           "Ensuring professional audio quality in challenging environments",
-          "Creating engaging content that balances brand messaging with authenticity"
+          "Creating engaging content that balances brand messaging with authenticity",
         ],
         results: [
           "Successfully captured premium branded content across multiple campaigns",
           "Content featured prominently across social media platforms",
           "Generated significant engagement and brand awareness",
-          "Strengthened client relationships through quality deliverables"
+          "Strengthened client relationships through quality deliverables",
         ],
         featured: false,
         year: 2023,
-        tags: ["Branded Content", "Celebrity Talent", "Multi-Camera", "Digital Marketing"]
+        tags: [
+          "Branded Content",
+          "Celebrity Talent",
+          "Multi-Camera",
+          "Digital Marketing",
+        ],
       },
       {
         title: "Recording Studio Productions",
         category: "audio",
         client: "Various Artists & Labels",
         role: "Producer, Audio Engineer",
-        description: "Produced and engineered high-profile video performances and recording sessions featuring notable artists in professional studio environments.",
-        imageUrl: "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
+        description:
+          "Produced and engineered high-profile video performances and recording sessions featuring notable artists in professional studio environments.",
+        imageUrl:
+          "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
         challenges: [
           "Coordinating complex multi-camera and audio setups",
           "Balancing live performance energy with broadcast quality",
           "Managing artist direction and technical requirements simultaneously",
-          "Delivering studio-quality recordings in live performance formats"
+          "Delivering studio-quality recordings in live performance formats",
         ],
         results: [
           "Successfully produced multiple award-winning performance videos",
           "Achieved broadcast quality in challenging live environments",
           "Built lasting relationships with high-profile artists and management",
-          "Established reputation for premium production value"
+          "Established reputation for premium production value",
         ],
         featured: false,
         year: 2014,
-        tags: ["Music Production", "Video Performance", "Studio Recording", "Artist Collaboration"]
-      }
+        tags: [
+          "Music Production",
+          "Video Performance",
+          "Studio Recording",
+          "Artist Collaboration",
+        ],
+      },
     ];
 
-    projectsData.forEach(project => {
+    projectsData.forEach((project) => {
       const id = this.currentProjectId++;
       this.projects.set(id, { ...project, id });
     });
 
     // Seed experiences
-    const experiencesData: Omit<Experience, 'id'>[] = [
+    const experiencesData: Omit<Experience, "id">[] = [
       {
         title: "Senior Learning Content & Innovations Producer",
         company: "Madecraft",
         location: "Santa Barbara, CA",
         startYear: 2024,
         endYear: 2025,
-        description: "Led workflow automation initiatives using Google Apps Script and OpenAI API. Ran bi-weekly sprints to enhance internal production tools, implementing problem-solving solutions for complex multimedia projects.",
+        description:
+          "Led workflow automation initiatives using Google Apps Script and OpenAI API. Ran bi-weekly sprints to enhance internal production tools, implementing problem-solving solutions for complex multimedia projects.",
         icon: "lightbulb",
-        color: "accent"
+        color: "accent",
       },
       {
         title: "Senior Learning Content Producer",
@@ -268,9 +323,10 @@ export class MemStorage implements IStorage {
         location: "Santa Barbara, CA",
         startYear: 2021,
         endYear: 2024,
-        description: "Produced educational content reaching over 2M learners, contributing to YouTube viewership growth from 8M to 22M. Led creative teams and managed complex multimedia productions for major educational platforms.",
+        description:
+          "Produced educational content reaching over 2M learners, contributing to YouTube viewership growth from 8M to 22M. Led creative teams and managed complex multimedia productions for major educational platforms.",
         icon: "video",
-        color: "teal"
+        color: "teal",
       },
       {
         title: "Founder & Digital Media Producer",
@@ -278,9 +334,10 @@ export class MemStorage implements IStorage {
         location: "Los Angeles, CA",
         startYear: 2016,
         endYear: 2021,
-        description: "Created impactful commercial and entertainment content for brands including Squarespace, Microsoft, LinkedIn, SeatGeek, Zocdoc, Jansport, Newcastle Brown Ale, and SPIN Magazine.",
+        description:
+          "Created impactful commercial and entertainment content for brands including Squarespace, Microsoft, LinkedIn, SeatGeek, Zocdoc, Jansport, Newcastle Brown Ale, and SPIN Magazine.",
         icon: "film",
-        color: "yellow"
+        color: "yellow",
       },
       {
         title: "Recording Engineer & Audio Technician",
@@ -288,13 +345,14 @@ export class MemStorage implements IStorage {
         location: "New York, NY",
         startYear: 2010,
         endYear: 2014,
-        description: "Engineered sessions with notable artists including Drake, Cyndi Lauper, and David Guetta at premier NYC studios. Developed expertise in complex A/V productions and technical problem-solving.",
+        description:
+          "Engineered sessions with notable artists including Drake, Cyndi Lauper, and David Guetta at premier NYC studios. Developed expertise in complex A/V productions and technical problem-solving.",
         icon: "music",
-        color: "primary"
-      }
+        color: "primary",
+      },
     ];
 
-    experiencesData.forEach(experience => {
+    experiencesData.forEach((experience) => {
       const id = this.currentExperienceId++;
       this.experiences.set(id, { ...experience, id });
     });
@@ -306,13 +364,13 @@ export class MemStorage implements IStorage {
 
   async getProjectsByCategory(category: string): Promise<Project[]> {
     return Array.from(this.projects.values())
-      .filter(project => project.category === category)
+      .filter((project) => project.category === category)
       .sort((a, b) => b.year - a.year);
   }
 
   async getFeaturedProjects(): Promise<Project[]> {
     return Array.from(this.projects.values())
-      .filter(project => project.featured)
+      .filter((project) => project.featured)
       .sort((a, b) => b.year - a.year);
   }
 
@@ -321,10 +379,14 @@ export class MemStorage implements IStorage {
   }
 
   async getAllExperiences(): Promise<Experience[]> {
-    return Array.from(this.experiences.values()).sort((a, b) => b.startYear - a.startYear);
+    return Array.from(this.experiences.values()).sort(
+      (a, b) => b.startYear - a.startYear,
+    );
   }
 
-  async createContactMessage(insertMessage: InsertContactMessage): Promise<ContactMessage> {
+  async createContactMessage(
+    insertMessage: InsertContactMessage,
+  ): Promise<ContactMessage> {
     const id = this.currentMessageId++;
     const message: ContactMessage = {
       ...insertMessage,

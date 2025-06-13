@@ -38,6 +38,18 @@ export const contactMessages = pgTable("contact_messages", {
   createdAt: text("created_at").notNull(),
 });
 
+export const videos = pgTable("videos", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  description: text("description").notNull(),
+  vimeoUrl: text("vimeo_url").notNull(),
+  thumbnailUrl: text("thumbnail_url").notNull(),
+  duration: text("duration").notNull(),
+  year: integer("year").notNull(),
+  category: text("category").notNull(),
+  featured: boolean("featured").default(false),
+});
+
 export const insertProjectSchema = createInsertSchema(projects).omit({
   id: true,
 });
@@ -51,9 +63,15 @@ export const insertContactMessageSchema = createInsertSchema(contactMessages).om
   createdAt: true,
 });
 
+export const insertVideoSchema = createInsertSchema(videos).omit({
+  id: true,
+});
+
 export type Project = typeof projects.$inferSelect;
 export type InsertProject = z.infer<typeof insertProjectSchema>;
 export type Experience = typeof experiences.$inferSelect;
 export type InsertExperience = z.infer<typeof insertExperienceSchema>;
 export type ContactMessage = typeof contactMessages.$inferSelect;
 export type InsertContactMessage = z.infer<typeof insertContactMessageSchema>;
+export type Video = typeof videos.$inferSelect;
+export type InsertVideo = z.infer<typeof insertVideoSchema>;
