@@ -158,10 +158,11 @@ export class MemStorage implements IStorage {
       {
         title: "LinkedIn Learning Course Production",
         category: "content",
-        client: "LinkedIn Learning",
-        role: "Course Producer",
+        client:
+          "Coursera, LinkedIn Learning, Microsoft, OpenSesame, Pluralsight",
+        role: "Senior Learning Content Producer",
         description:
-          "Professional development content creation for LinkedIn Learning platform, contributing to educational content reaching millions of learners worldwide.",
+          "As a Senior Learning Content Producer at Madecraft, I created professional business content for major digital platforms, helping deliver educational material to millions of learners globally.",
         imageUrl:
           "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
         challenges: [
@@ -171,7 +172,7 @@ export class MemStorage implements IStorage {
           "Ensuring accessibility across different learning styles",
         ],
         results: [
-          "Content contributed to platform growth from 8M to 22M viewership",
+          "Developed and produced 100+ full length video courses",
           "Reached over 2M learners across educational platforms",
           "Featured in LinkedIn Learning's top-performing courses",
           "Content adapted for global markets and multiple languages",
@@ -241,7 +242,7 @@ export class MemStorage implements IStorage {
       {
         title: "Branded Content Production",
         category: "content",
-        client: "Squarespace, Microsoft, LinkedIn, SeatGeek, Zocdoc, Madecraft",
+        client: "Google, Newcastle Brown Ale, SeatGeek, Squarespace, Zocdoc",
         role: "Producer, Director",
         description:
           "Directed and produced high-profile branded content featuring celebrities and influencers for digital marketing campaigns across major technology, entertainment, and healthcare brands.",
@@ -361,9 +362,11 @@ export class MemStorage implements IStorage {
     const videosData: Omit<Video, "id">[] = [
       {
         title: "Welcome Campers Season 3",
-        description: "Produced documentary-style series filmed in Austin, Texas, showcasing emerging artists and creative talent in intimate performance settings.",
+        description:
+          "Produced documentary-style series filmed in Austin, Texas, showcasing emerging artists and creative talent in intimate performance settings.",
         vimeoUrl: "https://vimeo.com/159641323",
-        thumbnailUrl: "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
+        thumbnailUrl:
+          "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
         duration: "4:32",
         year: 2016,
         category: "Documentary Series",
@@ -371,9 +374,11 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Brian Wilson - Little Kids Rock Benefit",
-        description: "Produced and directed intimate performance by Beach Boys legend Brian Wilson for Little Kids Rock charity benefit, featuring acoustic arrangements of classic hits.",
+        description:
+          "Produced and directed intimate performance by Beach Boys legend Brian Wilson for Little Kids Rock charity benefit, featuring acoustic arrangements of classic hits.",
         vimeoUrl: "https://www.youtube.com/watch?v=8JkhcP-fDfE",
-        thumbnailUrl: "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
+        thumbnailUrl:
+          "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
         duration: "3:48",
         year: 2016,
         category: "Music Performance",
@@ -381,7 +386,8 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Jim James - Studio Session",
-        description: "Intimate studio session with My Morning Jacket frontman Jim James, showcasing stripped-down arrangements and raw musical talent in professional recording environment.",
+        description:
+          "Intimate studio session with My Morning Jacket frontman Jim James, showcasing stripped-down arrangements and raw musical talent in professional recording environment.",
         vimeoUrl: "https://www.youtube.com/watch?v=wNf6qdr1loA",
         thumbnailUrl: "/attached_assets/Jim James Studio_02_1749669234911.jpg",
         duration: "4:15",
@@ -391,7 +397,8 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Zocdoc - Introducing Doctors",
-        description: "Commercial content introducing Zocdoc's platform to healthcare professionals, demonstrating the value proposition for medical practices and patient connection.",
+        description:
+          "Commercial content introducing Zocdoc's platform to healthcare professionals, demonstrating the value proposition for medical practices and patient connection.",
         vimeoUrl: "https://www.youtube.com/watch?v=FrKMKdRmqwc",
         thumbnailUrl: "/attached_assets/Zocdoc_01_1749669530369.png",
         duration: "2:30",
@@ -401,7 +408,8 @@ export class MemStorage implements IStorage {
       },
       {
         title: "SeatGeek - Wild Child",
-        description: "Brand activation content for SeatGeek featuring live music performance and event experience, showcasing the platform's connection to live entertainment.",
+        description:
+          "Brand activation content for SeatGeek featuring live music performance and event experience, showcasing the platform's connection to live entertainment.",
         vimeoUrl: "https://www.youtube.com/watch?v=RWOVYCYhWk0",
         thumbnailUrl: "/attached_assets/SeatGeek Sporting KC_1749669518138.JPG",
         duration: "3:22",
@@ -411,9 +419,11 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Music Performance Production",
-        description: "Live music performance production showcasing intimate artist sessions and professional audio-visual capture in studio environments.",
+        description:
+          "Live music performance production showcasing intimate artist sessions and professional audio-visual capture in studio environments.",
         vimeoUrl: "https://www.youtube.com/watch?v=HuHQ6rPtojw",
-        thumbnailUrl: "/attached_assets/Jon Audio Tinkering_01_1749669111385.jpg",
+        thumbnailUrl:
+          "/attached_assets/Jon Audio Tinkering_01_1749669111385.jpg",
         duration: "4:45",
         year: 2015,
         category: "Music Performance",
@@ -421,14 +431,16 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Madecraft Educational Content",
-        description: "Educational content production for Madecraft platform, demonstrating professional course creation and multimedia storytelling for learning audiences.",
+        description:
+          "Educational content production for Madecraft platform, demonstrating professional course creation and multimedia storytelling for learning audiences.",
         vimeoUrl: "https://vimeo.com/928586383",
-        thumbnailUrl: "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
+        thumbnailUrl:
+          "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
         duration: "5:12",
         year: 2024,
         category: "Educational",
         featured: true,
-      }
+      },
     ];
 
     videosData.forEach((video) => {
