@@ -241,7 +241,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Branded Content Production",
-        category: "content",
+        category: "digital",
         client: "Google, Newcastle Brown Ale, SeatGeek, Squarespace, Zocdoc",
         role: "Producer, Director",
         description:
