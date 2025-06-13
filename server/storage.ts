@@ -411,7 +411,7 @@ export class MemStorage implements IStorage {
         description:
           "Brand activation content for SeatGeek featuring live music performance and event experience, showcasing the platform's connection to live entertainment.",
         vimeoUrl: "https://www.youtube.com/watch?v=RWOVYCYhWk0",
-        thumbnailUrl: "/attached_assets/SeatGeek Sporting KC_1749669518138.JPG",
+        thumbnailUrl: "/attached_assets/image_1749858345629.png",
         duration: "3:22",
         year: 2023,
         category: "Brand Content",
