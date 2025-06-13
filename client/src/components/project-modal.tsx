@@ -56,14 +56,70 @@ export default function ProjectModal() {
               </div>
 
               <div className="space-y-8">
-                {/* Project Image */}
-                <div className="rounded-xl overflow-hidden">
-                  <img 
-                    src={project.imageUrl} 
-                    alt={project.title}
-                    className="w-full h-64 object-cover"
-                  />
-                </div>
+                {/* Project Image or AI Content Details */}
+                {project.imageUrl === "ai-automation-icon" ? (
+                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8">
+                    <h4 className="font-semibold text-gray-900 mb-6 text-xl">AI-Powered Content Automation System</h4>
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h5 className="font-medium text-blue-700 mb-4 flex items-center">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                          Core Technologies
+                        </h5>
+                        <ul className="space-y-3 text-gray-700">
+                          <li className="flex items-start">
+                            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            ChatGPT API integration for content generation
+                          </li>
+                          <li className="flex items-start">
+                            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            OpenAI API for advanced text processing
+                          </li>
+                          <li className="flex items-start">
+                            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Custom automation pipeline development
+                          </li>
+                          <li className="flex items-start">
+                            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Quality control and brand consistency systems
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="font-medium text-purple-700 mb-4 flex items-center">
+                          <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                          Implementation Features
+                        </h5>
+                        <ul className="space-y-3 text-gray-700">
+                          <li className="flex items-start">
+                            <span className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Automated content generation workflows
+                          </li>
+                          <li className="flex items-start">
+                            <span className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Team training and adoption programs
+                          </li>
+                          <li className="flex items-start">
+                            <span className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Content quality monitoring systems
+                          </li>
+                          <li className="flex items-start">
+                            <span className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Scalable production pipeline integration
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="rounded-xl overflow-hidden">
+                    <img 
+                      src={project.imageUrl} 
+                      alt={project.title}
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                )}
 
                 {/* Project Details */}
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
