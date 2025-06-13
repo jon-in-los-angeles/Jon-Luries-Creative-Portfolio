@@ -56,6 +56,40 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get all videos
+  app.get("/api/videos", async (req, res) => {
+    try {
+      const featured = req.query.featured === 'true';
+      
+      let videos;
+      if (featured) {
+        videos = await storage.getFeaturedVideos();
+      } else {
+        videos = await storage.getAllVideos();
+      }
+      
+      res.json(videos);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch videos" });
+    }
+  });
+
+  // Get single video
+  app.get("/api/videos/:id", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      const video = await storage.getVideo(id);
+      
+      if (!video) {
+        return res.status(404).json({ message: "Video not found" });
+      }
+      
+      res.json(video);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch video" });
+    }
+  });
+
   // Submit contact form
   app.post("/api/contact", async (req, res) => {
     try {

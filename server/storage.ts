@@ -356,6 +356,35 @@ export class MemStorage implements IStorage {
       const id = this.currentExperienceId++;
       this.experiences.set(id, { ...experience, id });
     });
+
+    // Seed videos
+    const videosData: Omit<Video, "id">[] = [
+      {
+        title: "Brian Wilson - Little Kids Rock Benefit",
+        description: "Produced and directed intimate performance by Beach Boys legend Brian Wilson for Little Kids Rock charity benefit, featuring acoustic arrangements of classic hits.",
+        vimeoUrl: "https://vimeo.com/159641323",
+        thumbnailUrl: "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
+        duration: "4:32",
+        year: 2016,
+        category: "Music Performance",
+        featured: true,
+      },
+      {
+        title: "Jim James - Studio Session",
+        description: "Intimate studio session with My Morning Jacket frontman Jim James, showcasing stripped-down arrangements and raw musical talent in professional recording environment.",
+        vimeoUrl: "https://vimeo.com/167665352",
+        thumbnailUrl: "/attached_assets/Jim James Studio_02_1749669234911.jpg",
+        duration: "3:48",
+        year: 2016,
+        category: "Studio Session",
+        featured: true,
+      }
+    ];
+
+    videosData.forEach((video) => {
+      const id = this.currentVideoId++;
+      this.videos.set(id, { ...video, id });
+    });
   }
 
   async getAllProjects(): Promise<Project[]> {
@@ -382,6 +411,20 @@ export class MemStorage implements IStorage {
     return Array.from(this.experiences.values()).sort(
       (a, b) => b.startYear - a.startYear,
     );
+  }
+
+  async getAllVideos(): Promise<Video[]> {
+    return Array.from(this.videos.values()).sort((a, b) => b.year - a.year);
+  }
+
+  async getFeaturedVideos(): Promise<Video[]> {
+    return Array.from(this.videos.values())
+      .filter((video) => video.featured)
+      .sort((a, b) => b.year - a.year);
+  }
+
+  async getVideo(id: number): Promise<Video | undefined> {
+    return this.videos.get(id);
   }
 
   async createContactMessage(

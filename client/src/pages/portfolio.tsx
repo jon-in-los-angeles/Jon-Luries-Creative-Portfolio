@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import ProjectShowcase from "@/components/project-showcase";
+import WatchSection from "@/components/watch-section";
 import ExperienceTimeline from "@/components/experience-timeline";
 import AudioPlayer from "@/components/audio-player";
 import ContactSection from "@/components/contact-section";
@@ -12,6 +13,7 @@ export default function Portfolio() {
       <Navigation />
       <HeroSection />
       <ProjectShowcase />
+      <WatchSection />
       <ExperienceTimeline />
       <AudioPlayer />
       <ContactSection />
