@@ -63,57 +63,42 @@ export default function HeroSection() {
 
           {/* Right Side - Portrait with Artistic Treatment */}
           <motion.div 
-            className="relative"
+            className="relative flex justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="relative w-full max-w-md mx-auto">
+            <div className="relative w-full max-w-sm">
               {/* Professional headshot portrait */}
               <img 
                 src="/attached_assets/Jon Headshot_1749763552830.JPG" 
                 alt="Jonathan Lurie - Professional headshot" 
-                className="w-full h-auto rounded-2xl shadow-2xl relative z-10"
+                className="w-full h-auto rounded-2xl shadow-2xl"
               />
               
-              
-              
-              {/* Code Elements Overlay */}
-              <div className="absolute top-4 right-4 z-30 opacity-70">
-                <div className="bg-primary bg-opacity-90 text-white p-3 rounded-lg font-mono text-xs">
-                  <div>const producer = {"{"}
-                  </div>
-                  <div className="ml-4">expertise: ['events', 'audio'],</div>
-                  <div className="ml-4">innovation: true</div>
-                  <div>{"}"}</div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
+              {/* Subtle floating elements positioned outside the image */}
               <motion.div 
-                className="absolute -left-8 top-20"
-                animate={{ y: [0, -20, 0] }}
+                className="absolute -left-16 top-12 hidden lg:block"
+                animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               >
-                <div className="w-16 h-16 bg-teal bg-opacity-20 rounded-full flex items-center justify-center">
-                  <Music className="text-teal text-xl" />
+                <div className="w-12 h-12 bg-teal bg-opacity-15 rounded-full flex items-center justify-center">
+                  <Music className="text-teal text-base" />
                 </div>
               </motion.div>
               
               <motion.div 
-                className="absolute -right-8 bottom-20"
-                animate={{ y: [0, -20, 0] }}
+                className="absolute -right-16 bottom-12 hidden lg:block"
+                animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: -2 }}
               >
-                <div className="w-20 h-20 bg-yellow bg-opacity-20 rounded-full flex items-center justify-center">
-                  <Mic className="text-primary text-2xl" />
+                <div className="w-14 h-14 bg-yellow bg-opacity-15 rounded-full flex items-center justify-center">
+                  <Mic className="text-primary text-lg" />
                 </div>
               </motion.div>
             </div>
 
-            {/* Background Geometric Shapes */}
-            <div className="absolute -top-10 -left-10 w-32 h-32 bg-accent bg-opacity-10 rounded-full -z-10"></div>
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-teal bg-opacity-10 rounded-full -z-10"></div>
+
           </motion.div>
         </div>
       </div>
