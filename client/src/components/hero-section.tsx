@@ -32,16 +32,16 @@ export default function HeroSection() {
               </div>
               
               <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-                Senior Producer specializing in event production, digital content strategy, and AI-enhanced learning experiences. Over a decade of delivering impactful experiences for major brands.
+                Senior Producer with 10+ years in multimedia content and digital storytelling, delivering impactful entertainment, commercial, and educational campaigns for major brands.
               </p>
             </div>
 
             {/* Skills Tags */}
             <div className="flex flex-wrap gap-3">
-              <span className="px-4 py-2 bg-accent text-white rounded-full text-sm font-medium">Event Production</span>
-              <span className="px-4 py-2 bg-teal text-white rounded-full text-sm font-medium">Audio Engineering</span>
-              <span className="px-4 py-2 bg-yellow text-primary rounded-full text-sm font-medium">Content Strategy</span>
-              <span className="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium">AI Innovation</span>
+              <span className="px-4 py-2 bg-accent text-white rounded-full text-sm font-medium">Video Production</span>
+              <span className="px-4 py-2 bg-teal text-white rounded-full text-sm font-medium">Digital Storytelling</span>
+              <span className="px-4 py-2 bg-yellow text-primary rounded-full text-sm font-medium">Workflow Optimization</span>
+              <span className="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium">Team Leadership</span>
             </div>
 
             {/* CTA Buttons */}

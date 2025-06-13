@@ -37,27 +37,27 @@ export class MemStorage implements IStorage {
     // Seed projects
     const projectsData: Omit<Project, 'id'>[] = [
       {
-        title: "Tienda Tecate @ Rolling Loud",
+        title: "SeatGeek Brand Activations",
         category: "events",
-        client: "Heineken USA",
+        client: "SeatGeek",
         role: "Producer, Manager",
-        description: "Custom built onsite activation and photo op for Heineken USA at one of the largest hip-hop festivals.",
+        description: "Large-scale brand activation and experiential marketing campaigns, managing complex A/V productions for major sporting and entertainment events.",
         imageUrl: "/attached_assets/Tecate Rolling Loud_02_1749763910224.jpg",
         challenges: [
-          "Coordinating with festival logistics and security",
+          "Coordinating with venue logistics and security teams",
           "Managing high-volume crowd flow and engagement",
-          "Ensuring brand safety in high-energy environment",
-          "Weather-proofing technical equipment and displays"
+          "Leading creative teams through complex productions",
+          "Ensuring seamless technical execution under pressure"
         ],
         results: [
-          "50,000+ festival attendees engaged",
-          "15,000+ photo experiences created",
-          "300% increase in brand social mentions",
-          "Zero safety incidents across 3-day event"
+          "50,000+ event attendees engaged across campaigns",
+          "Successful delivery of multi-day activation experiences",
+          "Enhanced brand visibility and social media presence",
+          "Zero technical failures during critical live events"
         ],
         featured: true,
         year: 2023,
-        tags: ["Event Production", "Brand Activation", "Festival"]
+        tags: ["Event Production", "Brand Activation", "Team Leadership"]
       },
       {
         title: "Spooky Mansion",
@@ -129,11 +129,11 @@ export class MemStorage implements IStorage {
         tags: ["Live Audio", "Digital Content", "Streaming"]
       },
       {
-        title: "Professional Development Content",
+        title: "LinkedIn Learning Course Production",
         category: "content",
-        client: "Educational Platforms",
+        client: "LinkedIn Learning",
         role: "Course Producer",
-        description: "Comprehensive professional development content series reaching diverse audiences across multiple learning platforms.",
+        description: "Professional development content creation for LinkedIn Learning platform, contributing to educational content reaching millions of learners worldwide.",
         imageUrl: "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
         challenges: [
           "Creating engaging content for diverse professional levels",
@@ -142,37 +142,37 @@ export class MemStorage implements IStorage {
           "Ensuring accessibility across different learning styles"
         ],
         results: [
-          "200,000+ learners reached across platforms",
-          "Consistently high engagement and completion rates",
-          "Featured in multiple platform recommendation algorithms",
-          "Content adapted for global markets and languages"
+          "Content contributed to platform growth from 8M to 22M viewership",
+          "Reached over 2M learners across educational platforms",
+          "Featured in LinkedIn Learning's top-performing courses",
+          "Content adapted for global markets and multiple languages"
         ],
         featured: true,
         year: 2023,
         tags: ["eLearning", "Content Production", "Professional Development"]
       },
       {
-        title: "AI-Powered Content Automation",
+        title: "Workflow Automation & Production Tools",
         category: "digital",
         client: "Madecraft",
         role: "Innovation Producer",
-        description: "Developed automated systems using ChatGPT and OpenAI API for generating educational content at scale.",
+        description: "Developed automated production workflows and internal tools using Google Apps Script and OpenAI API, implementing bi-weekly sprints to enhance team efficiency.",
         imageUrl: "ai-automation-icon",
         challenges: [
           "Integrating AI tools with existing production pipeline",
-          "Maintaining content quality and brand consistency",
-          "Training team on new AI-enhanced workflows",
-          "Balancing automation with human creativity"
+          "Removing hurdles for future project workflows",
+          "Training team on new automated systems",
+          "Maintaining content quality while scaling production"
         ],
         results: [
           "75% reduction in content production time",
           "300% increase in content output capacity",
-          "$50,000+ annual cost savings achieved",
-          "System adopted company-wide across all departments"
+          "Streamlined workflows adopted company-wide",
+          "Enhanced internal production tools through iterative development"
         ],
         featured: true,
         year: 2024,
-        tags: ["AI", "Automation", "Innovation", "Content Production"]
+        tags: ["Workflow Optimization", "Automation", "Team Leadership", "Production Tools"]
       },
       {
         title: "Zocdoc iPhone App Commercial",
@@ -258,7 +258,7 @@ export class MemStorage implements IStorage {
         location: "Santa Barbara, CA",
         startYear: 2024,
         endYear: 2025,
-        description: "Led technical initiatives and AI-powered automation systems, streamlining content production workflows and developing innovative eLearning solutions.",
+        description: "Led workflow automation initiatives using Google Apps Script and OpenAI API. Ran bi-weekly sprints to enhance internal production tools, implementing problem-solving solutions for complex multimedia projects.",
         icon: "lightbulb",
         color: "accent"
       },
@@ -268,7 +268,7 @@ export class MemStorage implements IStorage {
         location: "Santa Barbara, CA",
         startYear: 2021,
         endYear: 2024,
-        description: "Produced 60+ high-quality online learning courses, scaled global reach through localization, and mentored junior producers.",
+        description: "Produced educational content reaching over 2M learners, contributing to YouTube viewership growth from 8M to 22M. Led creative teams and managed complex multimedia productions for major educational platforms.",
         icon: "video",
         color: "teal"
       },
@@ -278,7 +278,7 @@ export class MemStorage implements IStorage {
         location: "Los Angeles, CA",
         startYear: 2016,
         endYear: 2021,
-        description: "Led creative development for national brands, produced viral content including Zocdoc TV commercial with 1.1M views.",
+        description: "Created impactful commercial and entertainment content for brands including Squarespace, Microsoft, LinkedIn, SeatGeek, Zocdoc, Jansport, Newcastle Brown Ale, and SPIN Magazine.",
         icon: "film",
         color: "yellow"
       },
@@ -288,7 +288,7 @@ export class MemStorage implements IStorage {
         location: "New York, NY",
         startYear: 2010,
         endYear: 2014,
-        description: "Engineered sessions with notable artists including Drake, Cyndi Lauper, and David Guetta at premier NYC studios.",
+        description: "Engineered sessions with notable artists including Drake, Cyndi Lauper, and David Guetta at premier NYC studios. Developed expertise in complex A/V productions and technical problem-solving.",
         icon: "music",
         color: "primary"
       }

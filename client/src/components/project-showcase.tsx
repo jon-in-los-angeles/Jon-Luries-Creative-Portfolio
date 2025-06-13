@@ -84,7 +84,7 @@ export default function ProjectShowcase() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-primary mb-4">Featured Work</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A showcase of diverse projects spanning event production, audio engineering, content creation, and digital innovation.
+              A showcase of multimedia content and digital storytelling projects for major brands including Squarespace, Microsoft, LinkedIn, SeatGeek, and Zocdoc.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
