@@ -59,12 +59,12 @@ export class MemStorage implements IStorage {
     // Seed projects
     const projectsData: Omit<Project, "id">[] = [
       {
-        title: "Heineken USA Brand Activations",
+        title: "Large-Scale Brand Activations",
         category: "events",
-        client: "SeatGeek",
+        client: "Heineken USA, SeatGeek, Rolling Loud, Live Nation, Complex Media",
         role: "Producer, Manager",
         description:
-          "Large-scale brand activation and experiential marketing campaigns, managing complex A/V productions for major sporting and entertainment events.",
+          "Large-scale brand activation and experiential marketing campaigns, managing complex A/V productions for major sporting and entertainment events across diverse venues and audiences.",
         imageUrl: "/attached_assets/Tecate Rolling Loud_02_1749763910224.jpg",
         challenges: [
           "Coordinating with venue logistics and security teams",
