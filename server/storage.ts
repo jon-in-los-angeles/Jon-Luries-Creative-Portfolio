@@ -325,7 +325,7 @@ export class MemStorage implements IStorage {
         startYear: 2021,
         endYear: 2024,
         description:
-          "Produced educational content reaching over 2M learners, contributing to YouTube viewership growth from 8M to 22M. Led creative teams and managed complex multimedia productions for major educational platforms.",
+          "Produced educational content reaching over 2M learners across major learning platforms. Led creative teams and managed complex multimedia productions for educational content distribution.",
         icon: "video",
         color: "teal",
       },
@@ -347,7 +347,7 @@ export class MemStorage implements IStorage {
         startYear: 2014,
         endYear: 2016,
         description:
-          "Executive produced immersive music experiences and content series including Spooky Mansion and Welcome Campers. Managed multi-venue productions, artist collaborations, and documentary-style content creation across NYC's music scene.",
+          "Executive produced immersive music experiences and content series including Spooky Mansion and Welcome Campers. Drove platform growth from 8M to 22M viewership through strategic content creation and multi-venue productions across NYC's music scene.",
         icon: "video",
         color: "accent",
       },
