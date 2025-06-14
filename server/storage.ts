@@ -434,7 +434,7 @@ export class MemStorage implements IStorage {
           "Live performance session with Chicano Batman for KEXP, showcasing intimate artist collaboration and professional multi-camera production in studio environments.",
         vimeoUrl: "https://www.youtube.com/watch?v=adWjEdqzhbc&t",
         thumbnailUrl:
-          "/attached_assets/Jon Audio Tinkering_02_1749669108567.jpg",
+          "/attached_assets/image_1749860026910.png",
         duration: "4:45",
         year: 2018,
         category: "Music Performance",
