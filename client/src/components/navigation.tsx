@@ -55,7 +55,7 @@ export default function Navigation() {
             <a href="mailto:jon_lurie@outlook.com" className="hover:text-accent transition-colors duration-300">
               <Mail size={20} />
             </a>
-            <a href="https://linkedin.com/in/jonlurie" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
+            <a href="http://linkedin.com/in/jlurie" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
               <Linkedin size={20} />
             </a>
             <button onClick={() => scrollToSection('audio-showcase')} className="hover:text-accent transition-colors duration-300">
@@ -92,7 +92,7 @@ export default function Navigation() {
                 <a href="mailto:jon_lurie@outlook.com" className="hover:text-accent transition-colors duration-300">
                   <Mail size={20} />
                 </a>
-                <a href="https://linkedin.com/in/jonlurie" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
+                <a href="http://linkedin.com/in/jlurie" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
                   <Linkedin size={20} />
                 </a>
                 <button onClick={() => scrollToSection('audio-showcase')} className="hover:text-accent transition-colors duration-300">

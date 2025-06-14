@@ -106,8 +106,8 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-semibold">LinkedIn</h4>
-                <a href="https://linkedin.com/in/jonlurie" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-teal transition-colors duration-300">
-                  linkedin.com/in/jonlurie
+                <a href="http://linkedin.com/in/jlurie" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-teal transition-colors duration-300">
+                  linkedin.com/in/jlurie
                 </a>
               </div>
             </div>
