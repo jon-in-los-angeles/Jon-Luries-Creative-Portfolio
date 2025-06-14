@@ -390,8 +390,8 @@ export class MemStorage implements IStorage {
         vimeoUrl: "https://www.youtube.com/watch?v=8JkhcP-fDfE",
         thumbnailUrl:
           "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
-        duration: "3:48",
-        year: 2016,
+        duration: "2:41",
+        year: 2015,
         category: "Music Performance",
         featured: true,
       },
@@ -435,8 +435,8 @@ export class MemStorage implements IStorage {
         vimeoUrl: "https://www.youtube.com/watch?v=adWjEdqzhbc&t",
         thumbnailUrl:
           "/attached_assets/image_1749860026910.png",
-        duration: "4:45",
-        year: 2018,
+        duration: "3:12",
+        year: 2017,
         category: "Music Performance",
         featured: true,
       },
@@ -447,8 +447,8 @@ export class MemStorage implements IStorage {
         vimeoUrl: "https://vimeo.com/928586383",
         thumbnailUrl:
           "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
-        duration: "5:12",
-        year: 2024,
+        duration: "1:32",
+        year: 2023,
         category: "Educational",
         featured: true,
       },
