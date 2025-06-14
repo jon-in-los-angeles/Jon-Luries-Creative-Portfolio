@@ -33,46 +33,46 @@ export default function HeroSection() {
 
           {/* Portrait */}
           <motion.div 
-            className="mb-12"
+            className="mb-16 flex justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="relative inline-block">
+            <div className="relative">
               <img 
-                src="/attached_assets/Jon Headshot_1749763552830.JPG" 
+                src="/attached_assets/image_1749859628252.png" 
                 alt="Jonathan Lurie - Professional headshot" 
-                className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover object-top shadow-2xl mx-auto"
+                className="w-72 h-72 lg:w-96 lg:h-96 object-contain"
               />
             </div>
           </motion.div>
 
           {/* Skills and CTA */}
           <motion.div 
-            className="space-y-8"
+            className="max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             {/* Skills Tags */}
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              <span className="px-4 py-2 bg-accent text-white rounded-full text-sm font-medium">Video Production</span>
-              <span className="px-4 py-2 bg-teal text-white rounded-full text-sm font-medium">Digital Storytelling</span>
-              <span className="px-4 py-2 bg-yellow text-primary rounded-full text-sm font-medium">Workflow Optimization</span>
-              <span className="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium">Team Leadership</span>
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <span className="px-6 py-3 bg-accent text-white rounded-full font-medium">Video Production</span>
+              <span className="px-6 py-3 bg-teal text-white rounded-full font-medium">Digital Storytelling</span>
+              <span className="px-6 py-3 bg-yellow text-primary rounded-full font-medium">Workflow Optimization</span>
+              <span className="px-6 py-3 bg-primary text-white rounded-full font-medium">Team Leadership</span>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-lg mx-auto">
               <button 
                 onClick={() => scrollToSection('watch')}
-                className="bg-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
+                className="bg-accent text-white px-10 py-4 rounded-xl font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 Watch My Work
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300"
+                className="border-2 border-primary text-primary px-10 py-4 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300 shadow-lg"
               >
                 Get In Touch
               </button>
