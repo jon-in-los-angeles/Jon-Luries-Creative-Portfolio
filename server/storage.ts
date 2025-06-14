@@ -341,6 +341,17 @@ export class MemStorage implements IStorage {
         color: "yellow",
       },
       {
+        title: "Executive Producer",
+        company: "The Wild Honey Pie",
+        location: "Brooklyn, NY",
+        startYear: 2014,
+        endYear: 2016,
+        description:
+          "Executive produced immersive music experiences and content series including Spooky Mansion and Welcome Campers. Managed multi-venue productions, artist collaborations, and documentary-style content creation across NYC's music scene.",
+        icon: "video",
+        color: "accent",
+      },
+      {
         title: "Recording Engineer & Audio Technician",
         company: "Area 51 NYC / Aura Sonic Ltd",
         location: "New York, NY",
