@@ -12,12 +12,10 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
       <HeroSection />
-      <ProjectShowcase />
       <WatchSection />
       <ExperienceTimeline />
       <AudioPlayer />
       <ContactSection />
-      <ProjectModal />
       
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-8">

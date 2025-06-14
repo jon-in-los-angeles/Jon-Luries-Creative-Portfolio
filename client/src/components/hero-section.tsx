@@ -10,34 +10,52 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="about" className="pt-20 min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Text Content */}
+    <section id="about" className="pt-20 pb-20 bg-gradient-to-br from-white via-gray-50 to-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          {/* Main Title */}
           <motion.div 
-            className="space-y-8"
+            className="space-y-6 mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <h1 className="text-5xl lg:text-6xl font-bold text-primary">
-                  Producer
-                </h1>
-                <div className="w-1 h-16 bg-accent"></div>
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-600">
-                  Innovator
-                </h1>
-              </div>
-              
-              <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-                Senior Producer with 10+ years in multimedia content and digital storytelling, delivering impactful entertainment, commercial, and educational campaigns for major brands.
-              </p>
-            </div>
+            <h1 className="text-6xl lg:text-7xl font-bold text-primary mb-4">
+              Jonathan Lurie
+            </h1>
+            <h2 className="text-2xl lg:text-3xl text-gray-600 font-light">
+              Senior Producer & Creative Director
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Driving multimedia content and digital storytelling for 10+ years, delivering impactful entertainment, commercial, and educational campaigns for major brands including Squarespace, LinkedIn, Zocdoc, and SeatGeek.
+            </p>
+          </motion.div>
 
+          {/* Portrait */}
+          <motion.div 
+            className="mb-12"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="relative inline-block">
+              <img 
+                src="/attached_assets/Jon Headshot_1749763552830.JPG" 
+                alt="Jonathan Lurie - Professional headshot" 
+                className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover object-top shadow-2xl mx-auto"
+              />
+            </div>
+          </motion.div>
+
+          {/* Skills and CTA */}
+          <motion.div 
+            className="space-y-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             {/* Skills Tags */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
               <span className="px-4 py-2 bg-accent text-white rounded-full text-sm font-medium">Video Production</span>
               <span className="px-4 py-2 bg-teal text-white rounded-full text-sm font-medium">Digital Storytelling</span>
               <span className="px-4 py-2 bg-yellow text-primary rounded-full text-sm font-medium">Workflow Optimization</span>
@@ -45,12 +63,12 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex space-x-4 pt-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button 
-                onClick={() => scrollToSection('work')}
+                onClick={() => scrollToSection('watch')}
                 className="bg-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
               >
-                View My Work
+                Watch My Work
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
@@ -59,46 +77,6 @@ export default function HeroSection() {
                 Get In Touch
               </button>
             </div>
-          </motion.div>
-
-          {/* Right Side - Portrait with Artistic Treatment */}
-          <motion.div 
-            className="relative flex justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="relative w-full max-w-sm">
-              {/* Professional headshot portrait */}
-              <img 
-                src="/attached_assets/Jon Headshot_1749763552830.JPG" 
-                alt="Jonathan Lurie - Professional headshot" 
-                className="w-full h-auto rounded-2xl shadow-2xl"
-              />
-              
-              {/* Subtle floating elements positioned outside the image */}
-              <motion.div 
-                className="absolute -left-16 top-12 hidden lg:block"
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <div className="w-12 h-12 bg-teal bg-opacity-15 rounded-full flex items-center justify-center">
-                  <Music className="text-teal text-base" />
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="absolute -right-16 bottom-12 hidden lg:block"
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: -2 }}
-              >
-                <div className="w-14 h-14 bg-yellow bg-opacity-15 rounded-full flex items-center justify-center">
-                  <Mic className="text-primary text-lg" />
-                </div>
-              </motion.div>
-            </div>
-
-
           </motion.div>
         </div>
       </div>
