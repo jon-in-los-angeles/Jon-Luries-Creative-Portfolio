@@ -4,7 +4,7 @@ import { Lightbulb, Video, Film, Music } from "lucide-react";
 import type { Experience } from "@shared/schema";
 
 const logoMap = {
-  "Madecraft": "/attached_assets/MELOGOLD_LOGO_V1_LG_ALPHA_1749859316035.png",
+  "Madecraft": null, // Use icon fallback - no logo available
   "Melogold, Inc.": "/attached_assets/MELOGOLD_LOGO_V1_LG_ALPHA_1749859316035.png",
   "The Wild Honey Pie": "/attached_assets/Honey Pie Logo_1749859316032.jpeg",
   "Area 51 NYC / Aura Sonic Ltd": null, // Use icon fallback
