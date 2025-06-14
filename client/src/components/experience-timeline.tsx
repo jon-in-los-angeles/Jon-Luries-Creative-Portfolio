@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 import { Lightbulb, Video, Film, Music } from "lucide-react";
 import type { Experience } from "@shared/schema";
 
+const logoMap = {
+  "Madecraft": "/attached_assets/MELOGOLD_LOGO_V1_LG_ALPHA_1749859316035.png",
+  "Melogold, Inc.": "/attached_assets/MELOGOLD_LOGO_V1_LG_ALPHA_1749859316035.png",
+  "The Wild Honey Pie": "/attached_assets/Honey Pie Logo_1749859316032.jpeg",
+  "Area 51 NYC / Aura Sonic Ltd": null, // Use icon fallback
+};
+
 const iconMap = {
   lightbulb: Lightbulb,
   video: Video,
@@ -76,6 +83,7 @@ export default function ExperienceTimeline() {
               const IconComponent = iconMap[experience.icon as keyof typeof iconMap] || Lightbulb;
               const colorClass = colorMap[experience.color as keyof typeof colorMap] || "bg-accent";
               const yearRange = experience.endYear ? `${experience.startYear}-${experience.endYear}` : `${experience.startYear}-Present`;
+              const companyLogo = logoMap[experience.company as keyof typeof logoMap];
 
               return (
                 <motion.div
@@ -86,8 +94,16 @@ export default function ExperienceTimeline() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className={`w-16 h-16 ${colorClass} rounded-full flex items-center justify-center flex-shrink-0 relative z-10`}>
-                    <IconComponent className="text-white text-xl" />
+                  <div className={`w-16 h-16 ${companyLogo ? 'bg-white border-2 border-gray-200' : colorClass} rounded-full flex items-center justify-center flex-shrink-0 relative z-10 p-2`}>
+                    {companyLogo ? (
+                      <img 
+                        src={companyLogo} 
+                        alt={`${experience.company} logo`}
+                        className="w-full h-full object-contain"
+                      />
+                    ) : (
+                      <IconComponent className="text-white text-xl" />
+                    )}
                   </div>
                   <div className="bg-white p-6 rounded-xl shadow-lg flex-1">
                     <div className="flex items-center justify-between mb-2">
