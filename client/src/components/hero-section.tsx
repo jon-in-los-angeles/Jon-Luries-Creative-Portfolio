@@ -57,19 +57,19 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <button 
                 onClick={() => scrollToSection('watch')}
-                className="bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300"
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300"
               >
                 Watch
               </button>
               <button 
                 onClick={() => scrollToSection('experience')}
-                className="bg-teal text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300"
+                className="bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-300"
               >
                 Experience
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300"
+                className="bg-gray-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition-all duration-300"
               >
                 Contact
               </button>
