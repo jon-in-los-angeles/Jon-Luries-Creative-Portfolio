@@ -40,9 +40,9 @@ export default function HeroSection() {
           >
             <div className="relative">
               <img 
-                src="/attached_assets/image_1749859628252.png" 
+                src="/attached_assets/Jon Headshot_1749860858044.JPG" 
                 alt="Jonathan Lurie - Professional headshot" 
-                className="w-72 h-72 lg:w-96 lg:h-96 object-contain"
+                className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover object-center shadow-xl"
               />
             </div>
           </motion.div>
