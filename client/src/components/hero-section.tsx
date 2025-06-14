@@ -47,34 +47,31 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Skills and CTA */}
+          {/* Navigation Buttons */}
           <motion.div 
-            className="max-w-4xl mx-auto"
+            className="max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {/* Skills Tags */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <span className="px-6 py-3 bg-accent text-white rounded-full font-medium">Video Production</span>
-              <span className="px-6 py-3 bg-teal text-white rounded-full font-medium">Digital Storytelling</span>
-              <span className="px-6 py-3 bg-yellow text-primary rounded-full font-medium">Workflow Optimization</span>
-              <span className="px-6 py-3 bg-primary text-white rounded-full font-medium">Team Leadership</span>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-lg mx-auto">
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
               <button 
                 onClick={() => scrollToSection('watch')}
-                className="bg-accent text-white px-10 py-4 rounded-xl font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300"
               >
-                Watch My Work
+                Watch
+              </button>
+              <button 
+                onClick={() => scrollToSection('experience')}
+                className="bg-teal text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300"
+              >
+                Experience
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="border-2 border-primary text-primary px-10 py-4 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300 shadow-lg"
+                className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300"
               >
-                Get In Touch
+                Contact
               </button>
             </div>
           </motion.div>
