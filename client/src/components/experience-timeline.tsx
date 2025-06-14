@@ -4,7 +4,7 @@ import { Lightbulb, Video, Film, Music } from "lucide-react";
 import type { Experience } from "@shared/schema";
 
 const logoMap = {
-  "Madecraft": null, // Use icon fallback - no logo available
+  "Madecraft": "/attached_assets/Madecraft Logo_1749860624278.png",
   "Melogold, Inc.": "/attached_assets/MELOGOLD_LOGO_V1_LG_ALPHA_1749859316035.png",
   "The Wild Honey Pie": "/attached_assets/Honey Pie Logo_1749859316032.jpeg",
   "Area 51 NYC / Aura Sonic Ltd": null, // Use icon fallback
@@ -94,15 +94,13 @@ export default function ExperienceTimeline() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className={`w-16 h-16 ${companyLogo ? 'bg-white border-2 border-gray-200' : experience.company === 'Madecraft' ? 'bg-white border-2 border-gray-200' : colorClass} rounded-full flex items-center justify-center flex-shrink-0 relative z-10 p-2`}>
+                  <div className={`w-16 h-16 ${companyLogo ? 'bg-white border-2 border-gray-200' : colorClass} rounded-full flex items-center justify-center flex-shrink-0 relative z-10 p-2`}>
                     {companyLogo ? (
                       <img 
                         src={companyLogo} 
                         alt={`${experience.company} logo`}
                         className="w-full h-full object-contain"
                       />
-                    ) : experience.company === 'Madecraft' ? (
-                      <span className="text-accent font-bold text-xs">MC</span>
                     ) : (
                       <IconComponent className="text-white text-xl" />
                     )}
