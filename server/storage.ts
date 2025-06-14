@@ -401,7 +401,7 @@ export class MemStorage implements IStorage {
           "Intimate studio session with My Morning Jacket frontman Jim James, showcasing stripped-down arrangements and raw musical talent in professional recording environment.",
         vimeoUrl: "https://www.youtube.com/watch?v=wNf6qdr1loA",
         thumbnailUrl: "/attached_assets/Jim James Studio_02_1749669234911.jpg",
-        duration: "4:15",
+        duration: "1:00",
         year: 2019,
         category: "Studio Session",
         featured: true,
@@ -435,7 +435,7 @@ export class MemStorage implements IStorage {
         vimeoUrl: "https://www.youtube.com/watch?v=adWjEdqzhbc&t",
         thumbnailUrl:
           "/attached_assets/image_1749860026910.png",
-        duration: "3:12",
+        duration: "1:03:00",
         year: 2020,
         category: "Music Performance",
         featured: true,
