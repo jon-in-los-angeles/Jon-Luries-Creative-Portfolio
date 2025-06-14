@@ -14,7 +14,6 @@ export default function Portfolio() {
       <HeroSection />
       <WatchSection />
       <ExperienceTimeline />
-      <AudioPlayer />
       <ContactSection />
       
       {/* Footer */}
