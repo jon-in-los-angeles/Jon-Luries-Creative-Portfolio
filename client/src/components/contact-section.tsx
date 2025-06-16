@@ -71,7 +71,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-primary text-white">
+    <section id="contact" className="pt-20 pb-12 bg-primary text-white">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Let's Create Something Amazing</h2>
