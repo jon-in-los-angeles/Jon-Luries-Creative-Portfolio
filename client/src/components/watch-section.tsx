@@ -2,11 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { Play, Clock, X } from "lucide-react";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import type { Video } from "@shared/schema";
 
 export default function WatchSection() {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
+  const [openDialog, setOpenDialog] = useState<string | null>(null);
 
   const { data: videos = [], isLoading } = useQuery<Video[]>({
     queryKey: ["/api/videos"],
@@ -61,7 +62,15 @@ export default function WatchSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {videos.map((video, index) => (
-            <Dialog key={video.id}>
+            <Dialog key={video.id} open={openDialog === video.id.toString()} onOpenChange={(open) => {
+              if (open) {
+                setOpenDialog(video.id.toString());
+                setSelectedVideo(video);
+              } else {
+                setOpenDialog(null);
+                setSelectedVideo(null);
+              }
+            }}>
               <DialogTrigger asChild>
                 <motion.div
                   className="group cursor-pointer"
@@ -123,9 +132,14 @@ export default function WatchSection() {
               </DialogTrigger>
               
               <DialogContent className="max-w-4xl w-full p-0">
+                <DialogTitle className="sr-only">{video.title}</DialogTitle>
+                <DialogDescription className="sr-only">{video.description}</DialogDescription>
                 <div className="relative">
                   <button
-                    onClick={() => setSelectedVideo(null)}
+                    onClick={() => {
+                      setOpenDialog(null);
+                      setSelectedVideo(null);
+                    }}
                     className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75 transition-all"
                   >
                     <X size={20} />
