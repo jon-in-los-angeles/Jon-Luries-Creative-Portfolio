@@ -325,7 +325,7 @@ export class MemStorage implements IStorage {
         startYear: 2021,
         endYear: 2024,
         description:
-          "Produced educational content reaching over 2M learners across major learning platforms. Led creative teams and managed complex multimedia productions for educational content distribution.",
+          "Produced comprehensive video courses for LinkedIn Learning, Coursera, Microsoft, and Pluralsight reaching over 2M learners globally. Managed end-to-end content development including curriculum design, video production, and post-production workflows.",
         icon: "video",
         color: "teal",
       },
