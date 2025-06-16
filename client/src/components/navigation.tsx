@@ -58,7 +58,7 @@ export default function Navigation() {
             <a href="http://linkedin.com/in/jlurie" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
               <Linkedin size={20} />
             </a>
-            <button onClick={() => scrollToSection('audio-showcase')} className="hover:text-accent transition-colors duration-300">
+            <button onClick={() => scrollToSection('watch')} className="hover:text-accent transition-colors duration-300">
               <Play size={20} />
             </button>
           </div>
@@ -95,7 +95,7 @@ export default function Navigation() {
                 <a href="http://linkedin.com/in/jlurie" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
                   <Linkedin size={20} />
                 </a>
-                <button onClick={() => scrollToSection('audio-showcase')} className="hover:text-accent transition-colors duration-300">
+                <button onClick={() => scrollToSection('watch')} className="hover:text-accent transition-colors duration-300">
                   <Play size={20} />
                 </button>
               </div>
