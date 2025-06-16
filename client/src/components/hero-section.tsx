@@ -42,7 +42,7 @@ export default function HeroSection() {
               <img 
                 src="/attached_assets/Jon Headshot_1749860858044.JPG" 
                 alt="Jonathan Lurie - Professional headshot" 
-                className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover object-center shadow-xl"
+                className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover object-top shadow-xl"
               />
             </div>
           </motion.div>
