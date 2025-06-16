@@ -378,7 +378,7 @@ export class MemStorage implements IStorage {
         vimeoUrl: "https://vimeo.com/159641323",
         thumbnailUrl:
           "/attached_assets/Welcome Campers 3 _01_1749858039158.JPG",
-        duration: "1:30",
+        duration: "01:54",
         year: 2016,
         category: "Documentary Series",
         featured: true,
