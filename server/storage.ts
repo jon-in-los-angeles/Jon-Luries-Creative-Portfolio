@@ -336,7 +336,7 @@ export class MemStorage implements IStorage {
         startYear: 2016,
         endYear: 2021,
         description:
-          "Founded digital media production company specializing in branded content and entertainment media. Produced commercial content for technology, entertainment, and consumer brands with focus on creative storytelling and multi-platform distribution.",
+          "Founded digital media production company specializing in branded content and entertainment media. Created impactful commercial and entertainment content for brands including SeatGeek, Zocdoc, and ATO Records with focus on creative storytelling and multi-platform distribution.",
         icon: "film",
         color: "yellow",
       },
