@@ -3,10 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Jonathan Lurie - Senior Producer & Creative Director</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Professional multimedia portfolio showcasing translation and production expertise through a clean, focused digital narrative." />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="JL Portfolio" />
+    
+    <!-- PWA Icons -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon-192.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.svg" />
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Jonathan Lurie - Senior Producer & Creative Director" />
+    <meta property="og:description" content="Professional multimedia portfolio showcasing translation and production expertise through a clean, focused digital narrative." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icon-512.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jonathan Lurie - Senior Producer & Creative Director" />
+    <meta name="twitter:description" content="Professional multimedia portfolio showcasing translation and production expertise through a clean, focused digital narrative." />
+    <meta name="twitter:image" content="/icon-512.svg" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
     <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
   </body>
