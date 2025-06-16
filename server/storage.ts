@@ -374,11 +374,11 @@ export class MemStorage implements IStorage {
       {
         title: "Welcome Campers Season 3",
         description:
-          "Produced documentary-style series filmed in Austin, Texas, showcasing emerging artists and creative talent in intimate performance settings.",
+          "Produced documentary-style live music video series filmed in Austin, Texas, showcasing emerging artists and creative talent in intimate performance settings.",
         vimeoUrl: "https://vimeo.com/159641323",
         thumbnailUrl:
           "/attached_assets/Welcome Campers 3 _01_1749858039158.JPG",
-        duration: "4:32",
+        duration: "1:30",
         year: 2016,
         category: "Documentary Series",
         featured: true,
@@ -386,7 +386,7 @@ export class MemStorage implements IStorage {
       {
         title: "Brian Wilson - Little Kids Rock Benefit",
         description:
-          "Produced and directed intimate performance by Beach Boys legend Brian Wilson for Little Kids Rock charity benefit, featuring acoustic arrangements of classic hits.",
+          "Executive Produced intimate performance by Beach Boys legend Brian Wilson for Little Kids Rock charity benefit, featuring a live version of Love & Mercy.",
         vimeoUrl: "https://www.youtube.com/watch?v=8JkhcP-fDfE",
         thumbnailUrl:
           "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
@@ -398,7 +398,7 @@ export class MemStorage implements IStorage {
       {
         title: "Jim James - Studio Session",
         description:
-          "Intimate studio session with My Morning Jacket frontman Jim James, showcasing stripped-down arrangements and raw musical talent in professional recording environment.",
+          "Intimate studio session with My Morning Jacket frontman Jim James, capturing the essence of his stripped-down arrangements and raw musical talent for his solo LP.",
         vimeoUrl: "https://www.youtube.com/watch?v=wNf6qdr1loA",
         thumbnailUrl: "/attached_assets/Jim James Studio_02_1749669234911.jpg",
         duration: "1:00",
@@ -420,7 +420,7 @@ export class MemStorage implements IStorage {
       {
         title: "SeatGeek - Wild Child",
         description:
-          "Brand activation content for SeatGeek featuring live music performance and event experience, showcasing the platform's connection to live entertainment.",
+          "Commercial content for SeatGeek focused on a narrative of fans connecting over live music performance and event experiences.",
         vimeoUrl: "https://www.youtube.com/watch?v=RWOVYCYhWk0",
         thumbnailUrl: "/attached_assets/image_1749858345629.png",
         duration: "3:22",
@@ -431,10 +431,9 @@ export class MemStorage implements IStorage {
       {
         title: "Chicano Batman - KEXP Session",
         description:
-          "Live performance session with Chicano Batman for KEXP, showcasing intimate artist collaboration and professional multi-camera production in studio environments.",
+          "Live performance session with Chicano Batman for KEXP, showcasing intimate artist collaboration and multi-camera production in non-traditional environments.",
         vimeoUrl: "https://www.youtube.com/watch?v=adWjEdqzhbc&t",
-        thumbnailUrl:
-          "/attached_assets/image_1749860026910.png",
+        thumbnailUrl: "/attached_assets/image_1749860026910.png",
         duration: "1:03:00",
         year: 2020,
         category: "Music Performance",
@@ -443,7 +442,7 @@ export class MemStorage implements IStorage {
       {
         title: "Madecraft Educational Content",
         description:
-          "Educational content production for Madecraft platform, demonstrating professional course creation and multimedia storytelling for learning audiences.",
+          "As Senior Learning Content Producer at Madecraft, I created comprehensive educational video courses for major platforms including LinkedIn Learning, Coursera, Microsoft, and Pluralsight. This work involved developing curriculum, managing production workflows, and delivering high-quality learning experiences that reached over 2 million learners globally.",
         vimeoUrl: "https://vimeo.com/928586383",
         thumbnailUrl:
           "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
