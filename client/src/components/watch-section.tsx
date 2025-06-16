@@ -4,7 +4,7 @@ import { Play, Clock, X } from "lucide-react";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import type { Video } from "@shared/schema";
-import AnimatedPlayIcon from "./animated-play-icon";
+import AnimatedEyeIcon from "./animated-play-icon";
 
 export default function WatchSection() {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
@@ -55,7 +55,7 @@ export default function WatchSection() {
     <section id="watch" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <AnimatedPlayIcon />
+          <AnimatedEyeIcon />
           <h2 className="text-4xl font-bold text-primary mb-4">Watch</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Featured video productions showcasing musical performances and creative storytelling.
