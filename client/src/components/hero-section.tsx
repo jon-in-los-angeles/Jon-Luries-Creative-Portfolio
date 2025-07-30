@@ -78,6 +78,12 @@ export default function HeroSection() {
                 Watch
               </button>
               <button 
+                onClick={() => scrollToSection('work')}
+                className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all duration-300"
+              >
+                Work
+              </button>
+              <button 
                 onClick={() => scrollToSection('experience')}
                 className="bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-300"
               >
