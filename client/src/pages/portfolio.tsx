@@ -1,6 +1,8 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import WatchSection from "@/components/watch-section";
+import ProjectShowcase from "@/components/project-showcase";
+import ProjectModal from "@/components/project-modal";
 import ExperienceTimeline from "@/components/experience-timeline";
 import ContactSection from "@/components/contact-section";
 import PWAInstallPrompt from "@/components/pwa-install-prompt";
@@ -14,11 +16,15 @@ export default function Portfolio() {
       <Navigation />
       <HeroSection />
       <WatchSection />
+      <ProjectShowcase />
       <ExperienceTimeline />
       <ContactSection />
       
       {/* PWA Install Prompt */}
       <PWAInstallPrompt />
+      
+      {/* Project Modal */}
+      <ProjectModal />
       
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-8">

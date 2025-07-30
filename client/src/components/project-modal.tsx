@@ -154,6 +154,29 @@ export default function ProjectModal() {
                   </div>
                 </div>
 
+                {/* Spotify Playlists */}
+                {project.spotifyEmbeds && project.spotifyEmbeds.length > 0 && (
+                  <div className="mb-8">
+                    <h4 className="font-semibold text-gray-900 mb-4">Featured Music</h4>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {project.spotifyEmbeds.map((embedUrl, index) => (
+                        <div key={index} className="rounded-xl overflow-hidden">
+                          <iframe 
+                            src={embedUrl}
+                            width="100%" 
+                            height="352" 
+                            frameBorder="0" 
+                            allowFullScreen
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy"
+                            style={{ borderRadius: '12px' }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {/* Challenges and Results */}
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>

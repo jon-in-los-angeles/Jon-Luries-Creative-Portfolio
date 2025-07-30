@@ -81,6 +81,7 @@ export class MemStorage implements IStorage {
         featured: true,
         year: 2023,
         tags: ["Event Production", "Brand Activation", "Team Leadership"],
+        spotifyEmbeds: [],
       },
       {
         title: "Spooky Mansion",
@@ -105,6 +106,10 @@ export class MemStorage implements IStorage {
         featured: true,
         year: 2022,
         tags: ["Event Production", "Music", "Venue Management"],
+        spotifyEmbeds: [
+          "https://open.spotify.com/embed/album/67mJBEKVOEJhAKeoh60gLZ?utm_source=generator",
+          "https://open.spotify.com/embed/album/2XdPnnKvl2GxMAsKIAQJHH?utm_source=generator"
+        ],
       },
       {
         title: "Premier NYC Studio Sessions",
@@ -129,6 +134,10 @@ export class MemStorage implements IStorage {
         featured: true,
         year: 2013,
         tags: ["Audio Engineering", "Recording", "Music Production"],
+        spotifyEmbeds: [
+          "https://open.spotify.com/embed/album/2B7Mzdlp0lSTxLixffl2FS?utm_source=generator",
+          "https://open.spotify.com/embed/album/6n7cTYvhdvhWlH2UvZgiSR?utm_source=generator"
+        ],
       },
       {
         title: "Tiny Desk & KEXP Sessions",
@@ -154,6 +163,7 @@ export class MemStorage implements IStorage {
         featured: false,
         year: 2014,
         tags: ["Live Audio", "Digital Content", "Streaming"],
+        spotifyEmbeds: [],
       },
       {
         title: "LinkedIn Learning Course Production",
@@ -180,6 +190,7 @@ export class MemStorage implements IStorage {
         featured: true,
         year: 2023,
         tags: ["eLearning", "Content Production", "Professional Development"],
+        spotifyEmbeds: [],
       },
       {
         title: "Workflow Automation & Production Tools",
@@ -209,6 +220,7 @@ export class MemStorage implements IStorage {
           "Team Leadership",
           "Production Tools",
         ],
+        spotifyEmbeds: [],
       },
       {
         title: "Zocdoc iPhone App Commercial",
@@ -238,6 +250,7 @@ export class MemStorage implements IStorage {
           "Digital Marketing",
           "Viral Content",
         ],
+        spotifyEmbeds: [],
       },
       {
         title: "Branded Content Production",
@@ -267,6 +280,7 @@ export class MemStorage implements IStorage {
           "Multi-Camera",
           "Digital Marketing",
         ],
+        spotifyEmbeds: [],
       },
       {
         title: "Recording Studio Productions",
@@ -297,6 +311,7 @@ export class MemStorage implements IStorage {
           "Studio Recording",
           "Artist Collaboration",
         ],
+        spotifyEmbeds: [],
       },
     ];
 

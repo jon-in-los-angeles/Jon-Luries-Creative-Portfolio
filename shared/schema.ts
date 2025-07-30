@@ -15,6 +15,7 @@ export const projects = pgTable("projects", {
   featured: boolean("featured").default(false),
   year: integer("year").notNull(),
   tags: jsonb("tags").$type<string[]>().notNull(),
+  spotifyEmbeds: jsonb("spotify_embeds").$type<string[]>().default([]),
 });
 
 export const experiences = pgTable("experiences", {
