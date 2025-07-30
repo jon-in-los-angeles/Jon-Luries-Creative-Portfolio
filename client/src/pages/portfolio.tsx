@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import WatchSection from "@/components/watch-section";
 import ProjectShowcase from "@/components/project-showcase";
+import SimpleProjectTest from "@/components/simple-project-test";
 import ProjectModal from "@/components/project-modal";
 import ExperienceTimeline from "@/components/experience-timeline";
 import ContactSection from "@/components/contact-section";
@@ -16,7 +17,14 @@ export default function Portfolio() {
       <Navigation />
       <HeroSection />
       <WatchSection />
+      
+      {/* DEBUG: Project Showcase should appear here */}
+      <div style={{ padding: '20px', background: 'red', color: 'white', textAlign: 'center' }}>
+        DEBUG: This is where ProjectShowcase should be
+      </div>
+      <SimpleProjectTest />
       <ProjectShowcase />
+      
       <ExperienceTimeline />
       <ContactSection />
       
