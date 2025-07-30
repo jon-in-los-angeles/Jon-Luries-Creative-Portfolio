@@ -56,7 +56,7 @@ const categoryLabels = {
 export default function ProjectShowcase() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const { data: projects = [], isLoading } = useQuery({
+  const { data: projects = [], isLoading, error } = useQuery({
     queryKey: ["/api/projects", selectedCategory],
     queryFn: async () => {
       const response = await fetch(`/api/projects?category=${selectedCategory}`);
@@ -64,6 +64,8 @@ export default function ProjectShowcase() {
       return response.json() as Promise<Project[]>;
     },
   });
+
+  console.log("ProjectShowcase rendering:", { projects, isLoading, error, selectedCategory });
 
   const filterButtons = [
     { id: "all", label: "All Projects" },
@@ -98,13 +100,16 @@ export default function ProjectShowcase() {
   }
 
   return (
-    <section id="work" className="py-20 bg-white">
+    <section id="work" className="py-20 bg-white" style={{ display: 'block', visibility: 'visible' }}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-primary mb-4">Featured Work</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             A showcase of diverse projects spanning event production, audio engineering, content creation, and digital innovation.
           </p>
+          <div className="text-xs text-gray-400 mt-2">
+            Debug: {projects.length} projects loaded, Loading: {isLoading ? 'true' : 'false'}
+          </div>
         </div>
 
         {/* Filter Buttons */}
