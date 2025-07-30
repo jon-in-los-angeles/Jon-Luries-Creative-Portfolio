@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import WatchSection from "@/components/watch-section";
 import ProjectShowcase from "@/components/project-showcase";
+import ProjectShowcaseSimple from "@/components/project-showcase-simple";
 import SimpleProjectTest from "@/components/simple-project-test";
 import ProjectModal from "@/components/project-modal";
 import ExperienceTimeline from "@/components/experience-timeline";
@@ -23,7 +24,7 @@ export default function Portfolio() {
         DEBUG: This is where ProjectShowcase should be
       </div>
       <SimpleProjectTest />
-      <ProjectShowcase />
+      <ProjectShowcaseSimple />
       
       <ExperienceTimeline />
       <ContactSection />
