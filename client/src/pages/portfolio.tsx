@@ -19,7 +19,7 @@ export default function Portfolio() {
       <HeroSection />
       <WatchSection />
       
-      <ProjectShowcase />
+
       
       <ExperienceTimeline />
       <ContactSection />
