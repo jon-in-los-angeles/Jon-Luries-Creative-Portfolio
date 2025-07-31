@@ -17,7 +17,7 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
       <HeroSection />
-      {/* <WatchSection /> */}
+      <WatchSection />
       
       {/* DEBUG: Project Showcase should appear here */}
       <div style={{ padding: '20px', background: 'red', color: 'white', textAlign: 'center' }}>
