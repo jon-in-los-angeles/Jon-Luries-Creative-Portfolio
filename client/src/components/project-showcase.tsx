@@ -100,16 +100,14 @@ export default function ProjectShowcase() {
   }
 
   return (
-    <section id="work" className="py-20 bg-white" style={{ display: 'block', visibility: 'visible' }}>
+    <section id="work" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-primary mb-4">Featured Work</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             A showcase of diverse projects spanning event production, audio engineering, content creation, and digital innovation.
           </p>
-          <div className="text-xs text-gray-400 mt-2">
-            Debug: {projects.length} projects loaded, Loading: {isLoading ? 'true' : 'false'}
-          </div>
+
         </div>
 
         {/* Filter Buttons */}

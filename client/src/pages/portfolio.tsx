@@ -19,12 +19,7 @@ export default function Portfolio() {
       <HeroSection />
       <WatchSection />
       
-      {/* DEBUG: Project Showcase should appear here */}
-      <div style={{ padding: '20px', background: 'red', color: 'white', textAlign: 'center' }}>
-        DEBUG: This is where ProjectShowcase should be
-      </div>
-      <SimpleProjectTest />
-      <ProjectShowcaseSimple />
+      <ProjectShowcase />
       
       <ExperienceTimeline />
       <ContactSection />
