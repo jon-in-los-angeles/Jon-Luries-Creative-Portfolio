@@ -44,6 +44,9 @@ export default function ExperienceTimeline() {
   });
 
   const spotifyProjects = projects.filter(project => project.spotifyEmbeds && project.spotifyEmbeds.length > 0);
+  
+  console.log('All projects:', projects);
+  console.log('Spotify projects found:', spotifyProjects);
 
   if (isLoading) {
     return (
