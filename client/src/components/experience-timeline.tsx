@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import { Lightbulb, Video, Film, Music, ExternalLink } from "lucide-react";
-import type { Experience, Project } from "@shared/schema";
+import { Lightbulb, Video, Film, Music } from "lucide-react";
+import type { Experience } from "@shared/schema";
 
 const logoMap = {
   "Madecraft": "/attached_assets/Madecraft Logo_1749860624278.png",
@@ -33,20 +33,6 @@ export default function ExperienceTimeline() {
       return response.json() as Promise<Experience[]>;
     },
   });
-
-  const { data: projects = [] } = useQuery({
-    queryKey: ["/api/projects"],
-    queryFn: async () => {
-      const response = await fetch("/api/projects");
-      if (!response.ok) throw new Error("Failed to fetch projects");
-      return response.json() as Promise<Project[]>;
-    },
-  });
-
-  const spotifyProjects = projects.filter(project => project.spotifyEmbeds && project.spotifyEmbeds.length > 0);
-  
-  console.log('All projects:', projects);
-  console.log('Spotify projects found:', spotifyProjects);
 
   if (isLoading) {
     return (
@@ -134,62 +120,6 @@ export default function ExperienceTimeline() {
             })}
           </div>
         </div>
-
-        {/* Featured Playlists Section */}
-        {spotifyProjects.length > 0 && (
-          <div className="mt-20">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-primary mb-4">Featured Playlists</h3>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Musical collections curated for various projects and collaborations.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              {spotifyProjects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  className="bg-white p-6 rounded-xl shadow-lg"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h4 className="text-xl font-bold text-primary mb-1">{project.title}</h4>
-                      <p className="text-gray-600 text-sm mb-3">{project.description}</p>
-                    </div>
-                    <Music className="text-green-500 flex-shrink-0 ml-4" size={24} />
-                  </div>
-                  
-                  {project.spotifyEmbeds && project.spotifyEmbeds.length > 0 && (
-                    <div className="space-y-3">
-                      <iframe
-                        src={project.spotifyEmbeds[0]}
-                        width="100%"
-                        height="152"
-                        frameBorder="0"
-                        allowTransparency={true}
-                        allow="encrypted-media"
-                        className="rounded-lg"
-                      />
-                      <a
-                        href={project.spotifyEmbeds[0].replace('/embed/', '/')}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-green-600 hover:text-green-700 text-sm font-medium"
-                      >
-                        Open in Spotify
-                        <ExternalLink className="ml-1" size={14} />
-                      </a>
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

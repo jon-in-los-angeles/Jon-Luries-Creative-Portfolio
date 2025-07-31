@@ -23,28 +23,12 @@ export default function HeroSection() {
             <h1 className="text-6xl lg:text-7xl font-bold text-primary mb-4">
               Jonathan Lurie
             </h1>
-            <h2 className="text-2xl lg:text-3xl text-gray-600 font-light mb-6">
-              Senior Producer & Production Operations Lead
+            <h2 className="text-2xl lg:text-3xl text-gray-600 font-light">
+              Senior Producer & Creative Director
             </h2>
-            <p className="text-xl text-gray-700 font-medium mb-8">
-              Crafting Stories. Driving Results.
+            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Driving multimedia content and digital storytelling for 10+ years, delivering impactful entertainment, commercial, and educational campaigns for major brands including Squarespace, LinkedIn, Zocdoc, and SeatGeek.
             </p>
-            
-            {/* Impact Stats */}
-            <div className="max-w-4xl mx-auto space-y-4 text-lg text-gray-600">
-              <div className="flex items-center justify-center">
-                <span className="font-semibold text-blue-600">2.1M+</span>
-                <span className="ml-2">Learners reached on LinkedIn Learning (100+ courses produced)</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <span className="font-semibold text-teal-600">28.7M+</span>
-                <span className="ml-2">YouTube Views generated (200+ videos for 40 brands)</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <span className="font-semibold text-gray-700">10+</span>
-                <span className="ml-2">Years leading content & experiential production for top brands</span>
-              </div>
-            </div>
           </motion.div>
 
           {/* Portrait */}
@@ -76,12 +60,6 @@ export default function HeroSection() {
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300"
               >
                 Watch
-              </button>
-              <button 
-                onClick={() => scrollToSection('work')}
-                className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all duration-300"
-              >
-                Work
               </button>
               <button 
                 onClick={() => scrollToSection('experience')}
