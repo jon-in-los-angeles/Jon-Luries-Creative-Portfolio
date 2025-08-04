@@ -1,4 +1,5 @@
 import Navigation from "@/components/navigation";
+import WorkCarousel from "@/components/work-carousel";
 import HeroSection from "@/components/hero-section";
 import ProjectShowcase from "@/components/project-showcase";
 import WatchSection from "@/components/watch-section";
@@ -13,6 +14,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
+      <WorkCarousel />
       <HeroSection />
       <ProjectShowcase />
       <WatchSection />

@@ -20,8 +20,8 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl lg:text-7xl font-bold text-primary mb-4">
-              Jonathan Lurie
+            <h1 className="text-5xl lg:text-6xl font-bold text-primary mb-4">
+              Produced by Jon Lurie
             </h1>
             <h2 className="text-2xl lg:text-3xl text-gray-600 font-light">
               Senior Producer & Creative Director
@@ -56,16 +56,16 @@ export default function HeroSection() {
           >
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <button 
-                onClick={() => scrollToSection('watch')}
+                onClick={() => scrollToSection('work')}
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300"
               >
-                Watch
+                View Portfolio
               </button>
               <button 
-                onClick={() => scrollToSection('experience')}
+                onClick={() => scrollToSection('watch')}
                 className="bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-300"
               >
-                Experience
+                Watch
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
