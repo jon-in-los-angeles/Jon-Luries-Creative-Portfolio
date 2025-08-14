@@ -39,9 +39,6 @@ export default function Navigation() {
             <button onClick={() => scrollToSection('about')} className="hover:text-accent transition-colors duration-300">
               About
             </button>
-            <button onClick={() => scrollToSection('work')} className="hover:text-accent transition-colors duration-300">
-              Work
-            </button>
             <button onClick={() => scrollToSection('watch')} className="hover:text-accent transition-colors duration-300">
               Watch
             </button>
@@ -81,9 +78,6 @@ export default function Navigation() {
             <div className="flex flex-col space-y-4 mt-4">
               <button onClick={() => scrollToSection('about')} className="text-left hover:text-accent transition-colors duration-300">
                 About
-              </button>
-              <button onClick={() => scrollToSection('work')} className="text-left hover:text-accent transition-colors duration-300">
-                Work
               </button>
               <button onClick={() => scrollToSection('watch')} className="text-left hover:text-accent transition-colors duration-300">
                 Watch
