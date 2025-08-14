@@ -14,7 +14,7 @@ import {
 } from "@shared/schema";
 
 export interface IStorage {
-  // Projects
+  // Projects (disabled to match deployed site)
   getAllProjects(): Promise<Project[]>;
   getProjectsByCategory(category: string): Promise<Project[]>;
   getFeaturedProjects(): Promise<Project[]>;
@@ -460,23 +460,23 @@ export class MemStorage implements IStorage {
   }
 
   async getAllProjects(): Promise<Project[]> {
-    return Array.from(this.projects.values()).sort((a, b) => b.year - a.year);
+    // Disabled to match deployed site structure
+    return [];
   }
 
   async getProjectsByCategory(category: string): Promise<Project[]> {
-    return Array.from(this.projects.values())
-      .filter((project) => project.category === category)
-      .sort((a, b) => b.year - a.year);
+    // Disabled to match deployed site structure
+    return [];
   }
 
   async getFeaturedProjects(): Promise<Project[]> {
-    return Array.from(this.projects.values())
-      .filter((project) => project.featured)
-      .sort((a, b) => b.year - a.year);
+    // Disabled to match deployed site structure  
+    return [];
   }
 
   async getProject(id: number): Promise<Project | undefined> {
-    return this.projects.get(id);
+    // Disabled to match deployed site structure
+    return undefined;
   }
 
   async getAllExperiences(): Promise<Experience[]> {
