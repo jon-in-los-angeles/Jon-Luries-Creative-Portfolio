@@ -24,7 +24,7 @@ export default function HeroSection() {
               Jonathan Lurie
             </h1>
             <h2 className="text-2xl lg:text-3xl text-gray-600 font-light mb-6">
-              Senior Producer & Production Operations Lead
+              Senior Producer & Content Strategist
             </h2>
             <p className="text-xl text-gray-700 font-medium mb-8">
               Crafting Stories. Driving Results.
@@ -33,11 +33,11 @@ export default function HeroSection() {
             {/* Impact Stats */}
             <div className="max-w-4xl mx-auto space-y-4 text-lg text-gray-600">
               <div className="flex items-center justify-center">
-                <span className="font-semibold text-blue-600">2.1M+</span>
+                <span className="font-semibold text-blue-600">2.5M+</span>
                 <span className="ml-2">Learners reached on LinkedIn Learning (100+ courses produced)</span>
               </div>
               <div className="flex items-center justify-center">
-                <span className="font-semibold text-teal-600">28.7M+</span>
+                <span className="font-semibold text-teal-600">30M+</span>
                 <span className="ml-2">YouTube Views generated (200+ videos for 40 brands)</span>
               </div>
               <div className="flex items-center justify-center">

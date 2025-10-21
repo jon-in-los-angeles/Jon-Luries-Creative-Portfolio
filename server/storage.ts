@@ -308,24 +308,24 @@ export class MemStorage implements IStorage {
     // Seed experiences
     const experiencesData: Omit<Experience, "id">[] = [
       {
-        title: "Senior Learning Content & Innovations Producer",
-        company: "Madecraft",
-        location: "Santa Barbara, CA",
-        startYear: 2024,
-        endYear: 2025,
+        title: "Innovations Producer",
+        company: "Independent Consultant",
+        location: "Los Angeles, CA",
+        startYear: 2025,
+        endYear: null,
         description:
-          "Led workflow automation initiatives using Google Apps Script and OpenAI API. Ran bi-weekly sprints to enhance internal production tools, implementing problem-solving solutions for complex multimedia projects.",
+          "Lead development of AI communication platform and music education tools, managing technical partnerships and user research. Partner with SMEs to build AI Product Management curriculum. Drive sponsorship strategy and business development.",
         icon: "lightbulb",
         color: "accent",
       },
       {
-        title: "Senior Learning Content Producer",
+        title: "Senior Learning Content & Innovations Producer",
         company: "Madecraft",
         location: "Santa Barbara, CA",
         startYear: 2021,
-        endYear: 2024,
+        endYear: 2025,
         description:
-          "Produced comprehensive video courses for LinkedIn Learning, Coursera, Microsoft, and Pluralsight reaching over 2M learners globally. Managed end-to-end content development including curriculum design, video production, and post-production workflows.",
+          "Produced video courses for LinkedIn Learning, Coursera, Microsoft, and Pluralsight reaching 2.5M+ learners. Managed end-to-end content development including curriculum design, production, and post-production. Led workflow automation using Google Apps Script and OpenAI API. Ran bi-weekly sprints to enhance production tools for complex multimedia projects.",
         icon: "video",
         color: "teal",
       },
