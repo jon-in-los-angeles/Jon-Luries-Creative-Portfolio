@@ -8,7 +8,7 @@ import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 export default function Portfolio() {
   useSmoothScroll();
-  
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
@@ -16,10 +16,10 @@ export default function Portfolio() {
       <WatchSection />
       <ExperienceTimeline />
       <ContactSection />
-      
+
       {/* PWA Install Prompt */}
       <PWAInstallPrompt />
-      
+
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-8">
         <div className="max-w-6xl mx-auto px-6">
