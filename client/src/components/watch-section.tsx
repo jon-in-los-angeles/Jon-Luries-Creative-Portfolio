@@ -114,22 +114,22 @@ export default function WatchSection() {
                     </div>
 
                     {/* Video Info */}
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col h-56">
                       <div className="flex items-start justify-between mb-3">
-                        <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors duration-300">
+                        <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors duration-300 line-clamp-2">
                           {video.title}
                         </h3>
                         <Play className="text-gray-400 group-hover:text-accent transition-colors duration-300 flex-shrink-0 ml-2" size={18} />
                       </div>
                       
-                      <p className="text-gray-600 mb-4 leading-relaxed">
+                      <p className="text-gray-600 mb-4 leading-relaxed flex-1 line-clamp-4">
                         {video.description}
                       </p>
                       
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between mt-auto">
                         <span className="text-sm text-gray-500 font-medium">{video.year}</span>
                         <div className="flex items-center text-accent font-medium text-sm">
-                          {video.vimeoUrl.includes('youtube.com') ? 'Watch Video' : 'Watch Video'}
+                          Watch Video
                           <Play className="w-4 h-4 ml-2" />
                         </div>
                       </div>
