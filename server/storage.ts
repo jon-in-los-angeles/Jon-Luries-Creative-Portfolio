@@ -315,7 +315,7 @@ export class MemStorage implements IStorage {
         endYear: null,
         description:
           "Lead development of AI communication platform and music education tools, managing technical partnerships and user research. Partner with SMEs to build AI Product Management curriculum. Drive sponsorship strategy and business development.",
-        icon: "lightbulb",
+        icon: "sparkles",
         color: "accent",
       },
       {

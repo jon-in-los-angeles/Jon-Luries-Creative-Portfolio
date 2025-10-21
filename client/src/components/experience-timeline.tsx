@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import { Lightbulb, Video, Film, Music } from "lucide-react";
+import { Lightbulb, Video, Film, Music, Sparkles } from "lucide-react";
 import type { Experience } from "@shared/schema";
 
 const logoMap = {
@@ -15,6 +15,7 @@ const iconMap = {
   video: Video,
   film: Film,
   music: Music,
+  sparkles: Sparkles,
 };
 
 const colorMap = {
