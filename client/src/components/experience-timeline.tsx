@@ -96,7 +96,7 @@ export default function ExperienceTimeline() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className={`w-20 h-20 ${companyLogo ? 'bg-white border-4 border-white shadow-xl' : colorClass} rounded-full flex items-center justify-center flex-shrink-0 relative z-10 p-3 ring-4 ring-gray-100`}>
+                  <div className={`w-20 h-20 ${companyLogo || experience.company === 'Independent Consultant' ? 'bg-white border-4 border-white shadow-xl' : colorClass} rounded-full flex items-center justify-center flex-shrink-0 relative z-10 p-3 ring-4 ring-gray-100`}>
                     {companyLogo ? (
                       <img 
                         src={companyLogo} 
@@ -104,7 +104,7 @@ export default function ExperienceTimeline() {
                         className="w-full h-full object-contain"
                       />
                     ) : (
-                      <IconComponent className="text-white text-2xl" />
+                      <IconComponent className={experience.company === 'Independent Consultant' ? 'text-gray-800 text-2xl' : 'text-white text-2xl'} />
                     )}
                   </div>
                   <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex-1 border border-gray-100">

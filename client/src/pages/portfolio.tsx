@@ -3,7 +3,6 @@ import HeroSection from "@/components/hero-section";
 import WatchSection from "@/components/watch-section";
 import ExperienceTimeline from "@/components/experience-timeline";
 import ContactSection from "@/components/contact-section";
-import PWAInstallPrompt from "@/components/pwa-install-prompt";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 export default function Portfolio() {
@@ -16,9 +15,6 @@ export default function Portfolio() {
       <WatchSection />
       <ExperienceTimeline />
       <ContactSection />
-
-      {/* PWA Install Prompt */}
-      <PWAInstallPrompt />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-8">
