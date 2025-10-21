@@ -65,7 +65,9 @@ export default function WatchSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {videos.map((video, index) => (
+          {videos.map((video, index) => {
+            const isLastAndOdd = index === videos.length - 1 && videos.length % 3 !== 0;
+            return (
             <Dialog key={video.id} open={openDialog === video.id.toString()} onOpenChange={(open) => {
               if (open) {
                 setOpenDialog(video.id.toString());
@@ -77,7 +79,7 @@ export default function WatchSection() {
             }}>
               <DialogTrigger asChild>
                 <motion.div
-                  className="group cursor-pointer"
+                  className={`group cursor-pointer ${isLastAndOdd ? 'md:col-span-2 lg:col-start-2' : ''}`}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -170,7 +172,8 @@ export default function WatchSection() {
                 </div>
               </DialogContent>
             </Dialog>
-          ))}
+          );
+          })}
         </div>
 
         {videos.length === 0 && (
