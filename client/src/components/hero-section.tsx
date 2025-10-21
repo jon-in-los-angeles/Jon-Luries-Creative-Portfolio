@@ -10,7 +10,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="about" className="pt-24 pb-32 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
+    <section id="about" className="pt-24 pb-12 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute top-20 right-20 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
