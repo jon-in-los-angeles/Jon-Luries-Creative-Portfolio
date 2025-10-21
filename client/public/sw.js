@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jl-portfolio-v5';
+const CACHE_NAME = 'jl-portfolio-v6';
 const STATIC_CACHE_URLS = [
   '/',
   '/manifest.json',
