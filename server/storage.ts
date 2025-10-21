@@ -423,7 +423,7 @@ export class MemStorage implements IStorage {
           "Commercial content for SeatGeek focused on a narrative of fans connecting over live music performance and event experiences.",
         vimeoUrl: "https://www.youtube.com/watch?v=RWOVYCYhWk0",
         thumbnailUrl: "/attached_assets/image_1749858345629.png",
-        duration: "3:22",
+        duration: "0:30",
         year: 2019,
         category: "Brand Content",
         featured: true,
