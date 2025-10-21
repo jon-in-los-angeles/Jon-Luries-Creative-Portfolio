@@ -412,7 +412,7 @@ export class MemStorage implements IStorage {
           "Commercial content introducing Zocdoc's platform to healthcare professionals, demonstrating the value proposition for medical practices and patient connection.",
         vimeoUrl: "https://www.youtube.com/watch?v=FrKMKdRmqwc",
         thumbnailUrl: "/attached_assets/Zocdoc_01_1749669530369.png",
-        duration: "2:30",
+        duration: "0:30",
         year: 2019,
         category: "Commercial",
         featured: true,
