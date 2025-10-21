@@ -431,7 +431,7 @@ export class MemStorage implements IStorage {
       {
         title: "Chicano Batman - KEXP Session",
         description:
-          "Live performance session with Chicano Batman for KEXP, showcasing intimate artist collaboration and multi-camera production in non-traditional environments.",
+          "Produced and edited this live performance session of Chicano Batman for KEXP, showcasing intimate artist collaboration and multi-camera production in non-traditional environments.",
         vimeoUrl: "https://www.youtube.com/watch?v=adWjEdqzhbc&t",
         thumbnailUrl: "/attached_assets/image_1749860026910.png",
         duration: "1:03:00",
@@ -442,7 +442,7 @@ export class MemStorage implements IStorage {
       {
         title: "Madecraft Educational Content",
         description:
-          "As Senior Learning Content Producer at Madecraft, I created comprehensive educational video courses for major platforms including LinkedIn Learning, Coursera, Microsoft, and Pluralsight. This work involved developing curriculum, managing production workflows, and delivering high-quality learning experiences that reached over 2 million learners globally.",
+          "Produced comprehensive educational video courses for LinkedIn Learning, Coursera, Microsoft, and Pluralsight, managing curriculum development and production workflows that reached over 2 million learners globally.",
         vimeoUrl: "https://vimeo.com/928586383",
         thumbnailUrl:
           "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
