@@ -57,14 +57,11 @@ export default function WatchSection() {
         <div className="absolute top-40 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-40 right-10 w-96 h-96 bg-teal/10 rounded-full blur-3xl"></div>
       </div>
-      
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <AnimatedEyeIcon />
           <h2 className="text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight">Watch</h2>
-          <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Featured video productions showcasing musical performances and creative storytelling.
-          </p>
+          <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Content that educates, entertains, and informs.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
