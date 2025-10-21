@@ -73,9 +73,6 @@ export default function ExperienceTimeline() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight">Career Journey</h2>
-          <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Over a decade of progressive growth across multiple industries and creative disciplines.
-          </p>
         </div>
 
         <div className="relative">
