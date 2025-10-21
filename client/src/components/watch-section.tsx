@@ -114,7 +114,7 @@ export default function WatchSection() {
                     </div>
 
                     {/* Video Info */}
-                    <div className="p-6 flex flex-col h-56">
+                    <div className="p-6 flex flex-col h-64">
                       <div className="flex items-start justify-between mb-3">
                         <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors duration-300 line-clamp-2">
                           {video.title}
@@ -122,7 +122,7 @@ export default function WatchSection() {
                         <Play className="text-gray-400 group-hover:text-accent transition-colors duration-300 flex-shrink-0 ml-2" size={18} />
                       </div>
                       
-                      <p className="text-gray-600 mb-4 leading-relaxed flex-1 line-clamp-4">
+                      <p className="text-gray-600 mb-4 leading-relaxed flex-1 line-clamp-3">
                         {video.description}
                       </p>
                       
