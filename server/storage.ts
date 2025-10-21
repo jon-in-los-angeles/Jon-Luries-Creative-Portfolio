@@ -442,7 +442,7 @@ export class MemStorage implements IStorage {
       {
         title: "Madecraft Educational Content",
         description:
-          "Produced comprehensive educational video courses for LinkedIn Learning, Coursera, Microsoft, and Pluralsight, managing curriculum development and production workflows that reached over 2 million learners globally.",
+          "100+ professional development courses produced for LinkedIn Learning, Coursera, Microsoft, and Pluralsight reaching 2.5M+ learners worldwide.",
         vimeoUrl: "https://vimeo.com/928586383",
         thumbnailUrl:
           "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
