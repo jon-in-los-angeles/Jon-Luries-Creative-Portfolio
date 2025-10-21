@@ -65,21 +65,25 @@ export default function ExperienceTimeline() {
   }
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-primary mb-4">Career Journey</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+    <section id="experience" className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight">Career Journey</h2>
+          <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Over a decade of progressive growth across multiple industries and creative disciplines.
           </p>
         </div>
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-accent"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-teal to-accent rounded-full"></div>
 
           {/* Timeline Items */}
-          <div className="space-y-12">
+          <div className="space-y-16">
             {experiences.map((experience, index) => {
               const IconComponent = iconMap[experience.icon as keyof typeof iconMap] || Lightbulb;
               const colorClass = colorMap[experience.color as keyof typeof colorMap] || "bg-accent";
@@ -95,7 +99,7 @@ export default function ExperienceTimeline() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className={`w-16 h-16 ${companyLogo ? 'bg-white border-2 border-gray-200' : colorClass} rounded-full flex items-center justify-center flex-shrink-0 relative z-10 p-2`}>
+                  <div className={`w-20 h-20 ${companyLogo ? 'bg-white border-4 border-white shadow-xl' : colorClass} rounded-full flex items-center justify-center flex-shrink-0 relative z-10 p-3 ring-4 ring-gray-100`}>
                     {companyLogo ? (
                       <img 
                         src={companyLogo} 
@@ -103,10 +107,10 @@ export default function ExperienceTimeline() {
                         className="w-full h-full object-contain"
                       />
                     ) : (
-                      <IconComponent className="text-white text-xl" />
+                      <IconComponent className="text-white text-2xl" />
                     )}
                   </div>
-                  <div className="bg-white p-6 rounded-xl shadow-lg flex-1">
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex-1 border border-gray-100">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-xl font-bold text-primary">{experience.title}</h3>
                       <span className="text-gray-500 font-medium">{yearRange}</span>

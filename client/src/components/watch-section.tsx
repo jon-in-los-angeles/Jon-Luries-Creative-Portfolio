@@ -52,12 +52,17 @@ export default function WatchSection() {
   }
 
   return (
-    <section id="watch" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+    <section id="watch" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-40 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-40 right-10 w-96 h-96 bg-teal/10 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
           <AnimatedEyeIcon />
-          <h2 className="text-4xl font-bold text-primary mb-4">Watch</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight">Watch</h2>
+          <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Featured video productions showcasing musical performances and creative storytelling.
           </p>
         </div>
@@ -80,7 +85,7 @@ export default function WatchSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-2xl group-hover:shadow-accent/20">
                     {/* Video Thumbnail */}
                     <div className="relative">
                       <img 

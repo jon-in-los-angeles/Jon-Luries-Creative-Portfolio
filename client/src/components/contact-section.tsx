@@ -71,11 +71,16 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="pt-20 pb-12 bg-primary text-white">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Let's Create Something Amazing</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+    <section id="contact" className="pt-24 pb-16 bg-gradient-to-br from-primary via-gray-900 to-primary text-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl lg:text-6xl font-bold mb-6 tracking-tight">Let's Create Something Amazing</h2>
+          <p className="text-xl lg:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Ready to bring your next project to life? I'm always excited to discuss new opportunities and innovative ideas.
           </p>
         </div>
@@ -88,9 +93,9 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                <Mail className="text-white" />
+            <div className="flex items-center space-x-6 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-300 group-hover:scale-110">
+                <Mail className="text-white" size={24} />
               </div>
               <div>
                 <h4 className="font-semibold">Email</h4>
@@ -100,9 +105,9 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-teal rounded-full flex items-center justify-center">
-                <Linkedin className="text-white" />
+            <div className="flex items-center space-x-6 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-teal to-teal/80 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-glow-teal transition-all duration-300 group-hover:scale-110">
+                <Linkedin className="text-white" size={24} />
               </div>
               <div>
                 <h4 className="font-semibold">LinkedIn</h4>
@@ -112,9 +117,9 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-yellow rounded-full flex items-center justify-center">
-                <MapPin className="text-primary" />
+            <div className="flex items-center space-x-6 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-yellow to-yellow/80 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                <MapPin className="text-primary" size={24} />
               </div>
               <div>
                 <h4 className="font-semibold">Location</h4>
@@ -124,7 +129,7 @@ export default function ContactSection() {
           </motion.div>
 
           <motion.div 
-            className="bg-white bg-opacity-10 p-8 rounded-2xl"
+            className="glass-effect p-10 rounded-3xl shadow-2xl"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -170,7 +175,7 @@ export default function ContactSection() {
               <Button 
                 type="submit" 
                 disabled={contactMutation.isPending}
-                className="w-full bg-accent text-white py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:transform-none"
+                className="w-full bg-gradient-to-r from-accent to-accent/90 text-white py-5 rounded-xl font-semibold text-lg hover:shadow-glow transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:transform-none disabled:shadow-none"
               >
                 {contactMutation.isPending ? "Sending..." : "Send Message"}
               </Button>
