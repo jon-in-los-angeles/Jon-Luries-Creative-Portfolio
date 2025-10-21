@@ -460,23 +460,23 @@ export class MemStorage implements IStorage {
   }
 
   async getAllProjects(): Promise<Project[]> {
-    // Disabled to match deployed site structure
-    return [];
+    return Array.from(this.projects.values()).sort((a, b) => b.year - a.year);
   }
 
   async getProjectsByCategory(category: string): Promise<Project[]> {
-    // Disabled to match deployed site structure
-    return [];
+    return Array.from(this.projects.values())
+      .filter((project) => project.category === category)
+      .sort((a, b) => b.year - a.year);
   }
 
   async getFeaturedProjects(): Promise<Project[]> {
-    // Disabled to match deployed site structure  
-    return [];
+    return Array.from(this.projects.values())
+      .filter((project) => project.featured)
+      .sort((a, b) => b.year - a.year);
   }
 
   async getProject(id: number): Promise<Project | undefined> {
-    // Disabled to match deployed site structure
-    return undefined;
+    return this.projects.get(id);
   }
 
   async getAllExperiences(): Promise<Experience[]> {
