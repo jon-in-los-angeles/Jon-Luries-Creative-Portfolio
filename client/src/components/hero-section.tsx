@@ -87,33 +87,19 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Navigation Buttons */}
+          {/* Navigation Button */}
           <motion.div 
             className="max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button 
-                onClick={() => scrollToSection('watch')}
-                className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-4 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                Watch
-                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-              </button>
+            <div className="flex justify-center">
               <button 
                 onClick={() => scrollToSection('experience')}
                 className="group bg-gradient-to-r from-teal to-teal/90 text-white px-10 py-4 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 Experience
-                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="group bg-gradient-to-r from-gray-800 to-gray-900 text-white px-10 py-4 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                Contact
                 <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
               </button>
             </div>
