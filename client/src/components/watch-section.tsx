@@ -79,7 +79,7 @@ export default function WatchSection() {
             }}>
               <DialogTrigger asChild>
                 <motion.div
-                  className={`group cursor-pointer ${isLastAndOdd ? 'md:col-span-2 lg:col-start-2' : ''}`}
+                  className={`group cursor-pointer ${isLastAndOdd ? 'md:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
