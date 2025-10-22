@@ -10,7 +10,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="about" className="pt-24 pb-12 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
+    <section id="about" className="pt-24 pb-4 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute top-20 right-20 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
@@ -72,7 +72,7 @@ export default function HeroSection() {
 
           {/* Portrait */}
           <motion.div 
-            className="mb-20 flex justify-center"
+            className="mb-8 flex justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}

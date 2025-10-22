@@ -52,7 +52,7 @@ export default function WatchSection() {
   }
 
   return (
-    <section id="watch" className="pt-8 pb-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section id="watch" className="pt-4 pb-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-40 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-40 right-10 w-96 h-96 bg-teal/10 rounded-full blur-3xl"></div>
