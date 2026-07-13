@@ -78,59 +78,59 @@
 
 @layer utilities {
   .text-accent {
-    color: hsl(var(--accent));
+    color: var(--accent);
   }
   
   .bg-accent {
-    background-color: hsl(var(--accent));
+    background-color: var(--accent);
   }
   
   .text-teal {
-    color: hsl(var(--teal));
+    color: var(--teal);
   }
   
   .bg-teal {
-    background-color: hsl(var(--teal));
+    background-color: var(--teal);
   }
   
   .text-yellow {
-    color: hsl(var(--yellow));
+    color: var(--yellow);
   }
   
   .bg-yellow {
-    background-color: hsl(var(--yellow));
+    background-color: var(--yellow);
   }
   
   .text-gray-50 {
-    color: hsl(var(--gray-50));
+    color: var(--gray-50);
   }
   
   .bg-gray-50 {
-    background-color: hsl(var(--gray-50));
+    background-color: var(--gray-50);
   }
   
   .text-gray-100 {
-    color: hsl(var(--gray-100));
+    color: var(--gray-100);
   }
   
   .bg-gray-100 {
-    background-color: hsl(var(--gray-100));
+    background-color: var(--gray-100);
   }
   
   .text-gray-600 {
-    color: hsl(var(--gray-600));
+    color: var(--gray-600);
   }
   
   .text-gray-900 {
-    color: hsl(var(--gray-900));
+    color: var(--gray-900);
   }
   
   .bg-gray-900 {
-    background-color: hsl(var(--gray-900));
+    background-color: var(--gray-900);
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--teal)) 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--teal) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -195,18 +195,18 @@
 
 .artistic-overlay {
   background: linear-gradient(45deg, 
-    hsla(var(--accent), 0.2) 0%, 
-    hsla(var(--teal), 0.2) 25%,
-    hsla(var(--yellow), 0.2) 50%,
-    hsla(var(--accent), 0.2) 75%,
-    hsla(var(--teal), 0.2) 100%);
+    color-mix(in srgb, var(--accent) 20%, transparent) 0%, 
+    color-mix(in srgb, var(--teal) 20%, transparent) 25%,
+    color-mix(in srgb, var(--yellow) 20%, transparent) 50%,
+    color-mix(in srgb, var(--accent) 20%, transparent) 75%,
+    color-mix(in srgb, var(--teal) 20%, transparent) 100%);
   mix-blend-mode: multiply;
 }
 
 .audio-visualizer {
   background: linear-gradient(90deg, 
-    hsla(var(--accent), 0.8) 0%, 
-    hsla(var(--teal), 0.8) 100%);
+    color-mix(in srgb, var(--accent) 80%, transparent) 0%, 
+    color-mix(in srgb, var(--teal) 80%, transparent) 100%);
 }
 
 /* Smooth scrolling */
@@ -220,14 +220,14 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--gray-100));
+  background: var(--gray-100);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--accent));
+  background: var(--accent);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary));
+  background: var(--primary);
 }

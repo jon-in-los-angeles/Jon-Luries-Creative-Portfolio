@@ -1,0 +1,1 @@
+- [CSS vars & SW caching](css-and-sw-caching.md) — CSS vars hold full hsl() values (never re-wrap in hsl/hsla); service worker cache can mask UI changes, bump CACHE_NAME.

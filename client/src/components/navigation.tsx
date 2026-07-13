@@ -52,7 +52,7 @@ export default function Navigation() {
 
           {/* Social Links */}
           <div className="hidden md:flex space-x-4">
-            <a href="mailto:jon_lurie@outlook.com" className="hover:text-accent transition-colors duration-300">
+            <a href="mailto:jlurie.12@gmail.com" className="hover:text-accent transition-colors duration-300">
               <Mail size={20} />
             </a>
             <a href="http://linkedin.com/in/jlurie" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
@@ -89,7 +89,7 @@ export default function Navigation() {
                 Contact
               </button>
               <div className="flex space-x-4 pt-2">
-                <a href="mailto:jon_lurie@outlook.com" className="hover:text-accent transition-colors duration-300">
+                <a href="mailto:jlurie.12@gmail.com" className="hover:text-accent transition-colors duration-300">
                   <Mail size={20} />
                 </a>
                 <a href="http://linkedin.com/in/jlurie" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">

@@ -26,7 +26,7 @@ export default function Portfolio() {
               </div>
               <span className="font-medium">Jonathan Lurie</span>
             </div>
-            <p>&copy; 2025 Jonathan Lurie. All rights reserved.</p>
+            <p>&copy; 2026 Jonathan Lurie. All rights reserved.</p>
           </div>
         </div>
       </footer>

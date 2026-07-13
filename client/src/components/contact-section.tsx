@@ -99,8 +99,8 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-semibold">Email</h4>
-                <a href="mailto:jon_lurie@outlook.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent transition-colors duration-300">
-                  jon_lurie@outlook.com
+                <a href="mailto:jlurie.12@gmail.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent transition-colors duration-300">
+                  jlurie.12@gmail.com
                 </a>
               </div>
             </div>

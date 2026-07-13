@@ -308,13 +308,13 @@ export class MemStorage implements IStorage {
     // Seed experiences
     const experiencesData: Omit<Experience, "id">[] = [
       {
-        title: "Innovations Producer",
-        company: "Independent Consultant",
+        title: "Founder & Creative Partnerships Strategist",
+        company: "12 Grand LLC",
         location: "Los Angeles, CA",
         startYear: 2025,
         endYear: null,
         description:
-          "Lead development of AI communication platform and music education tools, managing technical partnerships and user research. Partner with SMEs to build AI Product Management curriculum. Drive sponsorship strategy and business development.",
+          "Developing experiential partnerships, creator campaigns, and pitch strategies that connect music talent with global brands, including Shure and L'Acoustics.",
         icon: "sparkles",
         color: "accent",
       },
@@ -325,29 +325,40 @@ export class MemStorage implements IStorage {
         startYear: 2021,
         endYear: 2025,
         description:
-          "Produced video courses for LinkedIn Learning, Coursera, Microsoft, and Pluralsight reaching 2.5M+ learners. Managed end-to-end content development including curriculum design, production, and post-production. Led workflow automation using Google Apps Script and OpenAI API. Ran bi-weekly sprints to enhance production tools for complex multimedia projects.",
+          "Produced 115+ premium video courses reaching 2.7M+ learners across LinkedIn Learning, Coursera, Microsoft, and Pluralsight. Led a cross-functional team to build custom tools that streamlined the video production process.",
         icon: "video",
         color: "teal",
       },
       {
-        title: "Founder & Digital Media Producer",
+        title: "Digital Media & Experiential Producer",
         company: "Melogold, Inc.",
-        location: "Los Angeles, CA",
+        location: "United States",
         startYear: 2016,
         endYear: 2021,
         description:
-          "Founded digital media production company specializing in branded content and entertainment media. Created impactful commercial and entertainment content for brands including SeatGeek, Zocdoc, and ATO Records with focus on creative storytelling and multi-platform distribution.",
+          "Produced live-action, animated marketing, and experiential campaigns for tech clients (SeatGeek, Zocdoc) and music industry partners (Spotify, ATO Records).",
         icon: "film",
         color: "yellow",
       },
       {
-        title: "Executive Producer",
+        title: "Contributing Writer & Photojournalist",
+        company: "SonicScoop",
+        location: "New York City Metropolitan Area",
+        startYear: 2013,
+        endYear: 2018,
+        description:
+          "Developed and authored technical content and interviews with industry leaders, including live sound engineers for Peter Gabriel, Paul McCartney, Aerosmith, and Miles Davis. Photographer for major industry events including NAMM conferences.",
+        icon: "lightbulb",
+        color: "primary",
+      },
+      {
+        title: "Director of Production & Operations (COO)",
         company: "The Wild Honey Pie",
         location: "Brooklyn, NY",
-        startYear: 2014,
+        startYear: 2013,
         endYear: 2016,
         description:
-          "Executive produced immersive music experiences and content series including Spooky Mansion and Welcome Campers. Drove platform growth from 8M to 22M viewership through strategic content creation and multi-venue productions across NYC's music scene.",
+          "Executive produced over 150 live music sessions and multi-day experiential events. Scaled digital reach to 22M+ YouTube views while integrating strategic brand sponsorships with Heineken, Squarespace, and JanSport.",
         icon: "video",
         color: "accent",
       },
@@ -358,7 +369,7 @@ export class MemStorage implements IStorage {
         startYear: 2010,
         endYear: 2014,
         description:
-          "Engineered sessions with notable artists including Drake, Cyndi Lauper, and David Guetta at premier NYC studios. Developed expertise in complex A/V productions and technical problem-solving.",
+          "Assisted recording sessions with Drake, Cyndi Lauper, David Guetta, and LL Cool J at premier NYC studios, and engineered live recordings at venues including Blue Note Jazz Club and Newport Jazz Festival.",
         icon: "music",
         color: "primary",
       },
@@ -442,7 +453,7 @@ export class MemStorage implements IStorage {
       {
         title: "Madecraft Educational Content",
         description:
-          "100+ professional development courses produced for LinkedIn Learning, Coursera, Microsoft, and Pluralsight reaching 2.5M+ learners worldwide.",
+          "115+ professional development courses produced for LinkedIn Learning, Coursera, Microsoft, and Pluralsight reaching 2.7M+ learners worldwide.",
         vimeoUrl: "https://vimeo.com/928586383",
         thumbnailUrl:
           "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
