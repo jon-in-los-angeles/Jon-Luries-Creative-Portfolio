@@ -6,8 +6,22 @@ import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } 
 import type { Video } from "@shared/schema";
 import AnimatedEyeIcon from "./animated-play-icon";
 
+const categoryGroups = [
+  {
+    name: "Content Operations & Digital Learning",
+    description: "Building and managing high-quality educational content that reaches millions.",
+  },
+  {
+    name: "Brand Strategy & Product Storytelling",
+    description: "Turning complex products and services into clear, compelling video stories.",
+  },
+  {
+    name: "Experiential Partnerships & Live Events",
+    description: "Connecting brands with culture through unforgettable live music and experiential events.",
+  },
+];
+
 export default function WatchSection() {
-  const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
   const [openDialog, setOpenDialog] = useState<string | null>(null);
 
   const { data: videos = [], isLoading } = useQuery<Video[]>({
@@ -38,7 +52,7 @@ export default function WatchSection() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-primary mb-4">Watch</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Featured video productions showcasing musical performances and creative storytelling.
+              Selected work across content operations, brand storytelling, and live events.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -64,24 +78,28 @@ export default function WatchSection() {
           <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Content that educates, entertains, and informs.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {videos.map((video, index) => {
-            const isLastAndOdd = index === videos.length - 1 && videos.length % 3 !== 0;
+        <div className="space-y-24">
+          {categoryGroups.map((group) => {
+            const groupVideos = videos.filter((video) => video.category === group.name);
+            if (groupVideos.length === 0) return null;
             return (
+              <div key={group.name}>
+                <div className="text-center mb-12 max-w-3xl mx-auto">
+                  <h3 className="text-3xl lg:text-4xl font-bold text-primary mb-4 tracking-tight">{group.name}</h3>
+                  <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">{group.description}</p>
+                </div>
+                <div className={groupVideos.length === 1 ? "flex justify-center" : "grid md:grid-cols-2 lg:grid-cols-3 gap-8"}>
+                  {groupVideos.map((video, index) => {
+                    return (
             <Dialog key={video.id} open={openDialog === video.id.toString()} onOpenChange={(open) => {
-              if (open) {
-                setOpenDialog(video.id.toString());
-                setSelectedVideo(video);
-              } else {
-                setOpenDialog(null);
-                setSelectedVideo(null);
-              }
+              setOpenDialog(open ? video.id.toString() : null);
             }}>
               <DialogTrigger asChild>
                 <motion.div
-                  className={`group cursor-pointer ${isLastAndOdd ? 'md:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}
+                  className={`group cursor-pointer ${groupVideos.length === 1 ? 'w-full max-w-md' : ''}`}
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-2xl group-hover:shadow-accent/20">
@@ -106,10 +124,6 @@ export default function WatchSection() {
                         {video.duration}
                       </div>
 
-                      {/* Category Badge */}
-                      <div className="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {video.category}
-                      </div>
                     </div>
 
                     {/* Video Info */}
@@ -142,10 +156,7 @@ export default function WatchSection() {
                 <DialogDescription className="sr-only">{video.description}</DialogDescription>
                 <div className="relative">
                   <button
-                    onClick={() => {
-                      setOpenDialog(null);
-                      setSelectedVideo(null);
-                    }}
+                    onClick={() => setOpenDialog(null)}
                     className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75 transition-all"
                   >
                     <X size={20} />
@@ -172,7 +183,11 @@ export default function WatchSection() {
                 </div>
               </DialogContent>
             </Dialog>
-          );
+                    );
+                  })}
+                </div>
+              </div>
+            );
           })}
         </div>
 

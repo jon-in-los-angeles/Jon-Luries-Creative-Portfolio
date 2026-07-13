@@ -391,7 +391,7 @@ export class MemStorage implements IStorage {
           "/attached_assets/Welcome Campers 3 _01_1749858039158.JPG",
         duration: "01:54",
         year: 2016,
-        category: "Documentary Series",
+        category: "Experiential Partnerships & Live Events",
         featured: true,
       },
       {
@@ -403,7 +403,7 @@ export class MemStorage implements IStorage {
           "/attached_assets/Brian Wilson Little Kids Rock_1749669382052.jpg",
         duration: "2:41",
         year: 2015,
-        category: "Music Performance",
+        category: "Experiential Partnerships & Live Events",
         featured: true,
       },
       {
@@ -414,7 +414,7 @@ export class MemStorage implements IStorage {
         thumbnailUrl: "/attached_assets/Jim James Studio_02_1749669234911.jpg",
         duration: "1:00",
         year: 2019,
-        category: "Studio Session",
+        category: "Experiential Partnerships & Live Events",
         featured: true,
       },
       {
@@ -425,7 +425,7 @@ export class MemStorage implements IStorage {
         thumbnailUrl: "/attached_assets/Zocdoc_01_1749669530369.png",
         duration: "0:30",
         year: 2019,
-        category: "Commercial",
+        category: "Brand Strategy & Product Storytelling",
         featured: true,
       },
       {
@@ -436,7 +436,7 @@ export class MemStorage implements IStorage {
         thumbnailUrl: "/attached_assets/image_1749858345629.png",
         duration: "0:30",
         year: 2019,
-        category: "Brand Content",
+        category: "Brand Strategy & Product Storytelling",
         featured: true,
       },
       {
@@ -447,7 +447,7 @@ export class MemStorage implements IStorage {
         thumbnailUrl: "/attached_assets/image_1749860026910.png",
         duration: "1:03:00",
         year: 2020,
-        category: "Music Performance",
+        category: "Experiential Partnerships & Live Events",
         featured: true,
       },
       {
@@ -459,7 +459,7 @@ export class MemStorage implements IStorage {
           "/attached_assets/*Madecraft Courses live on Platform_1749669292583.png",
         duration: "1:32",
         year: 2024,
-        category: "Educational",
+        category: "Content Operations & Digital Learning",
         featured: true,
       },
     ];

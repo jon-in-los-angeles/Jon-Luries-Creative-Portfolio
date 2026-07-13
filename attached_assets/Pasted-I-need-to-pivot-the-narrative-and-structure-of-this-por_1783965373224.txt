@@ -1,0 +1,42 @@
+I need to pivot the narrative and structure of this portfolio. We are moving away from a traditional 'video producer reel' and upgrading the architecture to function as a consulting and agency landing page. Keep it clean, professional, and easy to read. Please implement the following structural and copy changes:
+
+1. Update the Hero/Header Section:
+
+New Headline: "Bridging the gap between creative vision and technical execution."
+
+New Sub-headline: "I help organizations build better content workflows, launch strategic brand partnerships, and solve complex operational bottlenecks."
+
+Action: Add a small "Certifications" banner or badge area below the hero text listing: Microsoft 365 Project Management | Agile | Anthropic AI Fluency.
+
+2. Restructure the Project Categories:
+Replace the current media categories (Educational, Commercial, Music Performance) with "Business Solution" categories. Move the existing projects into these new buckets:
+
+Category 1: Content Operations & Digital Learning
+
+Description: "Building and managing high-quality educational content that reaches millions."
+
+Projects to include here: Madecraft (Highlight the metric: 115+ courses, 2.7M+ learners).
+
+Category 2: Brand Strategy & Product Storytelling
+
+Description: "Turning complex products and services into clear, compelling video stories."
+
+Projects to include here: SeatGeek, Zocdoc, and the Skej AI Launch Demo.
+
+Category 3: Experiential Partnerships & Live Events
+
+Description: "Connecting brands with culture through unforgettable live music and experiential events."
+
+Projects to include here: The Wild Honey Pie (Shure & L'Acoustics Pizza Parties), KEXP Chicano Batman Session.
+
+3. Create a Dedicated '12 Grand LLC / Connect for Success' Section:
+
+Placement: This needs to sit prominently right after the Hero section, before the portfolio grid.
+
+Header: "Founder & Strategic Lead, 12 Grand LLC"
+
+Body Copy: "12 Grand LLC is a hybrid creative agency and consultancy. Currently, we are spearheading the development of Connect for Success (C4S), a behavioral intelligence platform that helps managers and teams communicate better, reducing workplace friction and saving companies time and money."
+
+Visual Ask: Give this section a distinct background color or card elevation to separate it from the past portfolio work.
+
+Please rewrite the underlying HTML/React components to reflect this new hierarchy and let me know when the preview is updated.
