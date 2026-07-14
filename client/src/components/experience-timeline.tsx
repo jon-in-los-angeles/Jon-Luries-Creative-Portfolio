@@ -1,31 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import { Lightbulb, Video, Film, Music, Sparkles } from "lucide-react";
 import type { Experience } from "@shared/schema";
-
-const logoMap = {
-  "Madecraft": "/attached_assets/Madecraft Logo_1749860624278.png",
-  "Melogold, Inc.": "/attached_assets/MELOGOLD_LOGO_V1_LG_ALPHA_1749859316035.png",
-  "The Wild Honey Pie": "/attached_assets/Honey Pie Logo_1749859316032.jpeg",
-  "Area 51 NYC / Aura Sonic Ltd": null, // Use icon fallback
-};
-
-const iconFallbackCompanies = ["12 Grand LLC", "Area 51 NYC / Aura Sonic Ltd", "SonicScoop"];
-
-const iconMap = {
-  lightbulb: Lightbulb,
-  video: Video,
-  film: Film,
-  music: Music,
-  sparkles: Sparkles,
-};
-
-const colorMap = {
-  accent: "bg-accent",
-  teal: "bg-teal",
-  yellow: "bg-yellow",
-  primary: "bg-primary",
-};
 
 export default function ExperienceTimeline({ embedded = false }: { embedded?: boolean }) {
   const { data: experiences = [], isLoading } = useQuery({
@@ -74,57 +49,35 @@ export default function ExperienceTimeline({ embedded = false }: { embedded?: bo
         </div>
       )}
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className={embedded ? "text-center mb-10" : "text-center mb-20"}>
-          <h2 className={embedded ? "text-3xl lg:text-4xl font-bold text-primary mb-4 tracking-tight" : "text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight"}>Career Journey</h2>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className={embedded ? "text-center mb-8 sm:mb-10" : "text-center mb-20"}>
+          <h2 className={embedded ? "text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-3 sm:mb-4 tracking-tight" : "text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight"}>Career Journey</h2>
         </div>
 
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-teal to-accent rounded-full"></div>
+        <div className="space-y-6 sm:space-y-8">
+          {experiences.map((experience, index) => {
+            const yearRange = experience.endYear ? `${experience.startYear}-${experience.endYear}` : `${experience.startYear}-Present`;
 
-          {/* Timeline Items */}
-          <div className="space-y-16">
-            {experiences.map((experience, index) => {
-              const IconComponent = iconMap[experience.icon as keyof typeof iconMap] || Lightbulb;
-              const colorClass = colorMap[experience.color as keyof typeof colorMap] || "bg-accent";
-              const yearRange = experience.endYear ? `${experience.startYear}-${experience.endYear}` : `${experience.startYear}-Present`;
-              const companyLogo = logoMap[experience.company as keyof typeof logoMap];
-
-              return (
-                <motion.div
-                  key={experience.id}
-                  className="flex items-start space-x-8"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className={`w-20 h-20 ${companyLogo || iconFallbackCompanies.includes(experience.company) ? 'bg-white border-4 border-white shadow-xl' : colorClass} rounded-full flex items-center justify-center flex-shrink-0 relative z-10 p-3 ring-4 ring-gray-100`}>
-                    {companyLogo ? (
-                      <img 
-                        src={companyLogo} 
-                        alt={`${experience.company} logo`}
-                        className="w-full h-full object-contain"
-                      />
-                    ) : (
-                      <IconComponent className={iconFallbackCompanies.includes(experience.company) ? 'text-gray-800 text-2xl' : 'text-white text-2xl'} />
-                    )}
-                  </div>
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex-1 border border-gray-100">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-xl font-bold text-primary">{experience.title}</h3>
-                      <span className="text-gray-500 font-medium">{yearRange}</span>
-                    </div>
-                    <p className={`text-${experience.color} font-medium mb-2`}>
-                      {experience.company} - {experience.location}
-                    </p>
-                    <p className="text-gray-600">{experience.description}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+            return (
+              <motion.div
+                key={experience.id}
+                className="bg-white p-5 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 min-w-0 border border-gray-100"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0.5 sm:gap-3 mb-2">
+                  <h3 className="text-lg sm:text-xl font-bold text-primary">{experience.title}</h3>
+                  <span className="text-sm sm:text-base text-gray-500 font-medium sm:whitespace-nowrap">{yearRange}</span>
+                </div>
+                <p className={`text-${experience.color} font-medium mb-2`}>
+                  {experience.company} - {experience.location}
+                </p>
+                <p className="text-gray-600">{experience.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

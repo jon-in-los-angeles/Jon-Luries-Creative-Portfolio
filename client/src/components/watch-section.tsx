@@ -73,24 +73,27 @@ export default function WatchSection({ embedded = false }: { embedded?: boolean 
           <div className="absolute bottom-40 right-10 w-96 h-96 bg-teal/10 rounded-full blur-3xl"></div>
         </div>
       )}
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className={embedded ? "text-center mb-10" : "text-center mb-20"}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className={embedded ? "text-center mb-8 sm:mb-10" : "text-center mb-20"}>
           {!embedded && <AnimatedEyeIcon />}
-          <h2 className={embedded ? "text-3xl lg:text-4xl font-bold text-primary mb-4 tracking-tight" : "text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight"}>Watch</h2>
-          <p className={embedded ? "text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" : "text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"}>Content that educates, entertains, and informs.</p>
+          <h2 className={embedded ? "text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-3 sm:mb-4 tracking-tight" : "text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight"}>Watch</h2>
+          <p className={embedded ? "text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" : "text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"}>Content that educates, entertains, and informs.</p>
+          <p className="mt-3 text-xs sm:text-sm text-gray-500 font-medium">
+            245 videos produced &middot; 29.8M+ views on YouTube &middot; 2.7M+ learners on LinkedIn Learning
+          </p>
         </div>
 
-        <div className={embedded ? "space-y-14" : "space-y-24"}>
+        <div className={embedded ? "space-y-10 sm:space-y-14" : "space-y-24"}>
           {categoryGroups.map((group) => {
             const groupVideos = videos.filter((video) => video.category === group.name);
             if (groupVideos.length === 0) return null;
             return (
               <div key={group.name}>
-                <div className="text-center mb-12 max-w-3xl mx-auto">
-                  <h3 className="text-3xl lg:text-4xl font-bold text-primary mb-4 tracking-tight">{group.name}</h3>
-                  <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">{group.description}</p>
+                <div className="text-center mb-8 sm:mb-12 max-w-3xl mx-auto">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-3 sm:mb-4 tracking-tight">{group.name}</h3>
+                  <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">{group.description}</p>
                 </div>
-                <div className={groupVideos.length === 1 ? "flex justify-center" : "grid md:grid-cols-2 lg:grid-cols-3 gap-8"}>
+                <div className={groupVideos.length === 1 ? "flex justify-center" : "grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"}>
                   {groupVideos.map((video, index) => {
                     return (
             <Dialog key={video.id} open={openDialog === video.id.toString()} onOpenChange={(open) => {
@@ -112,7 +115,7 @@ export default function WatchSection({ embedded = false }: { embedded?: boolean 
                       <img 
                         src={video.thumbnailUrl} 
                         alt={video.title}
-                        className="w-full h-64 object-cover"
+                        className="w-full h-48 sm:h-64 object-cover"
                       />
                       
                       {/* Play Overlay */}
@@ -131,7 +134,7 @@ export default function WatchSection({ embedded = false }: { embedded?: boolean 
                     </div>
 
                     {/* Video Info */}
-                    <div className="p-6 flex flex-col h-64">
+                    <div className="p-5 sm:p-6 flex flex-col sm:h-64">
                       <div className="flex items-start justify-between mb-3">
                         <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors duration-300 line-clamp-2">
                           {video.title}
@@ -155,7 +158,7 @@ export default function WatchSection({ embedded = false }: { embedded?: boolean 
                 </motion.button>
               </DialogTrigger>
               
-              <DialogContent className="max-w-4xl w-full p-0">
+              <DialogContent className="max-w-4xl w-[95vw] max-h-[88vh] overflow-y-auto p-0">
                 <DialogTitle className="sr-only">{video.title}</DialogTitle>
                 <DialogDescription className="sr-only">{video.description}</DialogDescription>
                 <div className="relative">
@@ -176,10 +179,10 @@ export default function WatchSection({ embedded = false }: { embedded?: boolean 
                     />
                   </div>
                   
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold text-primary mb-2">{video.title}</h3>
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-primary mb-2">{video.title}</h3>
                     <p className="text-gray-600 mb-4">{video.description}</p>
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                       <span className="text-sm text-gray-500">{video.category} • {video.year}</span>
                       <span className="text-sm text-gray-500">{video.duration}</span>
                     </div>

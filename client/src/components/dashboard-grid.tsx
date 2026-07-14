@@ -5,7 +5,6 @@ import { Award, Rocket, Play, Briefcase, Mail, Linkedin, ArrowUpRight, MapPin } 
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import WatchSection, { categoryGroups } from "@/components/watch-section";
 import ExperienceTimeline from "@/components/experience-timeline";
-import ContactSection from "@/components/contact-section";
 import type { Video, Experience } from "@shared/schema";
 
 const certifications = [
@@ -14,7 +13,24 @@ const certifications = [
   "Anthropic AI Fluency",
 ];
 
-type Panel = "twelve-grand" | "watch" | "experience" | "contact" | null;
+const impactStats = [
+  { value: "2.7M+", label: "Online Learners" },
+  { value: "116", label: "Courses Produced" },
+  { value: "29.8M+", label: "Video Views" },
+  { value: "245", label: "Videos Produced" },
+];
+
+const brands = [
+  "LinkedIn Learning",
+  "SPIN Magazine",
+  "Heineken",
+  "Microsoft",
+  "Universal Music Group",
+  "SeatGeek",
+  "Zocdoc",
+];
+
+type Panel = "twelve-grand" | "watch" | "experience" | null;
 
 const tileMotion = (delay: number) => ({
   initial: { opacity: 0, y: 20 },
@@ -45,42 +61,49 @@ export default function DashboardGrid() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-6 gap-4 lg:h-full max-w-[1500px] mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-12 gap-4 lg:h-full max-w-[1500px] mx-auto">
         {/* Hero / About tile */}
         <motion.div
           {...tileMotion(0)}
-          className="lg:col-span-2 lg:row-span-4 bg-white rounded-2xl border border-gray-200 shadow-sm p-6 lg:p-8 flex flex-col justify-center min-h-[420px] lg:min-h-0 lg:overflow-hidden"
+          className="lg:col-span-2 lg:row-span-8 bg-white rounded-2xl border-2 border-gray-300 shadow-sm p-6 lg:p-8 short:p-6 flex flex-col justify-center min-h-[380px] lg:min-h-0 lg:overflow-hidden"
         >
-          <h1 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-900 leading-tight mb-4">
+          <h1 className="text-2xl md:text-3xl 2xl:text-4xl short:text-2xl font-bold text-gray-900 leading-tight mb-4 short:mb-3">
             Bridging the gap between creative vision and technical execution.
           </h1>
-          <h2 className="text-sm md:text-base text-gray-500 leading-relaxed mb-5">
+          <h2 className="text-sm md:text-base short:text-sm text-gray-500 leading-relaxed mb-5 short:mb-4">
             I help organizations build better content workflows, launch strategic brand partnerships, and solve complex operational bottlenecks.
           </h2>
-          <div className="flex flex-wrap items-center gap-2 mb-6">
+          <div className="flex flex-wrap items-center gap-2 mb-6 short:mb-4">
             {certifications.map((cert) => (
               <span
                 key={cert}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-xs md:text-sm font-medium"
+                className="inline-flex items-center gap-2 px-3 py-1.5 short:py-1 rounded-full bg-gray-100 text-gray-700 text-xs md:text-sm short:text-xs font-medium"
               >
                 <Award className="w-3.5 h-3.5 text-gray-500" />
                 {cert}
               </span>
             ))}
           </div>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-            <button
-              onClick={() => setOpenPanel("watch")}
-              className="px-7 py-2.5 rounded-full bg-gray-900 text-white font-medium text-sm md:text-base hover:bg-gray-700 transition-colors duration-200 min-w-[150px]"
-            >
-              View Projects
-            </button>
-            <button
-              onClick={() => setOpenPanel("contact")}
-              className="px-7 py-2.5 rounded-full border border-gray-900 text-gray-900 font-medium text-sm md:text-base hover:bg-gray-50 transition-colors duration-200 min-w-[150px]"
-            >
-              Get in Touch
-            </button>
+          <div className="pt-5 short:pt-4 border-t border-gray-100 grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-3">
+            {impactStats.map((stat) => (
+              <div key={stat.label}>
+                <p className="text-xl md:text-2xl short:text-lg font-bold text-gray-900 tracking-tight">{stat.value}</p>
+                <p className="text-[11px] md:text-xs text-gray-500 leading-snug">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-5 short:mt-4 pt-4 short:pt-3 border-t border-gray-100">
+            <p className="text-[11px] md:text-xs font-medium uppercase tracking-wider text-gray-400 mb-2">Brands I've created for</p>
+            <div className="flex flex-wrap items-center gap-2">
+              {brands.map((brand) => (
+                <span
+                  key={brand}
+                  className="inline-flex items-center px-3 py-1.5 short:py-1 rounded-full bg-gray-100 text-gray-700 text-xs md:text-sm short:text-xs font-medium"
+                >
+                  {brand}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -88,7 +111,7 @@ export default function DashboardGrid() {
         <motion.button
           {...tileMotion(0.1)}
           onClick={() => setOpenPanel("twelve-grand")}
-          className="lg:col-span-2 lg:row-span-2 group bg-gray-900 text-white rounded-2xl shadow-sm p-6 lg:p-8 flex flex-col justify-between gap-3 text-left min-h-[200px] lg:min-h-0 lg:overflow-hidden hover:bg-gray-800 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="lg:col-span-2 lg:row-span-3 group bg-gray-900 text-white rounded-2xl border-2 border-gray-700 shadow-sm p-6 short:p-5 flex flex-col justify-between gap-3 text-left min-h-[170px] lg:min-h-0 lg:overflow-hidden hover:bg-gray-800 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
           <div className="flex items-start justify-between w-full">
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-gray-200 text-xs font-medium">
@@ -98,9 +121,9 @@ export default function DashboardGrid() {
             <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
           </div>
           <div>
-            <h3 className="text-xl md:text-2xl font-bold mb-1.5 tracking-tight">12 Grand LLC</h3>
-            <p className="text-sm md:text-base text-gray-300 leading-snug">
-              Founder &amp; Strategic Lead — developing <span className="font-semibold text-white">Connect for Success (C4S)</span>, a behavioral intelligence platform.
+            <h3 className="text-xl md:text-2xl short:text-xl font-bold mb-1.5 tracking-tight">Connect for Success (C4S)</h3>
+            <p className="text-sm md:text-base short:text-sm text-gray-300 leading-snug">
+              A behavioral intelligence platform that helps managers and teams communicate better.
             </p>
           </div>
         </motion.button>
@@ -109,7 +132,7 @@ export default function DashboardGrid() {
         <motion.button
           {...tileMotion(0.2)}
           onClick={() => setOpenPanel("watch")}
-          className="lg:col-span-2 lg:row-span-4 group bg-white rounded-2xl border border-gray-200 shadow-sm p-6 lg:p-8 flex flex-col text-left min-h-[320px] lg:min-h-0 lg:overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="lg:col-span-2 lg:row-span-9 group bg-white rounded-2xl border-2 border-gray-300 shadow-sm p-6 lg:p-8 short:p-6 flex flex-col text-left min-h-[320px] lg:min-h-0 lg:overflow-hidden hover:border-gray-400 hover:shadow-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
           <div className="flex items-start justify-between w-full mb-4">
             <div className="flex items-center gap-3">
@@ -135,9 +158,7 @@ export default function DashboardGrid() {
                   )}
                   <div className="min-w-0">
                     <p className="font-semibold text-gray-900 text-sm md:text-base leading-snug truncate">{group.name}</p>
-                    <p className="text-xs md:text-sm text-gray-500">
-                      {groupVideos.length} {groupVideos.length === 1 ? "video" : "videos"}
-                    </p>
+                    <p className="text-xs md:text-sm text-gray-500 truncate">{group.description}</p>
                   </div>
                 </div>
               );
@@ -149,7 +170,7 @@ export default function DashboardGrid() {
         <motion.button
           {...tileMotion(0.3)}
           onClick={() => setOpenPanel("experience")}
-          className="lg:col-span-1 lg:row-span-2 group bg-white rounded-2xl border border-gray-200 shadow-sm p-6 flex flex-col text-left min-h-[200px] lg:min-h-0 lg:overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="lg:col-span-1 lg:row-span-4 group bg-white rounded-2xl border-2 border-gray-300 shadow-sm p-6 flex flex-col text-left min-h-[200px] lg:min-h-0 lg:overflow-hidden hover:border-gray-400 hover:shadow-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
           <div className="flex items-start justify-between w-full mb-3">
             <div className="flex items-center gap-2.5">
@@ -170,53 +191,66 @@ export default function DashboardGrid() {
         </motion.button>
 
         {/* Contact tile */}
-        <motion.button
+        <motion.div
           {...tileMotion(0.4)}
-          onClick={() => setOpenPanel("contact")}
-          className="lg:col-span-1 lg:row-span-2 group bg-white rounded-2xl border border-gray-200 shadow-sm p-6 flex flex-col text-left min-h-[200px] lg:min-h-0 lg:overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="lg:col-span-1 lg:row-span-4 bg-white rounded-2xl border-2 border-gray-300 shadow-sm p-6 flex flex-col text-left min-h-[200px] lg:min-h-0 lg:overflow-hidden"
         >
           <div className="flex items-start justify-between w-full mb-3">
             <div className="flex items-center gap-2.5">
               <Mail className="w-5 h-5 text-gray-700" />
               <h3 className="text-lg font-bold text-gray-900 tracking-tight">Contact</h3>
             </div>
-            <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
           </div>
           <div className="flex-1 min-h-0 space-y-2 overflow-hidden">
-            <p className="text-sm text-gray-600 flex items-center gap-2 min-w-0">
+            <a
+              href="mailto:jlurie.12@gmail.com"
+              className="text-sm text-gray-600 flex items-center gap-2 min-w-0 hover:text-gray-900 hover:underline"
+            >
               <Mail className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
               <span className="truncate">jlurie.12@gmail.com</span>
-            </p>
-            <p className="text-sm text-gray-600 flex items-center gap-2 min-w-0">
+            </a>
+            <a
+              href="https://linkedin.com/in/jlurie"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 flex items-center gap-2 min-w-0 hover:text-gray-900 hover:underline"
+            >
               <Linkedin className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
               <span className="truncate">linkedin.com/in/jlurie</span>
-            </p>
+            </a>
             <p className="text-sm text-gray-600 flex items-center gap-2 min-w-0">
               <MapPin className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
               <span className="truncate">Los Angeles, CA</span>
             </p>
           </div>
-          <p className="text-xs text-gray-400 mt-2">Send a message →</p>
-        </motion.button>
+        </motion.div>
       </div>
 
       {/* 12 Grand expanded */}
       <Dialog open={openPanel === "twelve-grand"} onOpenChange={(open) => setOpenPanel(open ? "twelve-grand" : null)}>
         <DialogContent className="max-w-2xl w-[95vw] max-h-[88vh] overflow-y-auto">
-          <DialogTitle className="sr-only">12 Grand LLC</DialogTitle>
-          <DialogDescription className="sr-only">About 12 Grand LLC and Connect for Success</DialogDescription>
+          <DialogTitle className="sr-only">Connect for Success</DialogTitle>
+          <DialogDescription className="sr-only">About Connect for Success</DialogDescription>
           <div className="text-center py-6 px-2">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
               <Rocket className="w-4 h-4 text-gray-500" />
               Now Building
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5 tracking-tight">
-              Founder &amp; Strategic Lead, 12 Grand LLC
+              Connect for Success (C4S)
             </h2>
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-              12 Grand LLC is a hybrid creative agency and consultancy. Currently, we are spearheading the development of{" "}
-              <span className="font-semibold text-gray-900">Connect for Success (C4S)</span>, a behavioral intelligence platform that helps managers and teams communicate better, reducing workplace friction and saving companies time and money.
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-7">
+              <span className="font-semibold text-gray-900">Connect for Success (C4S)</span> is a behavioral intelligence platform that helps managers and teams communicate better, reducing workplace friction and saving companies time and money.
             </p>
+            <a
+              href="https://investinconnection.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full bg-gray-900 text-white font-medium text-sm md:text-base hover:bg-gray-700 transition-colors duration-200"
+            >
+              Learn more at investinconnection.com
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
           </div>
         </DialogContent>
       </Dialog>
@@ -236,15 +270,6 @@ export default function DashboardGrid() {
           <DialogTitle className="sr-only">Career Journey</DialogTitle>
           <DialogDescription className="sr-only">Professional experience timeline</DialogDescription>
           <ExperienceTimeline embedded />
-        </DialogContent>
-      </Dialog>
-
-      {/* Contact expanded */}
-      <Dialog open={openPanel === "contact"} onOpenChange={(open) => setOpenPanel(open ? "contact" : null)}>
-        <DialogContent className="max-w-5xl w-[95vw] max-h-[88vh] overflow-y-auto p-0 border-0">
-          <DialogTitle className="sr-only">Contact</DialogTitle>
-          <DialogDescription className="sr-only">Get in touch via the contact form</DialogDescription>
-          <ContactSection embedded />
         </DialogContent>
       </Dialog>
     </>
