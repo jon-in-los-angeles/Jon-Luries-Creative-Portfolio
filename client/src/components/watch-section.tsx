@@ -6,7 +6,7 @@ import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } 
 import type { Video } from "@shared/schema";
 import AnimatedEyeIcon from "./animated-play-icon";
 
-const categoryGroups = [
+export const categoryGroups = [
   {
     name: "Content Operations & Digital Learning",
     description: "Building and managing high-quality educational content that reaches millions.",
@@ -21,7 +21,7 @@ const categoryGroups = [
   },
 ];
 
-export default function WatchSection() {
+export default function WatchSection({ embedded = false }: { embedded?: boolean }) {
   const [openDialog, setOpenDialog] = useState<string | null>(null);
 
   const { data: videos = [], isLoading } = useQuery<Video[]>({
@@ -47,7 +47,7 @@ export default function WatchSection() {
 
   if (isLoading) {
     return (
-      <section id="watch" className="py-20 bg-gray-50">
+      <section id="watch" className={embedded ? "py-10 bg-gray-50" : "py-20 bg-gray-50"}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-primary mb-4">Watch</h2>
@@ -66,19 +66,21 @@ export default function WatchSection() {
   }
 
   return (
-    <section id="watch" className="pt-4 pb-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-40 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 right-10 w-96 h-96 bg-teal/10 rounded-full blur-3xl"></div>
-      </div>
+    <section id="watch" className={embedded ? "py-10 bg-white relative overflow-hidden" : "pt-4 pb-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"}>
+      {!embedded && (
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-40 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-10 w-96 h-96 bg-teal/10 rounded-full blur-3xl"></div>
+        </div>
+      )}
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <AnimatedEyeIcon />
-          <h2 className="text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight">Watch</h2>
-          <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Content that educates, entertains, and informs.</p>
+        <div className={embedded ? "text-center mb-10" : "text-center mb-20"}>
+          {!embedded && <AnimatedEyeIcon />}
+          <h2 className={embedded ? "text-3xl lg:text-4xl font-bold text-primary mb-4 tracking-tight" : "text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight"}>Watch</h2>
+          <p className={embedded ? "text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" : "text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"}>Content that educates, entertains, and informs.</p>
         </div>
 
-        <div className="space-y-24">
+        <div className={embedded ? "space-y-14" : "space-y-24"}>
           {categoryGroups.map((group) => {
             const groupVideos = videos.filter((video) => video.category === group.name);
             if (groupVideos.length === 0) return null;
@@ -95,8 +97,10 @@ export default function WatchSection() {
               setOpenDialog(open ? video.id.toString() : null);
             }}>
               <DialogTrigger asChild>
-                <motion.div
-                  className={`group cursor-pointer ${groupVideos.length === 1 ? 'w-full max-w-md' : ''}`}
+                <motion.button
+                  type="button"
+                  aria-label={`Watch ${video.title}`}
+                  className={`group cursor-pointer text-left block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-2xl ${groupVideos.length === 1 ? 'w-full max-w-md' : 'w-full'}`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -148,7 +152,7 @@ export default function WatchSection() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </motion.button>
               </DialogTrigger>
               
               <DialogContent className="max-w-4xl w-full p-0">

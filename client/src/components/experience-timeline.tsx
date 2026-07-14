@@ -27,7 +27,7 @@ const colorMap = {
   primary: "bg-primary",
 };
 
-export default function ExperienceTimeline() {
+export default function ExperienceTimeline({ embedded = false }: { embedded?: boolean }) {
   const { data: experiences = [], isLoading } = useQuery({
     queryKey: ["/api/experiences"],
     queryFn: async () => {
@@ -67,14 +67,16 @@ export default function ExperienceTimeline() {
   }
 
   return (
-    <section id="experience" className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
-      </div>
-      
+    <section id="experience" className={embedded ? "py-10 bg-white relative overflow-hidden" : "py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"}>
+      {!embedded && (
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+        </div>
+      )}
+
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight">Career Journey</h2>
+        <div className={embedded ? "text-center mb-10" : "text-center mb-20"}>
+          <h2 className={embedded ? "text-3xl lg:text-4xl font-bold text-primary mb-4 tracking-tight" : "text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight"}>Career Journey</h2>
         </div>
 
         <div className="relative">

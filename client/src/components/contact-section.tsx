@@ -16,7 +16,7 @@ interface ContactFormData {
   message: string;
 }
 
-export default function ContactSection() {
+export default function ContactSection({ embedded = false }: { embedded?: boolean }) {
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -71,16 +71,16 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="pt-24 pb-16 bg-gradient-to-br from-primary via-gray-900 to-primary text-white relative overflow-hidden">
+    <section id="contact" className={embedded ? "py-10 bg-gradient-to-br from-primary via-gray-900 to-primary text-white relative overflow-hidden rounded-lg" : "pt-24 pb-16 bg-gradient-to-br from-primary via-gray-900 to-primary text-white relative overflow-hidden"}>
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-20 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal rounded-full blur-3xl"></div>
       </div>
       
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6 tracking-tight">Let's Create Something Amazing</h2>
-          <p className="text-xl lg:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        <div className={embedded ? "text-center mb-10" : "text-center mb-20"}>
+          <h2 className={embedded ? "text-3xl lg:text-4xl font-bold mb-4 tracking-tight" : "text-5xl lg:text-6xl font-bold mb-6 tracking-tight"}>Let's Create Something Amazing</h2>
+          <p className={embedded ? "text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed" : "text-xl lg:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed"}>
             Ready to bring your next project to life? I'm always excited to discuss new opportunities and innovative ideas.
           </p>
         </div>
