@@ -109,7 +109,7 @@ export default function WatchSection({ embedded = false }: { embedded?: boolean 
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-2xl group-hover:shadow-accent/20">
+                  <div className="bg-white rounded-[24px] border border-gray-200 shadow-sm overflow-hidden transform transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-1 group-hover:shadow-lg group-hover:shadow-accent/10">
                     {/* Video Thumbnail */}
                     <div className="relative">
                       <img 
@@ -158,13 +158,13 @@ export default function WatchSection({ embedded = false }: { embedded?: boolean 
                 </motion.button>
               </DialogTrigger>
               
-              <DialogContent className="max-w-4xl w-[95vw] max-h-[88vh] overflow-y-auto p-0">
+              <DialogContent className="max-w-4xl w-[95vw] max-h-[88vh] overflow-hidden rounded-[24px] p-0">
                 <DialogTitle className="sr-only">{video.title}</DialogTitle>
                 <DialogDescription className="sr-only">{video.description}</DialogDescription>
                 <div className="relative">
                   <button
                     onClick={() => setOpenDialog(null)}
-                    className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75 transition-all"
+                    className="absolute top-4 right-4 z-10 rounded-full border border-white/20 bg-black/50 p-2 text-white backdrop-blur-sm transition-all hover:bg-black/70"
                   >
                     <X size={20} />
                   </button>
@@ -180,8 +180,11 @@ export default function WatchSection({ embedded = false }: { embedded?: boolean 
                   </div>
                   
                   <div className="p-4 sm:p-6">
+                    <div className="mb-3 inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-gray-600">
+                      {video.category}
+                    </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-primary mb-2">{video.title}</h3>
-                    <p className="text-gray-600 mb-4">{video.description}</p>
+                    <p className="text-gray-600 mb-4 leading-relaxed">{video.description}</p>
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                       <span className="text-sm text-gray-500">{video.category} • {video.year}</span>
                       <span className="text-sm text-gray-500">{video.duration}</span>

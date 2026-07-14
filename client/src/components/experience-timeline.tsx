@@ -61,7 +61,7 @@ export default function ExperienceTimeline({ embedded = false }: { embedded?: bo
             return (
               <motion.div
                 key={experience.id}
-                className="bg-white p-5 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 min-w-0 border border-gray-100"
+                className="min-w-0 rounded-[24px] border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:p-8"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -71,7 +71,7 @@ export default function ExperienceTimeline({ embedded = false }: { embedded?: bo
                   <h3 className="text-lg sm:text-xl font-bold text-primary">{experience.title}</h3>
                   <span className="text-sm sm:text-base text-gray-500 font-medium sm:whitespace-nowrap">{yearRange}</span>
                 </div>
-                <p className={`text-${experience.color} font-medium mb-2`}>
+                <p className="mb-2 font-medium text-gray-700">
                   {experience.company} - {experience.location}
                 </p>
                 <p className="text-gray-600">{experience.description}</p>

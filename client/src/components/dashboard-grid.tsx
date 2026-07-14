@@ -61,19 +61,24 @@ export default function DashboardGrid() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-12 gap-4 lg:h-full max-w-[1500px] mx-auto">
+      <div className="mx-auto grid w-full max-w-[1500px] grid-cols-1 gap-2.5 md:grid-cols-2 xl:grid-cols-4 md:gap-3 xl:gap-2.5">
         {/* Hero / About tile */}
         <motion.div
           {...tileMotion(0)}
-          className="lg:col-span-2 lg:row-span-8 bg-white rounded-2xl border-2 border-gray-300 shadow-sm p-6 lg:p-8 short:p-6 flex flex-col justify-center min-h-[380px] lg:min-h-0 lg:overflow-hidden"
+          className="md:col-span-2 lg:col-span-2 lg:row-span-8 relative overflow-hidden rounded-[22px] border border-gray-200 bg-gradient-to-br from-white via-gray-50 to-white p-4 shadow-sm sm:p-5 lg:p-5 short:p-4 flex flex-col justify-center min-h-[250px] sm:min-h-[270px] lg:min-h-0 lg:overflow-hidden"
         >
-          <h1 className="text-2xl md:text-3xl 2xl:text-4xl short:text-2xl font-bold text-gray-900 leading-tight mb-4 short:mb-3">
-            Bridging the gap between creative vision and technical execution.
+          <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-accent via-teal to-yellow" />
+          <div className="mb-2.5 inline-flex w-fit items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-gray-600">
+            <span className="h-2 w-2 rounded-full bg-accent" />
+            Strategy • Production • Partnerships
+          </div>
+          <h1 className="text-[1.4rem] md:text-[1.7rem] 2xl:text-[2rem] short:text-[1.35rem] font-bold text-gray-900 leading-[1.08] mb-2.5 short:mb-2">
+            Bridging creative vision and technical execution.
           </h1>
-          <h2 className="text-sm md:text-base short:text-sm text-gray-500 leading-relaxed mb-5 short:mb-4">
-            I help organizations build better content workflows, launch strategic brand partnerships, and solve complex operational bottlenecks.
+          <h2 className="max-w-2xl text-sm md:text-[0.92rem] short:text-sm text-gray-600 leading-relaxed mb-3 short:mb-2.5">
+            I help teams build better content workflows, launch strategic partnerships, and solve operational bottlenecks.
           </h2>
-          <div className="flex flex-wrap items-center gap-2 mb-6 short:mb-4">
+          <div className="flex flex-wrap items-center gap-2 mb-3 short:mb-2.5">
             {certifications.map((cert) => (
               <span
                 key={cert}
@@ -84,7 +89,7 @@ export default function DashboardGrid() {
               </span>
             ))}
           </div>
-          <div className="pt-5 short:pt-4 border-t border-gray-100 grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-3">
+          <div className="pt-3 short:pt-2.5 border-t border-gray-100 grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-2">
             {impactStats.map((stat) => (
               <div key={stat.label}>
                 <p className="text-xl md:text-2xl short:text-lg font-bold text-gray-900 tracking-tight">{stat.value}</p>
@@ -92,8 +97,8 @@ export default function DashboardGrid() {
               </div>
             ))}
           </div>
-          <div className="mt-5 short:mt-4 pt-4 short:pt-3 border-t border-gray-100">
-            <p className="text-[11px] md:text-xs font-medium uppercase tracking-wider text-gray-400 mb-2">Brands I've created for</p>
+          <div className="mt-3 short:mt-2.5 pt-2.5 short:pt-2 border-t border-gray-100">
+            <p className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-gray-400 mb-1.5">Brands I've created for</p>
             <div className="flex flex-wrap items-center gap-2">
               {brands.map((brand) => (
                 <span
@@ -111,19 +116,25 @@ export default function DashboardGrid() {
         <motion.button
           {...tileMotion(0.1)}
           onClick={() => setOpenPanel("twelve-grand")}
-          className="lg:col-span-2 lg:row-span-3 group bg-gray-900 text-white rounded-2xl border-2 border-gray-700 shadow-sm p-6 short:p-5 flex flex-col justify-between gap-3 text-left min-h-[170px] lg:min-h-0 lg:overflow-hidden hover:bg-gray-800 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="md:col-span-2 lg:col-span-2 lg:row-span-3 group relative overflow-hidden bg-gray-900 text-white rounded-[22px] border border-gray-700 shadow-sm p-4 sm:p-5 short:p-4 flex flex-col justify-between gap-3 text-left min-h-[150px] sm:min-h-[160px] lg:min-h-0 lg:overflow-hidden hover:-translate-y-1 hover:bg-gray-800 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
-          <div className="flex items-start justify-between w-full">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-gray-200 text-xs font-medium">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-teal/20" />
+          <div className="relative flex items-start justify-between w-full">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-gray-200 text-xs font-medium backdrop-blur-sm">
               <Rocket className="w-3.5 h-3.5" />
               Now Building
             </span>
-            <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
+            <div className="flex gap-1.5">
+              <div className="h-4 w-4 rounded-full bg-[#FF6B6B] shadow-lg" />
+              <div className="h-4 w-4 rounded-full bg-[#4ECDC4] shadow-lg" />
+              <div className="h-4 w-4 rounded-full bg-[#95E1D3] shadow-lg" />
+              <div className="h-4 w-4 rounded-full bg-[#FFE66D] shadow-lg" />
+            </div>
           </div>
-          <div>
+          <div className="relative">
             <h3 className="text-xl md:text-2xl short:text-xl font-bold mb-1.5 tracking-tight">Connect for Success (C4S)</h3>
             <p className="text-sm md:text-base short:text-sm text-gray-300 leading-snug">
-              A behavioral intelligence platform that helps managers and teams communicate better.
+              A platform that helps managers and teams communicate better.
             </p>
           </div>
         </motion.button>
@@ -132,9 +143,9 @@ export default function DashboardGrid() {
         <motion.button
           {...tileMotion(0.2)}
           onClick={() => setOpenPanel("watch")}
-          className="lg:col-span-2 lg:row-span-9 group bg-white rounded-2xl border-2 border-gray-300 shadow-sm p-6 lg:p-8 short:p-6 flex flex-col text-left min-h-[320px] lg:min-h-0 lg:overflow-hidden hover:border-gray-400 hover:shadow-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="md:col-span-2 lg:col-span-2 lg:row-span-9 group bg-white rounded-[22px] border border-gray-200 shadow-sm p-4 sm:p-5 lg:p-5 short:p-4 flex flex-col text-left min-h-[220px] sm:min-h-[240px] lg:min-h-0 lg:overflow-hidden hover:-translate-y-1 hover:border-gray-400 hover:shadow-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
-          <div className="flex items-start justify-between w-full mb-4">
+          <div className="flex items-start justify-between w-full mb-3">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center">
                 <Play className="w-4 h-4 text-white ml-0.5" fill="currentColor" />
@@ -143,17 +154,17 @@ export default function DashboardGrid() {
             </div>
             <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
           </div>
-          <div className="flex-1 min-h-0 flex flex-col gap-3 overflow-hidden">
+          <div className="flex-1 min-h-0 flex flex-col gap-2.5 overflow-hidden">
             {categoryGroups.map((group) => {
               const groupVideos = videos.filter((v) => v.category === group.name);
               const preview = groupVideos[0];
               return (
-                <div key={group.name} className="flex items-center gap-4 rounded-xl bg-gray-50 p-3 flex-1 min-h-0 overflow-hidden">
+                <div key={group.name} className="flex items-center gap-3 sm:gap-4 rounded-xl bg-gray-50 p-3 flex-1 min-h-0 overflow-hidden">
                   {preview && (
                     <img
                       src={preview.thumbnailUrl}
                       alt={group.name}
-                      className="w-20 h-14 md:w-24 md:h-16 object-cover rounded-lg flex-shrink-0"
+                      className="h-14 w-20 object-cover rounded-lg flex-shrink-0 sm:h-16 sm:w-24"
                     />
                   )}
                   <div className="min-w-0">
@@ -170,7 +181,7 @@ export default function DashboardGrid() {
         <motion.button
           {...tileMotion(0.3)}
           onClick={() => setOpenPanel("experience")}
-          className="lg:col-span-1 lg:row-span-4 group bg-white rounded-2xl border-2 border-gray-300 shadow-sm p-6 flex flex-col text-left min-h-[200px] lg:min-h-0 lg:overflow-hidden hover:border-gray-400 hover:shadow-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="lg:col-span-1 lg:row-span-4 group bg-white rounded-[22px] border border-gray-200 shadow-sm p-4 sm:p-5 flex flex-col text-left min-h-[150px] lg:min-h-0 lg:overflow-hidden hover:-translate-y-1 hover:border-gray-400 hover:shadow-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
           <div className="flex items-start justify-between w-full mb-3">
             <div className="flex items-center gap-2.5">
@@ -193,7 +204,7 @@ export default function DashboardGrid() {
         {/* Contact tile */}
         <motion.div
           {...tileMotion(0.4)}
-          className="lg:col-span-1 lg:row-span-4 bg-white rounded-2xl border-2 border-gray-300 shadow-sm p-6 flex flex-col text-left min-h-[200px] lg:min-h-0 lg:overflow-hidden"
+          className="lg:col-span-1 lg:row-span-4 bg-white rounded-[22px] border border-gray-200 shadow-sm p-4 sm:p-5 flex flex-col text-left min-h-[150px] lg:min-h-0 lg:overflow-hidden"
         >
           <div className="flex items-start justify-between w-full mb-3">
             <div className="flex items-center gap-2.5">
