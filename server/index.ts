@@ -59,8 +59,9 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Serve the app locally on a localhost-friendly host.
-  const host = process.env.HOST || "127.0.0.1";
+  // Bind to all interfaces in production (required by Railway/Render/most PaaS);
+  // default to localhost-only for a quieter local dev experience.
+  const host = process.env.HOST || (app.get("env") === "development" ? "127.0.0.1" : "0.0.0.0");
   const port = Number(process.env.PORT || 5000);
   server.listen({
     port,
