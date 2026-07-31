@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import { Bar, BarChart, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import { Award, Rocket, Play, Briefcase, Mail, Linkedin, ArrowUpRight, MapPin, Users, BookOpen, Eye, Video as VideoIcon } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import WatchSection, { categoryGroups } from "@/components/watch-section";
@@ -24,6 +24,41 @@ const impactStats = [
 // Matches the hsl values behind the accent/teal/yellow CSS variables in index.css,
 // since recharts fill/stroke attributes don't resolve var() reliably.
 const CATEGORY_COLORS = ["hsl(16, 100%, 60%)", "hsl(176, 45%, 57%)", "hsl(50, 100%, 71%)"];
+
+const coursesByTopic = [
+  { name: "Artificial Intelligence", count: 6 },
+  { name: "Business & Sales", count: 14 },
+  { name: "Customer Experience", count: 5 },
+  { name: "L&D & Instructional Design", count: 9 },
+  { name: "Leadership & Management", count: 20 },
+  { name: "Professional Effectiveness", count: 32 },
+  { name: "Tech & Productivity", count: 29 },
+];
+
+const TOPIC_COLORS = [
+  "hsl(217, 91%, 60%)", // Artificial Intelligence
+  "hsl(0, 72%, 51%)", // Business & Sales
+  "hsl(50, 100%, 71%)", // Customer Experience
+  "hsl(142, 44%, 47%)", // L&D & Instructional Design
+  "hsl(16, 100%, 60%)", // Leadership & Management
+  "hsl(176, 45%, 57%)", // Professional Effectiveness
+  "hsl(199, 89%, 65%)", // Tech & Productivity
+];
+
+function ProportionBar({ data, colors }: { data: { name: string; count: number }[]; colors: string[] }) {
+  const total = data.reduce((sum, d) => sum + d.count, 0) || 1;
+  return (
+    <div className="flex h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
+      {data.map((d, i) => (
+        <div
+          key={d.name}
+          title={`${d.name}: ${d.count}`}
+          style={{ width: `${(d.count / total) * 100}%`, backgroundColor: colors[i % colors.length] }}
+        />
+      ))}
+    </div>
+  );
+}
 
 const brands = [
   "LinkedIn Learning",
@@ -69,6 +104,11 @@ export default function DashboardGrid() {
     count: videos.filter((v) => v.category === group.name).length,
   }));
 
+  const topTopic = [...coursesByTopic].sort((a, b) => b.count - a.count)[0];
+  const topCategory = categoryData.length
+    ? [...categoryData].sort((a, b) => b.count - a.count)[0]
+    : null;
+
   return (
     <>
       {/* KPI row */}
@@ -87,9 +127,34 @@ export default function DashboardGrid() {
                 {stat.label}
               </span>
             </div>
-            <p className="text-2xl font-bold tracking-tight text-gray-900 tabular-nums md:text-[1.75rem]">
+            <p className="mb-2.5 text-2xl font-bold tracking-tight text-gray-900 tabular-nums md:text-[1.75rem]">
               {stat.value}
             </p>
+
+            {stat.label === "Online Learners" && (
+              <p className="line-clamp-2 text-[10px] leading-snug text-gray-400">
+                LinkedIn Learning · Coursera · Microsoft · Pluralsight
+              </p>
+            )}
+            {stat.label === "Courses Produced" && (
+              <div>
+                <ProportionBar data={coursesByTopic} colors={TOPIC_COLORS} />
+                <p className="mt-1.5 truncate text-[10px] text-gray-400">
+                  Top: {topTopic.name} ({topTopic.count})
+                </p>
+              </div>
+            )}
+            {stat.label === "Video Views" && (
+              <p className="text-[10px] leading-snug text-gray-400">All on YouTube</p>
+            )}
+            {stat.label === "Videos Produced" && (
+              <div>
+                <ProportionBar data={categoryData} colors={CATEGORY_COLORS} />
+                <p className="mt-1.5 truncate text-[10px] text-gray-400">
+                  {topCategory ? `Top: ${topCategory.name} (${topCategory.count})` : "By category"}
+                </p>
+              </div>
+            )}
           </motion.div>
         ))}
       </div>
@@ -101,16 +166,10 @@ export default function DashboardGrid() {
           className="relative overflow-hidden rounded-[22px] border border-gray-200 bg-gradient-to-br from-white via-gray-50 to-white p-4 shadow-md sm:p-5 lg:p-5 short:p-4 flex flex-col justify-center min-h-[250px] sm:min-h-[270px] lg:min-h-0 lg:overflow-hidden"
         >
           <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-accent via-teal to-yellow" />
-          <div className="mb-2.5 inline-flex w-fit items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-gray-600">
+          <div className="mb-3.5 inline-flex w-fit items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-gray-600">
             <span className="h-2 w-2 rounded-full bg-accent" />
             Strategy • Production • Partnerships
           </div>
-          <h1 className="text-[1.4rem] md:text-[1.7rem] 2xl:text-[2rem] short:text-[1.35rem] font-bold text-gray-900 leading-[1.08] mb-2.5 short:mb-2">
-            Bridging creative vision and technical execution.
-          </h1>
-          <h2 className="max-w-2xl text-sm md:text-[0.92rem] short:text-sm text-gray-600 leading-relaxed mb-3 short:mb-2.5 text-pretty">
-            I help teams build better content workflows, launch strategic partnerships, and solve operational bottlenecks.
-          </h2>
           <div className="flex flex-wrap items-center gap-2 mb-3 short:mb-2.5">
             {certifications.map((cert) => (
               <span
@@ -240,39 +299,49 @@ export default function DashboardGrid() {
           </motion.div>
         </div>
 
-        {/* Content mix chart tile */}
+        {/* Courses by topic chart tile */}
         <motion.div
           {...tileMotion(0.35)}
           className="relative overflow-hidden rounded-[22px] border border-gray-200 bg-white p-4 shadow-md sm:p-5 flex flex-col min-h-[150px]"
         >
           <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-accent via-teal to-yellow" />
-          <div className="mb-1 flex items-center justify-between">
-            <h3 className="text-lg font-bold tracking-tight text-gray-900">Content Mix</h3>
-            <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">By category</span>
+          <div className="mb-2 flex items-center justify-between">
+            <h3 className="text-lg font-bold tracking-tight text-gray-900">Courses by Topic</h3>
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">116 total</span>
           </div>
-          <div className="flex-1 min-h-[130px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={categoryData} layout="vertical" margin={{ top: 4, right: 16, bottom: 4, left: 0 }}>
-                <XAxis type="number" allowDecimals={false} hide />
-                <YAxis
-                  type="category"
-                  dataKey="name"
-                  width={100}
-                  tickLine={false}
-                  axisLine={false}
-                  tick={{ fontSize: 12, fill: "#6b7280" }}
-                />
-                <Tooltip
-                  cursor={{ fill: "rgba(0,0,0,0.04)" }}
-                  contentStyle={{ borderRadius: 12, border: "1px solid #e5e7eb", fontSize: 12 }}
-                />
-                <Bar dataKey="count" radius={[0, 6, 6, 0]} barSize={18}>
-                  {categoryData.map((entry, index) => (
-                    <Cell key={entry.name} fill={CATEGORY_COLORS[index % CATEGORY_COLORS.length]} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+          <div className="flex flex-1 items-center gap-4">
+            <div className="h-[150px] w-[150px] flex-shrink-0">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={coursesByTopic}
+                    dataKey="count"
+                    nameKey="name"
+                    innerRadius="58%"
+                    outerRadius="95%"
+                    paddingAngle={2}
+                    stroke="none"
+                  >
+                    {coursesByTopic.map((entry, index) => (
+                      <Cell key={entry.name} fill={TOPIC_COLORS[index % TOPIC_COLORS.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip contentStyle={{ borderRadius: 12, border: "1px solid #e5e7eb", fontSize: 12 }} />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="min-w-0 flex-1 space-y-1.5">
+              {coursesByTopic.map((entry, index) => (
+                <div key={entry.name} className="flex items-center gap-2 text-xs">
+                  <span
+                    className="h-2.5 w-2.5 flex-shrink-0 rounded-full"
+                    style={{ backgroundColor: TOPIC_COLORS[index % TOPIC_COLORS.length] }}
+                  />
+                  <span className="min-w-0 flex-1 truncate text-gray-600">{entry.name}</span>
+                  <span className="flex-shrink-0 font-semibold text-gray-900 tabular-nums">{entry.count}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
 
