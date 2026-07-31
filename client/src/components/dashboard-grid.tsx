@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import { Award, Rocket, Play, Briefcase, Mail, Linkedin, ArrowUpRight, MapPin } from "lucide-react";
+import { Bar, BarChart, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Award, Rocket, Play, Briefcase, Mail, Linkedin, ArrowUpRight, MapPin, Users, BookOpen, Eye, Video as VideoIcon } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import WatchSection, { categoryGroups } from "@/components/watch-section";
 import ExperienceTimeline from "@/components/experience-timeline";
@@ -14,11 +15,15 @@ const certifications = [
 ];
 
 const impactStats = [
-  { value: "2.7M+", label: "Online Learners" },
-  { value: "116", label: "Courses Produced" },
-  { value: "29.8M+", label: "Video Views" },
-  { value: "245", label: "Videos Produced" },
+  { value: "2.7M+", label: "Online Learners", icon: Users },
+  { value: "116", label: "Courses Produced", icon: BookOpen },
+  { value: "29.8M+", label: "Video Views", icon: Eye },
+  { value: "245", label: "Videos Produced", icon: VideoIcon },
 ];
+
+// Matches the hsl values behind the accent/teal/yellow CSS variables in index.css,
+// since recharts fill/stroke attributes don't resolve var() reliably.
+const CATEGORY_COLORS = ["hsl(16, 100%, 60%)", "hsl(176, 45%, 57%)", "hsl(50, 100%, 71%)"];
 
 const brands = [
   "LinkedIn Learning",
@@ -59,12 +64,40 @@ export default function DashboardGrid() {
     },
   });
 
+  const categoryData = categoryGroups.map((group) => ({
+    name: group.name.split(" & ")[0],
+    count: videos.filter((v) => v.category === group.name).length,
+  }));
+
   return (
     <>
+      {/* KPI row */}
+      <div className="mx-auto mb-4 grid w-full max-w-[1500px] grid-cols-2 gap-4 md:mb-5 md:grid-cols-4 md:gap-5">
+        {impactStats.map((stat, index) => (
+          <motion.div
+            key={stat.label}
+            {...tileMotion(index * 0.05)}
+            className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 shadow-sm"
+          >
+            <div className="mb-2.5 flex items-center gap-2.5">
+              <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600">
+                <stat.icon className="h-4 w-4" />
+              </div>
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 leading-tight">
+                {stat.label}
+              </span>
+            </div>
+            <p className="text-2xl font-bold tracking-tight text-gray-900 tabular-nums md:text-[1.75rem]">
+              {stat.value}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+
       <div className="mx-auto grid w-full max-w-[1500px] grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
         {/* Hero / About tile */}
         <motion.div
-          {...tileMotion(0)}
+          {...tileMotion(0.2)}
           className="relative overflow-hidden rounded-[22px] border border-gray-200 bg-gradient-to-br from-white via-gray-50 to-white p-4 shadow-md sm:p-5 lg:p-5 short:p-4 flex flex-col justify-center min-h-[250px] sm:min-h-[270px] lg:min-h-0 lg:overflow-hidden"
         >
           <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-accent via-teal to-yellow" />
@@ -89,15 +122,7 @@ export default function DashboardGrid() {
               </span>
             ))}
           </div>
-          <div className="pt-3 short:pt-2.5 border-t border-gray-100 grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-2">
-            {impactStats.map((stat) => (
-              <div key={stat.label}>
-                <p className="text-xl md:text-2xl short:text-lg font-bold text-gray-900 tracking-tight">{stat.value}</p>
-                <p className="text-[11px] md:text-xs text-gray-500 leading-snug">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-3 short:mt-2.5 pt-2.5 short:pt-2 border-t border-gray-100">
+          <div className="pt-3 short:pt-2.5 border-t border-gray-100">
             <p className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-gray-400 mb-1.5">Brands I've created for</p>
             <div className="flex flex-wrap items-center gap-2">
               {brands.map((brand) => (
@@ -215,11 +240,47 @@ export default function DashboardGrid() {
           </motion.div>
         </div>
 
+        {/* Content mix chart tile */}
+        <motion.div
+          {...tileMotion(0.35)}
+          className="relative overflow-hidden rounded-[22px] border border-gray-200 bg-white p-4 shadow-md sm:p-5 flex flex-col min-h-[150px]"
+        >
+          <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-accent via-teal to-yellow" />
+          <div className="mb-1 flex items-center justify-between">
+            <h3 className="text-lg font-bold tracking-tight text-gray-900">Content Mix</h3>
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">By category</span>
+          </div>
+          <div className="flex-1 min-h-[130px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={categoryData} layout="vertical" margin={{ top: 4, right: 16, bottom: 4, left: 0 }}>
+                <XAxis type="number" allowDecimals={false} hide />
+                <YAxis
+                  type="category"
+                  dataKey="name"
+                  width={100}
+                  tickLine={false}
+                  axisLine={false}
+                  tick={{ fontSize: 12, fill: "#6b7280" }}
+                />
+                <Tooltip
+                  cursor={{ fill: "rgba(0,0,0,0.04)" }}
+                  contentStyle={{ borderRadius: 12, border: "1px solid #e5e7eb", fontSize: 12 }}
+                />
+                <Bar dataKey="count" radius={[0, 6, 6, 0]} barSize={18}>
+                  {categoryData.map((entry, index) => (
+                    <Cell key={entry.name} fill={CATEGORY_COLORS[index % CATEGORY_COLORS.length]} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </motion.div>
+
         {/* 12 Grand tile */}
         <motion.button
           {...tileMotion(0.4)}
           onClick={() => setOpenPanel("twelve-grand")}
-          className="group relative overflow-hidden bg-gray-900 text-white rounded-[22px] border border-gray-700 shadow-md p-6 sm:p-8 flex flex-col justify-center gap-6 text-left min-h-[150px] sm:min-h-[160px] lg:overflow-hidden hover:-translate-y-1 hover:bg-gray-800 hover:shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="group relative overflow-hidden bg-gray-900 text-white rounded-[22px] border border-gray-700 shadow-md p-6 sm:p-8 flex flex-col justify-center gap-6 text-left min-h-[150px] sm:min-h-[160px] lg:overflow-hidden hover:-translate-y-1 hover:bg-gray-800 hover:shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:col-span-2"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-teal/20" />
           <div className="relative flex items-center justify-between w-full">

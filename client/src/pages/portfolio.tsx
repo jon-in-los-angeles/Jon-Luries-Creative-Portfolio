@@ -1,12 +1,39 @@
-import Navigation from "@/components/navigation";
+import { useEffect, useState } from "react";
+import Navigation, { type ViewMode } from "@/components/navigation";
+import WelcomeView from "@/components/welcome-view";
 import DashboardGrid from "@/components/dashboard-grid";
+import TimelineView from "@/components/timeline-view";
+import TheatreView from "@/components/theatre-view";
+
+const VIEW_STORAGE_KEY = "portfolio-view";
 
 export default function Portfolio() {
+  const [view, setView] = useState<ViewMode>(() => {
+    if (typeof window === "undefined") return "welcome";
+    return (localStorage.getItem(VIEW_STORAGE_KEY) as ViewMode) || "welcome";
+  });
+
+  useEffect(() => {
+    localStorage.setItem(VIEW_STORAGE_KEY, view);
+  }, [view]);
+
+  if (view === "welcome") {
+    return <WelcomeView onSelect={setView} />;
+  }
+
+  const isTheatre = view === "theatre";
+
   return (
-    <div className="min-h-screen flex flex-col bg-gray-200 overflow-x-hidden">
-      <Navigation />
-      <main className="flex-1 min-h-0 px-3 py-4 sm:px-4 sm:py-5 lg:px-6 lg:py-6 overflow-y-auto overflow-x-hidden">
-        <DashboardGrid />
+    <div className={`min-h-screen flex flex-col overflow-x-hidden ${isTheatre ? "bg-black" : "bg-gray-200"}`}>
+      <Navigation view={view} onViewChange={setView} />
+      <main
+        className={`flex-1 min-h-0 overflow-y-auto overflow-x-hidden ${
+          isTheatre ? "" : "px-3 py-4 sm:px-4 sm:py-5 lg:px-6 lg:py-6"
+        }`}
+      >
+        {view === "dashboard" && <DashboardGrid />}
+        {view === "timeline" && <TimelineView />}
+        {view === "theatre" && <TheatreView />}
       </main>
     </div>
   );
