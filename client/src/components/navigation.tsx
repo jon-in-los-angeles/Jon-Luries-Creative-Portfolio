@@ -26,7 +26,7 @@ export default function Navigation({
           <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-accent">
             <span className="font-mono text-sm font-bold text-white">JL</span>
           </div>
-          <span className="truncate text-sm font-semibold sm:text-base">Jonathan Lurie</span>
+          <span className="truncate text-sm font-semibold sm:text-base">Jon Lurie</span>
         </button>
 
         <div className="flex flex-wrap items-center justify-end gap-3 sm:gap-4">
@@ -54,7 +54,7 @@ export default function Navigation({
               </button>
             ))}
           </div>
-          <span className="hidden text-xs text-gray-400 sm:inline">&copy; 2026 Jonathan Lurie</span>
+          <span className="hidden text-xs text-gray-400 sm:inline">&copy; 2026 Jon Lurie</span>
           <a href="mailto:jlurie.12@gmail.com" className="transition-colors duration-300 hover:text-accent" aria-label="Email">
             <Mail size={18} />
           </a>

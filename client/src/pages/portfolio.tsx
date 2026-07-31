@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Navigation, { type ViewMode } from "@/components/navigation";
 import WelcomeView from "@/components/welcome-view";
-import DashboardGrid from "@/components/dashboard-grid";
-import TimelineView from "@/components/timeline-view";
-import TheatreView from "@/components/theatre-view";
+
+const DashboardGrid = lazy(() => import("@/components/dashboard-grid"));
+const TimelineView = lazy(() => import("@/components/timeline-view"));
+const TheatreView = lazy(() => import("@/components/theatre-view"));
 
 const VIEW_STORAGE_KEY = "portfolio-view";
 
@@ -31,9 +32,11 @@ export default function Portfolio() {
           isTheatre ? "" : "px-3 py-4 sm:px-4 sm:py-5 lg:px-6 lg:py-6"
         }`}
       >
-        {view === "dashboard" && <DashboardGrid />}
-        {view === "timeline" && <TimelineView />}
-        {view === "theatre" && <TheatreView />}
+        <Suspense fallback={null}>
+          {view === "dashboard" && <DashboardGrid />}
+          {view === "timeline" && <TimelineView />}
+          {view === "theatre" && <TheatreView />}
+        </Suspense>
       </main>
     </div>
   );

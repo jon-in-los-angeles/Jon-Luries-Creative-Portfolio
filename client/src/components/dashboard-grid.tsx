@@ -111,6 +111,17 @@ export default function DashboardGrid() {
 
   return (
     <>
+      {/* Header */}
+      <motion.div {...tileMotion(0)} className="mx-auto mb-6 w-full max-w-[1500px] text-center md:mb-8">
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-gray-600">
+          <span className="h-2 w-2 rounded-full bg-accent" />
+          Dashboard
+        </div>
+        <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Jon Lurie, by the numbers.
+        </h1>
+      </motion.div>
+
       {/* KPI row */}
       <div className="mx-auto mb-4 grid w-full max-w-[1500px] grid-cols-2 gap-4 md:mb-5 md:grid-cols-4 md:gap-5">
         {impactStats.map((stat, index) => (

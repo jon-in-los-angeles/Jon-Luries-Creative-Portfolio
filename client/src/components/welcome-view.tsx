@@ -42,7 +42,7 @@ export default function WelcomeView({ onSelect }: { onSelect: (view: ViewMode) =
         <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent">
           <span className="font-mono text-sm font-bold text-white">JL</span>
         </div>
-        <span className="text-base font-semibold text-gray-900">Jonathan Lurie</span>
+        <span className="text-base font-semibold text-gray-900">Jon Lurie</span>
       </div>
 
       <motion.div

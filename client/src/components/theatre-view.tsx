@@ -9,10 +9,10 @@ import type { Video, Experience } from "@shared/schema";
 const getEmbedUrl = (url: string) => {
   if (url.includes("youtube.com/watch?v=")) {
     const videoId = url.split("v=")[1]?.split("&")[0];
-    return `https://www.youtube.com/embed/${videoId}`;
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
   } else if (url.includes("vimeo.com/")) {
     const videoId = url.split("/").pop()?.split("?")[0];
-    return `https://player.vimeo.com/video/${videoId}`;
+    return `https://player.vimeo.com/video/${videoId}?autoplay=1`;
   }
   return url;
 };
