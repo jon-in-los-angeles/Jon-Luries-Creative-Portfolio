@@ -5,6 +5,7 @@ import WelcomeView from "@/components/welcome-view";
 const DashboardGrid = lazy(() => import("@/components/dashboard-grid"));
 const TimelineView = lazy(() => import("@/components/timeline-view"));
 const TheatreView = lazy(() => import("@/components/theatre-view"));
+const PhotoGallery = lazy(() => import("@/components/photo-gallery"));
 
 const VIEW_STORAGE_KEY = "portfolio-view";
 
@@ -36,6 +37,7 @@ export default function Portfolio() {
           {view === "dashboard" && <DashboardGrid />}
           {view === "timeline" && <TimelineView />}
           {view === "theatre" && <TheatreView />}
+          {view === "gallery" && <PhotoGallery />}
         </Suspense>
       </main>
     </div>

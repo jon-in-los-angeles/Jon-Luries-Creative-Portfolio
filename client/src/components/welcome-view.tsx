@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { LayoutGrid, GitCommitVertical, Clapperboard, Mail, Linkedin, ArrowRight } from "lucide-react";
+import { LayoutGrid, GitCommitVertical, Clapperboard, Images, Mail, Linkedin, ArrowRight } from "lucide-react";
 import type { ViewMode } from "@/components/navigation";
 
 const paths: {
@@ -30,6 +30,13 @@ const paths: {
     icon: Clapperboard,
     accent: "bg-teal",
   },
+  {
+    id: "gallery",
+    title: "Gallery",
+    description: "Behind the scenes — live sessions, festival production, and the campaign art built alongside them.",
+    icon: Images,
+    accent: "bg-primary",
+  },
 ];
 
 export default function WelcomeView({ onSelect }: { onSelect: (view: ViewMode) => void }) {
@@ -56,14 +63,14 @@ export default function WelcomeView({ onSelect }: { onSelect: (view: ViewMode) =
           Strategy • Production • Partnerships
         </div>
         <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Same portfolio, three ways to explore it.
+          Same portfolio, four ways to explore it.
         </h1>
         <p className="mt-3 text-sm text-gray-600 sm:text-base">
           Pick whichever way you'd like to browse the work — you can switch anytime from the nav.
         </p>
       </motion.div>
 
-      <div className="relative mt-10 grid w-full max-w-4xl grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-3 sm:gap-5">
+      <div className="relative mt-10 grid w-full max-w-5xl grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
         {paths.map((path, index) => (
           <motion.button
             key={path.id}

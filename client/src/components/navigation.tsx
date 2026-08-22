@@ -1,11 +1,12 @@
-import { Mail, Linkedin, LayoutGrid, GitCommitVertical, Clapperboard, Compass } from "lucide-react";
+import { Mail, Linkedin, LayoutGrid, GitCommitVertical, Clapperboard, Images, Compass } from "lucide-react";
 
-export type ViewMode = "welcome" | "dashboard" | "timeline" | "theatre";
+export type ViewMode = "welcome" | "dashboard" | "timeline" | "theatre" | "gallery";
 
 const views: { id: ViewMode; label: string; icon: typeof LayoutGrid }[] = [
   { id: "dashboard", label: "Dashboard", icon: LayoutGrid },
   { id: "timeline", label: "Timeline", icon: GitCommitVertical },
   { id: "theatre", label: "Theatre", icon: Clapperboard },
+  { id: "gallery", label: "Gallery", icon: Images },
 ];
 
 export default function Navigation({

@@ -281,7 +281,11 @@ export default function DashboardGrid() {
             <div className="absolute inset-x-0 top-0 h-1.5 bg-accent" />
             <div className="flex items-start justify-between w-full mb-3">
               <div className="flex items-center gap-2.5">
-                <Mail className="w-5 h-5 text-gray-700" />
+                <img
+                  src="/attached_assets/gallery/jon-lurie-portrait.jpg"
+                  alt="Jon Lurie"
+                  className="h-7 w-7 flex-shrink-0 rounded-full object-cover object-[50%_18%]"
+                />
                 <h3 className="text-lg font-bold text-gray-900 tracking-tight">Contact</h3>
               </div>
             </div>
